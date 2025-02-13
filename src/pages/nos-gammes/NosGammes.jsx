@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router';
 
 // CSS
-import './shop.scss'
+import './nosgammes.scss'
 
-const Shop = () => {
+const NosGammes = () => {
   return (
     <div>
-        <h1>Shop</h1>
+        <h1>nos gammes</h1>
     </div>
   )
 }
 
-export default Shop
+export default NosGammes
