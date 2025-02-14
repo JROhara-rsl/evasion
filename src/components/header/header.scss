@@ -1,0 +1,46 @@
+// Utilities
+@import "../../scss/variables.scss";
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    width: 100%;
+    margin: 20px auto;
+
+    nav {
+        margin: 0 auto;
+
+        #border-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        height: fit-content;
+        padding: 12px 40px;
+
+        border: 2px solid $dark-color;
+        border-radius: 40px;
+
+        font-family: $base-font;
+        font-weight: 400;
+        font-size: 1.1rem;
+
+        transition: border 0.1s ease-in;
+
+            a {
+                color: $dark-color;
+                text-decoration-thickness: 2px;
+
+                *:hover {
+                    color: $base-color;
+                }
+            }
+        }
+    }
+    #border-nav:hover {
+        border: 0px solid $dark-color;
+    }
+}
