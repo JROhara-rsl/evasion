@@ -15,7 +15,7 @@ const Header = () => {
     <header>
         <Logo />
         <nav>
-          <div id="border-nav">
+          <div className="border-nav display-nav">
             <Link to='/'><div>Home</div></Link>
             <Link to='/shop'><div>Shop</div></Link>
             <Link to='/nos-gammes'><div>Nos gammes</div></Link>

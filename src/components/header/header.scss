@@ -9,27 +9,15 @@ header {
     width: 100%;
     margin: 20px auto;
 
+    .border-nav {
+        gap: 20px;
+        padding: 12px 40px;
+    
+        border-radius: 40px;
+    }
+
     nav {
         margin: 0 auto;
-
-        #border-nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        height: fit-content;
-        padding: 12px 40px;
-
-        border: 2px solid $dark-color;
-        border-radius: 40px;
-
-        font-family: $base-font;
-        font-weight: 400;
-        font-size: 1.1rem;
-
-        transition: border 0.1s ease-in;
-
             a {
                 color: $dark-color;
                 text-decoration-thickness: 2px;
@@ -38,9 +26,9 @@ header {
                     color: $base-color;
                 }
             }
-        }
     }
     #border-nav:hover {
         border: 0px solid $dark-color;
     }
 }
+

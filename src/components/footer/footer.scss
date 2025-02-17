@@ -1,0 +1,52 @@
+// Utilities
+@import "../../scss/variables.scss";
+
+footer {
+    display: flex;
+    max-width: 1140px;
+    width: 100%;
+    margin: 20px auto;
+
+    #logo-footer {
+        width: 100%;
+        max-width: 190px;
+    }
+
+    ul {
+        margin: 5px 0;
+        padding-inline-start: 30px;
+
+        li {
+            font-size: 0.8rem;
+
+            ul {
+                padding-inline-start: 30px;
+                li {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+
+    .border-nav {
+        display: flex;
+        justify-content: space-between;
+        
+        gap: 20px;
+        height: fit-content;
+        padding: 30px 100px;
+    
+        border-radius: 140px;
+
+        .display-nav {
+            align-items: flex-start;
+        }
+    
+        #container-copyright {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            list-style-type: none;
+        }
+    }
+}

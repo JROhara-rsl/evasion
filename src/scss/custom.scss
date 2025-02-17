@@ -1,3 +1,6 @@
+// Utilities
+@import "./variables.scss";
+
 html {
     font-size: 14px;
 }
@@ -12,4 +15,40 @@ body, main, section, #root {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+}
+
+a {
+    color: $dark-color;
+    text-decoration-thickness: 2px;
+
+    *:hover {
+        color: $base-color;
+    }
+}
+
+nav {
+    margin: 0 auto;
+}
+#border-nav:hover {
+    border: 0px solid $dark-color;
+}
+
+.border-nav { 
+    display: flex;
+    width: 100%;
+
+    border: 2px solid $dark-color;
+    transition: border 0.1s ease-in;
+
+    font-family: $base-font;
+    font-weight: 400;
+    font-size: 1.1rem;    
+}
+
+.display-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
