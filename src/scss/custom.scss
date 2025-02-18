@@ -1,8 +1,14 @@
 // Utilities
 @import "./variables.scss";
+@import "./font.scss";
 
-html {
-    font-size: 14px;
+a {
+    color: $dark-color;
+    text-decoration-thickness: 2px;
+
+    *:hover {
+        color: $base-color;
+    }
 }
 
 body, main, section, #root {
@@ -15,22 +21,24 @@ body, main, section, #root {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+    padding: 70px 0;
 }
 
-a {
-    color: $dark-color;
-    text-decoration-thickness: 2px;
+.section-dark {
+    background-color: $background-color;
 
-    *:hover {
-        color: $base-color;
+    h1, h2, h3, h4, h5, h6, p, span {
+        color: white;
     }
 }
 
-nav {
-    margin: 0 auto;
-}
-#border-nav:hover {
-    border: 0px solid $dark-color;
+.container-grid {
+    display: grid;  
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 20px;
+
+    .grid3 {    grid-column: 7/10; }
+    .grid6 {    grid-column: 1/7; } 
 }
 
 .border-nav { 
@@ -45,6 +53,10 @@ nav {
     font-size: 1.1rem;    
 }
 
+.border-nav:hover {
+    border: 0px solid $dark-color;
+}
+
 .display-nav {
     display: flex;
     flex-direction: row;
@@ -52,3 +64,4 @@ nav {
     justify-content: space-between;
     gap: 20px;
 }
+

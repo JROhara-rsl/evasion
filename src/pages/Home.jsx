@@ -13,9 +13,23 @@ const Home = () => {
           <title>Évasion - cosmétique & hygiène sensorielle</title>
           <meta name='description' content="Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
         </Helmet>
-        <div className="container">
+        <section className="hero container">
           <h1>Évasion</h1>
-        </div>
+        </section>
+        <section id="section-intro-produit" className='section-dark'>
+          <div className='container container-grid'>
+            <div className='grid6'>
+              <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
+            </div>
+            <div className='grid3'>
+              <h2>Nos produits</h2>
+              <p>
+                <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
+                Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France. Parce que prendre soin de soi, c'est aussi s'offrir un moment d'évasion.
+              </p>
+            </div>
+          </div>
+        </section>
     </div>
   )
 }

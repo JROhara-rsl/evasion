@@ -1,0 +1,27 @@
+// Utilities
+@import "./variables.scss";
+
+html {
+    font-size: 14px;
+    font-family: $base-font, sans-serif;
+    font-weight: 300;
+}
+
+h1, h2 {
+    font-family: $title-font, serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+}
+
+h1.title-XXH, h2.title-XXH  {    font-size: 7.2rem;  }
+h1.title-XH, h2.title-XH    {    font-size: 4.2rem;  }
+
+
+p {
+    font-family: $base-font, sans-serif;
+
+    .paragraphe-chapeau {
+        font-weight: 600;
+        font-size: 1.15rem;
+    }
+}
