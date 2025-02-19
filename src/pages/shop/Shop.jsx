@@ -33,8 +33,21 @@ const Shop = () => {
             <h1>Shop</h1>
             <div className="container-shop">
               {items.map((item) => (
-                <div key={item.id}>
-                  <span>{item.name}</span>
+                <div className='container-product'>
+                  <div className='border'></div>
+                  <div key={item.uuid} className='container-product-meta'>
+                    <Link to={'/shop/item/'+(item.uuid)}>
+                      <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />
+                    </Link>
+                    <div className='container-meta'>
+                      <h3>{item.name}</h3>
+                      <div className='meta'>
+                        <span>{item.gamme}</span>
+                        <span>{item.format}ml</span>
+                      </div>
+                      <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
