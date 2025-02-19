@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router'
 import { HelmetProvider } from 'react-helmet-async'
-import GoogleFonts from 'react-google-fonts';
+import supabase from "./supabase.js"
 
 // CSS
 import './App.css'
@@ -30,8 +30,6 @@ function App() {
   return (
     <>
       <HelmetProvider context={helmetContext}>
-        <GoogleFonts font='Alef'/>
-        <GoogleFonts font='Kalnia'/>
         <Routes>
             <Route path="/" element={<Layout/>}>
               <Route index element={<Home/>} />  
