@@ -11,7 +11,7 @@ import './scss/custom.scss'
 import Layout from './components/Layout';
 
 // Pages
-import Home from './pages/Home';
+import Home from './pages/Home/Home.jsx';
 import Nothing from './pages/Nothing';
 import Shop from './pages/shop/Shop';
 import NosGammes from './pages/nos-gammes/NosGammes';
