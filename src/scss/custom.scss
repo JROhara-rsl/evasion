@@ -29,11 +29,15 @@ body, main, section, #root {
     padding: 70px 0;
 }
 
-.section-dark {
+.container-dark {
     background-color: $background-color;
 
     h1, h2, h3, h4, h5, h6, p, span {
         color: white;
+    }
+
+    .border {
+        border-color: white !important;
     }
 }
 
@@ -49,8 +53,11 @@ body, main, section, #root {
     grid-template-columns: repeat(9, 1fr);
     column-gap: 20px;
 
-    .grid3 {    grid-column: 7/10; }
-    .grid6 {    grid-column: 1/7; } 
+    .grid1  {   grid-column: 1/2;   }
+    .grid3  {   grid-column: 7/10;  }
+    .grid4  {   grid-column: 2/7;  }
+    .grid5  {   grid-column: 1/5;  }
+    .grid6  {   grid-column: 1/7;   } 
 
     img {
         width: 100%;

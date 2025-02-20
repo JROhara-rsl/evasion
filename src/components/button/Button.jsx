@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 const Button = (props) => {
   return (
     <button>
-        <Link to={props.lien} className='border-button'>
+        <Link to={props.lien} className={'border-button ' + props.class}>
             {props.name}
         </Link>
     </button>
