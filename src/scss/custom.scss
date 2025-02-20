@@ -11,6 +11,11 @@ a {
     }
 }
 
+hr {    
+    width: 100%;
+    border: 1px solid $dark-color
+}
+
 body, main, section, #root {
     width: 100%;
     max-width: 100%;

@@ -34,14 +34,15 @@ function App() {
             <Route path="/" element={<Layout/>}>
               <Route index element={<Home/>} />  
               <Route path="/shop" element={<Shop/>} /> 
-              <Route path='/shop/item:id' element={<PostItem/>} /> 
+              <Route path='/shop/item/:id' element={<PostItem/>} /> 
               <Route path="/nos-gammes" element={<NosGammes/>} />
               <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
               <Route path="/actualite" element={<Actualite/>} />
-              <Route path='/actualite/article:id' element={<Article/>} /> 
+              <Route path='/actualite/article/:id' element={<Article/>} /> 
               <Route path="/contact" element={<Contact/>} />   
+              <Route path='*' element={<Nothing/>} />
             </Route>      
-            <Route path='*' element={<Nothing/>} />
+            
         </Routes>
       </HelmetProvider>
     </>
