@@ -12,7 +12,7 @@ import Button from '../../components/button/Button'
 
 const Home = () => {
   return (
-    <div>
+    <>
         <Helmet>
           <title>Évasion - cosmétique & hygiène sensorielle</title>
           <meta name='description' content="Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
@@ -70,11 +70,16 @@ const Home = () => {
               </p>
               <Button name="Pour l'adopter" lien='/shop'/>
             </div>
-            <div className='grid4 container-image'>
+            <div className='grid5 container-image'>
               <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg"></img>
             </div>
-            <div className='grid3'>
-              
+            <div className='grid3d'>
+              <div className='container-image'>
+                <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-03-1000px.jpg"></img>
+              </div>
+              <div className='container-image'>
+                <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-02-1000px.jpg"></img>
+              </div>
             </div>
           </div>
         </section>
@@ -89,7 +94,7 @@ const Home = () => {
               </div>
             </div>
         </section>
-    </div>
+    </>
   )
 }
 

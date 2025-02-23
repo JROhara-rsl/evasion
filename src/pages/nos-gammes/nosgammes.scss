@@ -1,0 +1,30 @@
+// Utilities
+@import "../../scss/variables.scss";
+@import "../../scss/font.scss";
+
+// CSS - HEADER
+#header-gammes {
+    height: 700px;
+    h1 {
+        grid-column: 1/5;
+    }
+
+    .container-image {
+        display: flex;
+        justify-content: center;
+
+        grid-column: span 2;
+        height: 605px;
+        overflow: hidden;
+        border-radius: 40px;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+
+        &:nth-child(2), &:nth-child(4)  {
+            align-self: flex-end;
+        }
+    }
+}
