@@ -1,35 +1,71 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router'
 import supabase from "../../supabase.js"
+import { Helmet } from 'react-helmet-async';
+
 
 // CSS
 import './shop.scss'
+
+// Component
+import Button from '../../components/button/Button'
 
 const PostItem = () => {
     const params = useParams()
     const { id } = params;  
 
     const [post, setPost] = useState([])
-
+    const [gamme, setGamme] = useState()
+    
     useEffect(() => {
       const fetchItem = async () => {
         try{
           const {data, status, error} = await supabase.from("produits").select("*");          
           const dataId = data.filter((item) => item.uuid === id);
-
           if(status === 200) setPost(dataId[0])  
-          
+          if(status === 200) setGamme(dataId[0].gammeId)    
+            
+          } catch(error) {
+            console.log("Error fetching: ", error);
+          }
+        }
+        fetchItem()
+      }, []);
+      
+      useEffect(() => {
+        //console.log(gamme);
+    }, [gamme])
+
+    // Partie propositions produits
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+      const fetchItem = async () => {
+        try{
+          const {data, status, error} = await supabase
+                                        .from("produits")
+                                        .select("*")
+                                        .in("gammeId", [gamme])
+                                        .neq("uuid", id) 
+                                        .limit(3);
+          if(status === 200) setItems(data)
+            console.log(gamme);
+            
         } catch(error) {
           console.log("Error fetching: ", error);
         }
       }
       fetchItem()
-    }, []);
+    }, [gamme]);
 
   return (
-    <>
+    <>  
+        <Helmet>
+          <title>{post.name}</title>
+          <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
+        </Helmet>
         { post &&   
-          <div key={post.uuid} id="container-post-product"> 
+          <section key={post.uuid} id="container-post-product"> 
             <div id="background-post-product"></div>
             <div id="container-post-meta" className='container container-grid'>
               <div className="container-image">
@@ -50,8 +86,40 @@ const PostItem = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         }
+        <section id="container-proposition">
+          <div className='container container-grid'>
+          <hr></hr>
+            <div className='grid3 display-flex-texte'>
+            <h2>Vous pourriez aimer aussi...</h2>
+              <p>
+              Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature.               </p>
+              <Button name='Profitez de toute la gamme !' lien='/nos-gammes' />
+            </div>
+            <div id="container-shop" className='grid6d'>
+              {items.map((item) => (
+                <div key={item.uuid} className={'container-product product-' + item.categorieId} >
+                  <div className='border'></div>
+                  <div  className='container-product-meta'>
+                    <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
+                      <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />
+                    </Link>
+                    <div className='container-meta'>
+                      <h3 className='title-post-item'>{item.name}</h3>
+                      <div className='meta'>
+                        <span>{item.gamme}</span>
+                        <span>{item.format}ml</span>
+                      </div>
+                      <hr></hr>
+                      <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
     </>
   )
 }

@@ -41,7 +41,7 @@ const Shop = () => {
                                       .select("*")
                                       .in("categorieId", categorieOk)
                                       .in("gammeId", gammeOk);
-        if(status === 200) setItems(data)
+        if(status === 200) setItems(data)          
 
       } catch(error) {
         console.log("Error fetching: ", error);
@@ -51,13 +51,11 @@ const Shop = () => {
   }, [categorieOk, gammeOk]);
   
   const handleToggle = (filtre, name, value) => {
-    console.log("Valeur reçue:", filtre, name, value);
-
     if(filtre === 'categorie') {
       setCategorie((prevCategorie) => {
         // Si c'est le premier clic, on désactive tout sauf le bouton cliqué
         if (!categorieOn) {
-          setCategorieOn(true); // Active le mode filtre
+          setCategorieOn(true); // Active le mode filtre des cagtégories
           return Object.keys(prevCategorie).reduce((acc, key) => {
             acc[key] = key === name; // Seul le bouton cliqué est `true`
             return acc;
@@ -73,7 +71,7 @@ const Shop = () => {
       setGamme((prevGamme) => {
         // Si c'est le premier clic, on désactive tout sauf le bouton cliqué
         if (!gammeOn) {
-          setGammeOn(true); // Active le mode filtre
+          setGammeOn(true); // Active le mode filtre des gammes
           return Object.keys(prevGamme).reduce((acc, key) => {
             acc[key] = key === name; // Seul le bouton cliqué est `true`
             return acc;
@@ -93,7 +91,6 @@ const Shop = () => {
             .filter(([key, value]) => value === true)
             .map(([key]) => key)
     );
-    console.log("categorie mis à jour :", categorie);
   }, [categorie]); 
 
   useEffect(() => {
@@ -102,7 +99,6 @@ const Shop = () => {
             .filter(([key, value]) => value === true)
             .map(([key]) => key)
     );
-    console.log("Gamme mis à jour :", gamme);
   }, [gamme]); 
 
   return (

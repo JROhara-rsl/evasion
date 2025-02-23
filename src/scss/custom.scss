@@ -63,10 +63,12 @@ body, main, section, #root {
     column-gap: 20px;
 
     .grid1  {   grid-column: 1/2;   }
-    .grid3  {   grid-column: 7/10;  }
+    .grid3  {   grid-column: 1/4;  }
+    .grid3d  {   grid-column: 7/10;  }
     .grid4  {   grid-column: 2/7;  }
     .grid5  {   grid-column: 1/5;  }
     .grid6  {   grid-column: 1/7;   } 
+    .grid6d  {   grid-column: 4/10;   } 
 
     img {
         width: 100%;

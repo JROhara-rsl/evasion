@@ -164,3 +164,12 @@
         z-index:-1;
     }
 }
+
+#container-proposition {
+    hr {
+        grid-column: 1 / 10;
+    }
+    .display-flex-texte {
+        justify-content: flex-end;
+    }
+}

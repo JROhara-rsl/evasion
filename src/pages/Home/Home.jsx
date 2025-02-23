@@ -25,7 +25,7 @@ const Home = () => {
             <div className='grid6'>
               <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
             </div>
-            <div className='display-flex-texte grid3'>
+            <div className='display-flex-texte grid3d'>
               <h2>Nos produits</h2>
               <p>
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
