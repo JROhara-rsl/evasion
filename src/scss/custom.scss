@@ -9,11 +9,20 @@ a {
     *:hover {
         color: $base-color;
     }
+
+    &:focus {
+        outline: none;
+        color: $violet-color;
+    }
 }
 
 hr {    
     width: 100%;
     border: 1px solid $dark-color
+}
+
+button:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    outline: none;
 }
 
 body, main, section, #root {
@@ -33,11 +42,11 @@ body, main, section, #root {
     background-color: $background-color;
 
     h1, h2, h3, h4, h5, h6, p, span {
-        color: white;
+        color: $white-color;
     }
 
     .border {
-        border-color: white !important;
+        border-color: $white-color !important;
     }
 }
 

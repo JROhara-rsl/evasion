@@ -5,9 +5,10 @@ import { Helmet } from 'react-helmet-async'
 
 // CSS
 import '../../scss/custom.scss'
-import Button from '../../components/button/Button'
 import './home.scss';
 
+// Component
+import Button from '../../components/button/Button'
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
                 Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France. Parce que prendre soin de soi, c'est aussi s'offrir un moment d'évasion.
               </p>
-              <Button name='Découvrir nos gammes' lien='/nos-gammes'/>
+              <Button name='Découvrir nos gammes' lien='/nos-gammes' class="button-white" />
             </div>
           </div>
         </section>
@@ -78,17 +79,15 @@ const Home = () => {
           </div>
         </section>
         <section id="section-huiles-essentielles">
-          <div>
             <div className='container-image'>
               <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>
             <div className='container container-grid'>
-              <div className='container-texte grid5'>
+              <div className='display-flex-texte grid5'>
                 <h2 className='title-XH'>Huiles essentielles</h2>
                 <Button name="En savoir plus" lien='/huiles-essentielles' class="button-white"/>
               </div>
             </div>
-          </div>
         </section>
     </div>
   )

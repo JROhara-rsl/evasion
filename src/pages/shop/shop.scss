@@ -19,7 +19,11 @@
 // CATEGORY CSS
 #container-filter {
     .liste-filter {
+        margin: 0 0 30px;
         ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             padding-inline-start: 0;
 
             li {
@@ -80,6 +84,15 @@
             border-radius: 40px;
             z-index: -1;
             transition: transform 0.2s ease-in-out;
+        }
+    }
+
+    .product-creme {
+        .product-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 330px;
         }
     }
 }
