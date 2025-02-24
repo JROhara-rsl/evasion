@@ -74,17 +74,17 @@ const PostItem = () => {
                 <img alt={post.name} src={ 'http://localhost:5173/public/assets/img/'+(post.img)} />
                 <div className='border'></div>
               </div>
-              <div className="container-meta">
+              <div className="container-meta display-flex-texte">
                 <span id="link-breadcrumb"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
                 <span className="brand">{post.gamme}</span>
-                <h1>{post.name}</h1>
+                <h1 className='title-X'>{post.name}</h1>
                 <hr></hr>
                 <p className='description'>Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature. </p>
                 <span className="category">{post.category}</span>
                 <span className="prix">{post.prix}€</span>
                 <hr></hr>
                 <div>
-                  <h3>Ingrédients</h3>
+                  <h3 className='name-category'>Ingrédients</h3>
                 </div>
                 <div className='container-button'>
                   <ButtonPanier name='Ajouter au panier' add="true" uuid={post.uuid}/>

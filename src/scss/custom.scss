@@ -50,6 +50,10 @@ body, main, section, #root {
     }
 }
 
+.container-white {
+    background-color: $white-color;
+}
+
 .display-flex-texte {
     display: flex;
     flex-direction: column;
@@ -63,6 +67,7 @@ body, main, section, #root {
     column-gap: 20px;
 
     .grid1  {   grid-column: span 1;   }
+    .grid2c  {   grid-column: 4/7;   }
     .grid3  {   grid-column: span 3;  }
     .grid3d  {   grid-column: 7/10;  }
     .grid4  {   grid-column: span 4;  }
@@ -70,6 +75,7 @@ body, main, section, #root {
     .grid6  {   grid-column: span 6;   } 
     .grid6d  {   grid-column: 4/10;   } 
     .grid7  {   grid-column: span 7;   } 
+    .grid8  {   grid-column: 2/9;}
 
     img {
         width: 100%;

@@ -154,7 +154,10 @@
         }
 
         .container-meta {
-            span {  display: block;    }
+            gap: 6px;
+            justify-content: flex-end;
+
+            #link-breadcrumb {  margin-bottom: 20px;    }
 
             .container-button {
                 display: flex;

@@ -11,7 +11,7 @@ import Logo2 from '../logo/Logo2';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='container-white'>
       <div className="border-nav">
         <Logo2 />
         <div>

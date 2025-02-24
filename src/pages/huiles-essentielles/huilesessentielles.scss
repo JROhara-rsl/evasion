@@ -1,0 +1,46 @@
+// Utilities
+@import "../../scss/variables.scss";
+@import "../../scss/font.scss";
+
+// ************** HUILES ESSENTIELLES CSS ************* */
+/* ************************************* */
+
+
+#container-header-huile {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+
+    .container-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#container-header-texte {
+    svg {
+        position: relative;
+        top: 10px;
+
+        path {
+            fill: $background-color;
+        }
+    }
+}
+
+#container-evader {
+    padding: 40px 0;
+
+    .container-image {
+        border-radius: 40px;
+        overflow: hidden;
+    }
+
+}
+
+#container-citation {
+    padding: 70px 0;
+    text-align: center;
+}
