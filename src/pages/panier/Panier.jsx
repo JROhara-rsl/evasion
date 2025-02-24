@@ -98,7 +98,7 @@ const Panier = () => {
                     <h2 className='title-H'>Récapitulatif</h2>
                     <ul>
                         {items.map((item) => (
-                            <li key={item.uuid}><span>{panier[item.uuid].quantite} - {item.name} {item.gamme} - {item.format}ml</span> <span>{item.prix*panier[item.uuid].quantite}€</span></li>
+                            <li key={item.uuid}><span>{panier[item.uuid].quantite}x - {item.name} {item.gamme} - {item.format}ml</span> <span>{item.prix*panier[item.uuid].quantite}€</span></li>
                         ))}
                     </ul>
                     <div id="text-total">= {total}€</div>

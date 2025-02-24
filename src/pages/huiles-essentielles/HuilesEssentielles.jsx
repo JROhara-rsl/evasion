@@ -7,6 +7,7 @@ import '../../scss/custom.scss'
 import './huilesessentielles.scss'
 
 // Component
+import Newsletter from '../../components/newsletter/Newsletter';
 import Button from '../../components/button/Button'
 
 const HuilesEssentielles = () => {
@@ -43,12 +44,10 @@ const HuilesEssentielles = () => {
 
               <div className='display-flex-texte grid5'>
                 <h2>S’évader un moment</h2>
-                <p>
-                  <span className='paragraphe-chapeau'>Prendre soin de soi, c’est aussi s’accorder le luxe de ralentir, de fermer les yeux et de respirer profondément<br/></span>
-                  Un parfum, une texture, une sensation... et vous voici transporté(e) en Bretagne, sur la Côte d'Azur ou au cœur du maquis corse. Nos soins sont pensés pour vous offrir une expérience sensorielle unique, inspirée des plus belles régions françaises.
-Chaque produit est une invitation au voyage, un rituel qui transforme l’ordinaire en un instant précieux. Une crème aux senteurs de lavande évoque une balade au cœur des champs ensoleillés, une huile aux agrumes réveille les souvenirs d’une escapade sur la Riviera... Laissez-vous porter par ces instants d’évasion et ressentez pleinement le plaisir du moment présent.
-Nos soins vous accompagnent dans cette quête de bien-être en vous offrant un moment suspendu, où seuls comptent les sensations et le plaisir des sens. Faites une pause, laissez-vous emporter, et savourez chaque instant.
-                </p>
+                <p><span className='paragraphe-chapeau'>Prendre soin de soi, c’est aussi s’accorder le luxe de ralentir, de fermer les yeux et de respirer profondément</span></p>
+                <p>Un parfum, une texture, une sensation... et vous voici transporté(e) en Bretagne, sur la Côte d'Azur ou au cœur du maquis corse. Nos soins sont pensés pour vous offrir une expérience sensorielle unique, inspirée des plus belles régions françaises.</p>
+                <p>Chaque produit est une invitation au voyage, un rituel qui transforme l’ordinaire en un instant précieux. Une crème aux senteurs de lavande évoque une balade au cœur des champs ensoleillés, une huile aux agrumes réveille les souvenirs d’une escapade sur la Riviera... Laissez-vous porter par ces instants d’évasion et ressentez pleinement le plaisir du moment présent.</p>
+                <p>Nos soins vous accompagnent dans cette quête de bien-être en vous offrant un moment suspendu, où seuls comptent les sensations et le plaisir des sens. Faites une pause, laissez-vous emporter, et savourez chaque instant.</p>
                 <Button name='Découvrir nos gammes' lien='/nos-gammes' class="button-white" />
               </div>
             </div>  
@@ -60,6 +59,21 @@ Nos soins vous accompagnent dans cette quête de bien-être en vous offrant un m
               <p className='grid8'>Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France.</p>
             </div>
           </section>
+          <section id="section-huiles-essentielles">
+            <div className='container-image'>
+              <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
+            </div>
+            <div className='container container-grid'>
+              <div className='display-flex-texte container-white grid4'>
+                <h2 className='title-XH'>Savoir-faire d’exellence</h2>
+                <p><span className='paragraphe-chapeau'>L'excellence au service de votre bien-être.</span></p>
+                <p>Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence, en partenariat avec des experts en cosmétologie et des producteurs locaux, pour garantir une qualité et une efficacité optimales.</p>
+                <p>Nous privilégions des ingrédients bruts d'exception, sélectionnés avec soin pour leurs bienfaits reconnus. Nos processus de fabrication respectueux préservent toute la richesse des huiles essentielles et des actifs naturels afin d'offrir des soins à la fois doux, efficaces et sensoriels. Chaque produit est conçu pour s’intégrer parfaitement à votre rituel beauté et bien-être.</p>
+                <Button name="En savoir plus" lien='/huiles-essentielles'/>
+              </div>
+            </div>
+          </section>
+          <Newsletter/>
     </>
   )
 }

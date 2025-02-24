@@ -21,7 +21,7 @@ hr {
     border: 1px solid $dark-color
 }
 
-button:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+button:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="mail"]:focus, textarea:focus {
     outline: none;
 }
 
@@ -52,6 +52,10 @@ body, main, section, #root {
 
 .container-white {
     background-color: $white-color;
+
+    h1, h2, h3, h4, h5, h6, p, span {
+        color: $dark-color;
+    }
 }
 
 .display-flex-texte {
