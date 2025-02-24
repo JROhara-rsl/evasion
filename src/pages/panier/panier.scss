@@ -3,11 +3,11 @@
 @import "../../scss/font.scss";
 
 // CSS - PANIER
-header {
+/*header {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
+}*/
 
 #container-commande {
     .container-product {
@@ -69,4 +69,12 @@ header {
             }
         }
     }
+}
+
+// CSS - CONTAINER RECAP
+#container-recap {
+    padding: 50px 20px;
+
+    background-color: $light-color;
+    border-radius: 40px;
 }

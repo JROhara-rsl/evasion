@@ -49,6 +49,10 @@ const Panier = () => {
         fetchItem()
     }, []);
 
+   
+
+
+
   return (
     <>
         <Helmet>
@@ -56,9 +60,9 @@ const Panier = () => {
             <meta name='description' content="Sélectionnez votre commande et finalisez l'achat." />
         </Helmet>
         <div className="container">
-            <header>
-                <span id="link-breadcrumb"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
-                <h1>Votre panier</h1>
+            <header className='container-grid'>
+                <span id="link-breadcrumb" lassName='grid6'><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
+                <h1 className='grid3d'>Votre panier</h1>
             </header>
             <div className='container-grid'>
                 <div id="container-commande" className='grid6'>
@@ -84,6 +88,14 @@ const Panier = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div id="container-recap" className='grid3 display-flex-texte'>
+                    <h2 className='title-H'>Récapitulatif</h2>
+                    <ul>
+                        {items.map((item) => (
+                            <li>{} - {item.name} {item.gamme} {item.format} <span>{item.prix}</span></li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
