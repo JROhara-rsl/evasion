@@ -9,6 +9,7 @@ import './home.scss';
 
 // Component
 import Button from '../../components/button/Button'
+import Newsletter from '../../components/newsletter/Newsletter'
 
 const Home = () => {
   return (
@@ -94,6 +95,7 @@ const Home = () => {
               </div>
             </div>
         </section>
+        <Newsletter/>
     </>
   )
 }

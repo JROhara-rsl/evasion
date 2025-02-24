@@ -1,0 +1,12 @@
+// Utilities
+@import "../../scss/variables.scss";
+@import "../../scss/font.scss";
+
+#container-newsletter {
+    align-items: center;   
+
+    .grid3 {
+        grid-column-start: 2;
+        grid-column-end: span 3;
+    }
+}
