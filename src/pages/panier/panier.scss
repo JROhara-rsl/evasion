@@ -1,0 +1,72 @@
+// Utilities
+@import "../../scss/variables.scss";
+@import "../../scss/font.scss";
+
+// CSS - PANIER
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#container-commande {
+    .container-product {
+        position: relative;
+
+        .container-product-meta {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+
+            .container-meta {
+                margin: 0 20px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .meta {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .product-image {
+                max-height: 380px;
+                max-width: 210px;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+
+        .border {
+            width: 100%;
+            height: 260px;
+            position: absolute;
+            bottom: 0;
+            border: 2px solid $dark-color;
+            border-radius: 40px;
+            z-index: -1;
+            transition: transform 0.2s ease-in-out;
+
+            .prix {
+                position: absolute;
+                right: 3%;
+                top: 4%;
+                width: 50px;
+                height: 50px;
+                border-radius: 30px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: $white-color;
+                background-color: $dark-color;
+            }
+        }
+    }
+}

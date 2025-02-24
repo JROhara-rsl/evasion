@@ -10,6 +10,7 @@ import './shop.scss'
 // Component
 import Button from '../../components/button/Button'
 import ButtonPicto from '../../components/button/ButtonPicto.jsx';
+import ButtonPanier from '../../components/button/ButtonPanier.jsx';
 
 const PostItem = () => {
     const params = useParams()
@@ -18,6 +19,7 @@ const PostItem = () => {
     const [post, setPost] = useState([])
     const [gamme, setGamme] = useState()
     
+    // Importer la BDD du produit BDD
     useEffect(() => {
       const fetchItem = async () => {
         try{
@@ -50,7 +52,6 @@ const PostItem = () => {
                                         .neq("uuid", id) 
                                         .limit(3);
           if(status === 200) setItems(data)
-            console.log(gamme);
             
         } catch(error) {
           console.log("Error fetching: ", error);
@@ -74,7 +75,7 @@ const PostItem = () => {
                 <div className='border'></div>
               </div>
               <div className="container-meta">
-                <span id="link"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
+                <span id="link-breadcrumb"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
                 <span className="brand">{post.gamme}</span>
                 <h1>{post.name}</h1>
                 <hr></hr>
@@ -84,6 +85,10 @@ const PostItem = () => {
                 <hr></hr>
                 <div>
                   <h3>Ingrédients</h3>
+                </div>
+                <div className='container-button'>
+                  <ButtonPanier name='Ajouter au panier' add="true" uuid={post.uuid}/>
+                  <ButtonPanier name="Acheter" add="true" lien="/panier" uuid={post.uuid} />
                 </div>
               </div>
             </div>

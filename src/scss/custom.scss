@@ -69,6 +69,7 @@ body, main, section, #root {
     .grid5  {   grid-column: span 5;  }
     .grid6  {   grid-column: span 6;   } 
     .grid6d  {   grid-column: 4/10;   } 
+    .grid7  {   grid-column: span 7;   } 
 
     img {
         width: 100%;
@@ -99,3 +100,16 @@ body, main, section, #root {
     gap: 20px;
 }
 
+#link-breadcrumb {
+    margin: 0 0 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;  
+    margin: 0;
+
+    .button-picto {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+}

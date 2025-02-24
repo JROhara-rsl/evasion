@@ -166,17 +166,10 @@
         .container-meta {
             span {  display: block;    }
 
-            #link {
-                margin: 0 0 50px;
+            .container-button {
                 display: flex;
-                align-items: center;
-                gap: 5px;  
-
-                .button-picto {
-                    width: 30px;
-                    height: 30px;
-                    margin-right: 10px;
-                }
+                flex-direction: row;
+                gap: 20px;
             }
         }
     }

@@ -7,7 +7,7 @@ import './contact.scss'
 
 const Contact = () => {
   return (
-    <div>    
+    <>    
       <Helmet>
         <title>Contactez Évasion</title>
         <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
@@ -15,7 +15,7 @@ const Contact = () => {
       <div className="container">
             <h1>Contacter nous</h1>
       </div>
-    </div>
+    </>
   )
 }
 

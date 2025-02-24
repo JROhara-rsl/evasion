@@ -20,7 +20,7 @@ import Actualite from './pages/actualite/Actualite';
 import Article from './pages/actualite/Article';
 import Contact from './pages/contact/Contact';
 import PostItem from './pages/shop/PostItem';
-
+import Panier from './pages/panier/Panier.jsx'
 
 const helmetContext = {};
 
@@ -39,7 +39,8 @@ function App() {
               <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
               <Route path="/actualite" element={<Actualite/>} />
               <Route path='/actualite/article/:id' element={<Article/>} /> 
-              <Route path="/contact" element={<Contact/>} />   
+              <Route path="/contact" element={<Contact/>} />  
+              <Route path="/panier" element={<Panier/>} />  
               <Route path='*' element={<Nothing/>} />
             </Route>      
             

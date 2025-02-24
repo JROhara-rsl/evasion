@@ -1,0 +1,90 @@
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router';
+import { Helmet } from 'react-helmet-async';
+import supabase from "../../supabase.js"
+
+// CSS
+import '../shop/shop.scss'
+import './panier.scss'
+
+
+// Component
+import Button from '../../components/button/Button';
+import ButtonPanier from '../../components/button/ButtonPanier';
+import ButtonPicto from '../../components/button/ButtonPicto';
+
+const Panier = () => {
+    // Importer dans le panier du localStorage 
+    const [panier, setPanier] = useState(() => {
+        const saved = localStorage.getItem('panier');
+        if (saved !== null) {
+            try {
+                return JSON.parse(saved);
+            } catch {
+                return null;
+            }
+        }
+        return null;
+    })    
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        const fetchItem = async () => {
+          try{
+            const {data, status, error} = await supabase
+                                          .from("produits")
+                                          .select("*")
+                                          .in("uuid", panier);
+            if(status === 200) setItems(data)          
+    
+          } catch(error) {
+            console.log("Error fetching: ", error);
+          }
+        }
+        fetchItem()
+    }, []);
+
+  return (
+    <>
+        <Helmet>
+            <title>Votre panier - Évasion</title>
+            <meta name='description' content="Sélectionnez votre commande et finalisez l'achat." />
+        </Helmet>
+        <div className="container">
+            <header>
+                <span id="link-breadcrumb"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
+                <h1>Votre panier</h1>
+            </header>
+            <div className='container-grid'>
+                <div id="container-commande" className='grid6'>
+                    {items.map((item) => (
+                        <div key={item.uuid} className={'container-product product-' + item.categorieId}   >
+                            <div className='border'>
+                                <div className='prix'>{item.prix}€</div>
+                            </div>
+                            <div  className='container-product-meta'>
+                            <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
+                                <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />
+                            </Link>
+                            <div className='container-meta'>
+                                <h3 className='title-post-item'>{item.name}</h3>
+                                <div className='meta'>
+                                <span>{item.gamme}</span>
+                                <span>{item.format}ml</span>
+                                </div>
+                                <hr></hr>
+                                <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
+                                <ButtonPanier name='Retirer du panier' delete="true" uuid={item.uuid}/>
+                            </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </>
+  )
+}
+
+export default Panier
