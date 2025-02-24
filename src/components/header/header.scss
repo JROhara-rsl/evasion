@@ -9,6 +9,20 @@ header {
     width: 100%;
     margin: 20px auto;
 
+    #container-logo {
+        a {
+            path {
+                fill: $black-color;
+            } 
+
+            &:focus {
+                path {
+                    fill: $violet-color;
+                }
+            }
+        }
+    }
+
     .border-nav {
         gap: 20px;
         padding: 12px 40px;

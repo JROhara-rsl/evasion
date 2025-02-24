@@ -132,7 +132,9 @@ const Shop = () => {
             <div id="container-shop">
               {items.map((item) => (
                 <div key={item.uuid} className={'container-product product-' + item.categorieId}   >
-                  <div className='border'></div>
+                  <div className='border'>
+                      <div className='prix'>{item.prix}€</div>
+                  </div>
                   <div  className='container-product-meta'>
                     <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
                       <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />

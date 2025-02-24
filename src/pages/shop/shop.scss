@@ -66,7 +66,7 @@
 
             a {
                 margin: 0 auto;
-
+                
                 img {
                     width: 100%;
                     max-height: 330px;
@@ -84,6 +84,22 @@
             border-radius: 40px;
             z-index: -1;
             transition: transform 0.2s ease-in-out;
+
+            .prix {
+                position: absolute;
+                right: 5%;
+                top: 4%;
+                width: 50px;
+                height: 50px;
+                border-radius: 30px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: $white-color;
+                background-color: $dark-color;
+            }
         }
     }
 
@@ -152,6 +168,15 @@
 
             #link {
                 margin: 0 0 50px;
+                display: flex;
+                align-items: center;
+                gap: 5px;  
+
+                .button-picto {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
+                }
             }
         }
     }

@@ -7,6 +7,7 @@ import './nosgammes.scss'
 
 // Component
 import ButtonToggle from '../../components/button/ButtonToggle';
+import Button from '../../components/button/Button';
 
 const NosGammes = () => {
   return (
@@ -18,30 +19,31 @@ const NosGammes = () => {
       <section className="container">
           <h1 className='title-XH'>Nos gammes</h1>
       <div id="header-gammes" className='container container-grid'>
-          <div className='container-image'>
-            <img alt="" src="../../public/assets/img/photos/maillot-rayure-orange-1000px.jpg"></img>
-          </div>
-          <div className='container-image'>
-            <img alt="" src="../../public/assets/img/photos/maillot-jaune-azur-1000px.jpg"></img>
-          </div>
-          <div className='container-image'>
-            <img alt="" src="../../public/assets/img/photos/soiree-plaid-1000px.jpg"></img>
-          </div>
-          <div className='container-image'>
-            <img alt="" src="../../public/assets/img/photos/maillot-rayure-orange-1000px.jpg"></img>
-          </div>
-          <div id='container-filter'>
-              <div className='liste-filter'>
-                <h2 className='name-category'>Nos produits</h2>
-                <ul>
-                  <ButtonToggle filtre="categorie" name='Gel douche' value="gelDouche"/>
-                  <ButtonToggle filtre="categorie" name='Huile' value="huile"/>
-                  <ButtonToggle filtre="categorie" name='Huile satinée'  value="huileSatinee"/>
-                  <ButtonToggle filtre="categorie" name='Crème'  value="creme"/>
-                </ul>
-              </div>
+        <div className='container-image'>
+          <img alt="" src="../../public/assets/img/photos/maillot-rayure-orange-1000px.jpg"></img>
+        </div>
+        <div className='container-image'>
+          <img alt="" src="../../public/assets/img/photos/maillot-jaune-azur-1000px.jpg"></img>
+        </div>
+        <div className='container-image'>
+          <img alt="" src="../../public/assets/img/photos/soiree-plaid-1000px.jpg"></img>
+        </div>
+        <div className='container-image'>
+          <img alt="" src="../../public/assets/img/photos/homme-torse-nue-ciel-1000px.jpg"></img>
+        </div>
+        <div id='container-filter'>
+            <div className='liste-filter'>
+              <h2 className='name-category'>Nos produits</h2>
+              <ul>
+                <ButtonToggle filtre="categorie" name='Gel douche' value="gelDouche"/>
+                <ButtonToggle filtre="categorie" name='Huile' value="huile"/>
+                <ButtonToggle filtre="categorie" name='Huile satinée'  value="huileSatinee"/>
+                <ButtonToggle filtre="categorie" name='Crème'  value="creme"/>
+              </ul>
             </div>
+        </div>
       </div>
+      <Button name="Découvrir nos produits" lien='/shop'/>
       </section>
     </>
   )

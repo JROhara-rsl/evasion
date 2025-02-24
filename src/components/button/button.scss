@@ -97,3 +97,38 @@
         }
     }
 }
+
+.button-picto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+
+    background-color: $dark-color;
+
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    img {
+        width: 70%;
+        height: 70%;
+    }
+
+    &:focus {
+        background-color: $violet-color;
+        -webkit-box-shadow: inset 0px 5px 3px 0px rgba($background-color, 0.25); 
+        box-shadow: inset 0px 5px 3px 0px rgba($background-color, 0.25);
+    }
+
+    &:active {
+        background-color: $background-color;
+    }
+
+    &:hover {
+        background-color: $grey-color;
+        -webkit-box-shadow: inset 0px 5px 3px 0px rgba($background-color, 0.25); 
+        box-shadow: inset 0px 5px 3px 0px rgba($background-color, 0.25);
+    }
+}

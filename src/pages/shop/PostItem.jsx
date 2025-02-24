@@ -9,6 +9,7 @@ import './shop.scss'
 
 // Component
 import Button from '../../components/button/Button'
+import ButtonPicto from '../../components/button/ButtonPicto.jsx';
 
 const PostItem = () => {
     const params = useParams()
@@ -73,7 +74,7 @@ const PostItem = () => {
                 <div className='border'></div>
               </div>
               <div className="container-meta">
-                <span id="link"><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
+                <span id="link"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
                 <span className="brand">{post.gamme}</span>
                 <h1>{post.name}</h1>
                 <hr></hr>

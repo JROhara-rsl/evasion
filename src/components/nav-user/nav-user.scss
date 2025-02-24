@@ -1,0 +1,14 @@
+// Utilities
+@import "../../scss/variables.scss";
+@import "../../scss/font.scss";
+
+#nav-user {
+    position: fixed;
+    bottom: 10vh;
+    right: 7vw;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
