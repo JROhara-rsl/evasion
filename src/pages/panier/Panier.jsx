@@ -31,11 +31,15 @@ const Panier = () => {
 
     useEffect(() => {
         const fetchItem = async () => {
-          try{
+          try{          
+            if (!panier || panier.length === 0) return; // Vérifie que le panier n'est pas vide
+            const uuidList = panier.map(item => item[0]); // Récupère uniquement les UUIDs
+            if (uuidList.length === 0) return;
+
             const {data, status, error} = await supabase
                                           .from("produits")
                                           .select("*")
-                                          .in("uuid", panier);
+                                          .in("uuid", uuidList);
             if(status === 200) setItems(data)          
     
           } catch(error) {
