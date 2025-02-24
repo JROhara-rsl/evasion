@@ -5,23 +5,27 @@ import '../../scss/custom.scss'
 import './button.scss';
 
 function addPanier(element, quantite) {
-  const panier = JSON.parse(localStorage.getItem("panier")) || [];
+  const panier = JSON.parse(localStorage.getItem("panier")) || {};
   
-  const found = panier.find((liste) => liste === element);
-  if(!found) {
-    panier.push([element, quantite]);
+  if (panier[element]) {
+    // Si l'élément existe, augmenter la quantité
+    panier[element].quantite += quantite;
+  } else {
+    // Sinon, l'ajouter avec la quantité
+    panier[element] = { quantite };
   }
+
   localStorage.setItem("panier", JSON.stringify(panier))
 }
 
 function deletePanier(element) {
   const panier = JSON.parse(localStorage.getItem("panier")) || [];
-  const found = panier.find((liste) => liste === element);
-  if(!found) {
-    const nouveauPanier = panier.filter(produit => produit[0] !== element);
-    localStorage.setItem("panier", JSON.stringify(nouveauPanier))
-  }
-  goPanier()
+  
+  if (!panier[element]) return; // 🔍 Vérifie si l'élément existe
+  delete panier[element];
+  localStorage.setItem("panier", JSON.stringify(panier));
+
+  goPanier(); 
 }
 
 function goPanier() {

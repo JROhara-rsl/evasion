@@ -14,6 +14,8 @@ import ButtonPanier from '../../components/button/ButtonPanier';
 import ButtonPicto from '../../components/button/ButtonPicto';
 
 const Panier = () => {
+    const [total, setTotal] = useState(0);
+
     // Importer dans le panier du localStorage 
     const [panier, setPanier] = useState(() => {
         const saved = localStorage.getItem('panier');
@@ -33,7 +35,7 @@ const Panier = () => {
         const fetchItem = async () => {
           try{          
             if (!panier || panier.length === 0) return; // Vérifie que le panier n'est pas vide
-            const uuidList = panier.map(item => item[0]); // Récupère uniquement les UUIDs
+            const uuidList = Object.keys(panier); // Récupère les UUIDs sous forme de tableau
             if (uuidList.length === 0) return;
 
             const {data, status, error} = await supabase
@@ -41,7 +43,10 @@ const Panier = () => {
                                           .select("*")
                                           .in("uuid", uuidList);
             if(status === 200) setItems(data)          
-    
+            
+                const total = data.reduce((acc, item) => acc + item.prix * panier[item.uuid].quantite, 0); // Addition des prix avec la quantité
+                setTotal(total);
+
           } catch(error) {
             console.log("Error fetching: ", error);
           }
@@ -61,7 +66,7 @@ const Panier = () => {
         </Helmet>
         <div className="container">
             <header className='container-grid'>
-                <span id="link-breadcrumb" lassName='grid6'><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
+                <span id="link-breadcrumb" className='grid6'><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
                 <h1 className='grid3d'>Votre panier</h1>
             </header>
             <div className='container-grid'>
@@ -93,9 +98,10 @@ const Panier = () => {
                     <h2 className='title-H'>Récapitulatif</h2>
                     <ul>
                         {items.map((item) => (
-                            <li>{} - {item.name} {item.gamme} {item.format} <span>{item.prix}</span></li>
+                            <li key={item.uuid}><span>{panier[item.uuid].quantite} - {item.name} {item.gamme} - {item.format}ml</span> <span>{item.prix*panier[item.uuid].quantite}€</span></li>
                         ))}
                     </ul>
+                    <div id="text-total">= {total}€</div>
                 </div>
             </div>
         </div>
