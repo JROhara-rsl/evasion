@@ -4,7 +4,6 @@ import { Link } from 'react-router'
 import { Helmet } from 'react-helmet-async'
 
 // CSS
-import '../../scss/custom.scss'
 import './home.scss';
 
 // Component

@@ -1,6 +1,6 @@
+
 // Utilities
 @import "../../scss/variables.scss";
-@import "../../scss/font.scss";
 
 // ************** HOME CSS ************* */
 /* ************************************* */
@@ -118,7 +118,8 @@
 
 #section-huiles-essentielles {
     position: relative;
-    height: 440px;
+    height: auto;
+    min-height: 450px;
     overflow: hidden;
 
     .container-image {

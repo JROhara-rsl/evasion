@@ -1,7 +1,6 @@
 import React from 'react'
 
 // CSS
-import '../../scss/custom.scss'
 import './button.scss';
 
 function addPanier(element, quantite) {

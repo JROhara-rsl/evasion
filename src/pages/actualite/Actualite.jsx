@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { Helmet
+import { Helmet } from 'react-helmet-async'
 
- } from 'react-helmet-async'
 // CSS
 import './actualite.scss'
 

@@ -114,7 +114,7 @@ const Shop = () => {
                 <h2 className='name-category'>Nos produits</h2>
                 <ul>
                   <ButtonToggle filtre="categorie" name='Gel douche' value="gelDouche" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="categorie" name='Huile' value="huile" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="categorie" name='Huile douche' value="huile" onToggle={handleToggle}/>
                   <ButtonToggle filtre="categorie" name='Huile satinée'  value="huileSatinee" onToggle={handleToggle}/>
                   <ButtonToggle filtre="categorie" name='Crème'  value="creme" onToggle={handleToggle}/>
                 </ul>

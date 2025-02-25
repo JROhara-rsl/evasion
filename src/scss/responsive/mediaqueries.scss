@@ -1,0 +1,64 @@
+// Utilities
+@import "../variables.scss";
+
+/* *********** MEDIA QUERIES *********** */
+/* ************************************* */
+
+/* //////////////////////////////////////// PORTRAIT //////////////// */
+/* Pour le format portrait */
+
+@media (orientation: portrait) {
+
+}
+
+/* ///////////////////////////////////////// 1140px //////////////// */
+/* Ajustements à partir de la colonne principale */
+
+@media screen and (max-width: 1140px) {
+    header, .container {
+        width: 96%;
+        margin: 20px 2%;
+    }
+}
+
+/* ///////////////////////////////////////// 980px //////////////// */
+
+@media screen and (max-width: 980px) {
+    :root {
+        font-size: 12px;
+    }
+
+    header {
+        align-items: flex-end;
+        nav {
+            margin-bottom: 10px;
+            .border-nav {
+                font-size: 0.95rem;
+                gap: 15px;
+                padding: 12px 25px;
+            }
+        }
+    }
+}
+
+/* ///////////////////////////////////////// 840px //////////////// */
+/* Pour le format Tablette */
+
+@media screen and (max-width: 980px) {
+    header {
+        nav {
+            .border-nav {
+                padding: 12px 18px;
+                a {
+                    display: none;
+                }
+    
+                svg {
+                    display: block;
+                    stroke: $dark-color;
+                }
+            }
+        }
+    }
+
+}

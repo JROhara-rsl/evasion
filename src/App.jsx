@@ -5,7 +5,6 @@ import supabase from "./supabase.js"
 
 // CSS
 import './App.css'
-import './scss/custom.scss'
 
 // Component
 import Layout from './components/Layout';

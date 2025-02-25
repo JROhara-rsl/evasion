@@ -10,6 +10,7 @@ header {
     margin: 20px auto;
 
     #container-logo {
+        z-index: 5;
         a {
             path {
                 fill: $black-color;
@@ -26,11 +27,13 @@ header {
     .border-nav {
         gap: 20px;
         padding: 12px 40px;
-    
+        box-sizing: border-box;
         border-radius: 40px;
+        z-index: 4;
     }
 
     nav {
+        z-index: 5;
         a {
             color: $dark-color;
             text-decoration-thickness: 2px;
@@ -39,9 +42,49 @@ header {
                 color: $base-color;
             }
         }
+        svg {   
+            display: none;  
+            stroke-width: 4;
+            stroke-linecap: round;
+        }
     }
     #border-nav:hover {
         border: 0px solid $dark-color;
+    }
+
+    #container-burger-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 3;
+        background-color: $background-color;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 30px 0;
+        
+        &.activate {
+            display: flex;
+        }
+
+        a {
+            font-size: 2.8rem; 
+            line-height: 1; 
+            font-family: $title-font;
+            text-decoration: none;
+            color: $white-color;
+        }
+
+        hr {
+            max-width: 80%;
+            margin: 0 auto;
+            border-color: $white-color;
+        }
     }
 }
 

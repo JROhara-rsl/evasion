@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 
 // CSS
-import '../../scss/custom.scss'
 import './huilesessentielles.scss'
 
 // Component
@@ -12,7 +11,7 @@ import Button from '../../components/button/Button'
 
 const HuilesEssentielles = () => {
   return (
-    <>
+    <div id="page-huiles-essentielles">
           <Helmet>
             <title>Évasion - Laboratoire d'huiles essentielles</title>
             <meta name='description' content="Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence." />
@@ -74,7 +73,7 @@ const HuilesEssentielles = () => {
             </div>
           </section>
           <Newsletter/>
-    </>
+    </div>
   )
 }
 

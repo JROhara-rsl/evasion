@@ -7,7 +7,6 @@ import supabase from "../../supabase.js"
 import '../shop/shop.scss'
 import './panier.scss'
 
-
 // Component
 import Button from '../../components/button/Button';
 import ButtonPanier from '../../components/button/ButtonPanier';

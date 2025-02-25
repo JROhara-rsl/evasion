@@ -1,21 +1,24 @@
 // Utilities
 @import "../../scss/variables.scss";
-@import "../../scss/font.scss";
 
 // ************** HUILES ESSENTIELLES CSS ************* */
 /* ************************************* */
-
 
 #container-header-huile {
     position: fixed;
     top: 0;
     z-index: -1;
     width: 100%;
-
+    height: 100%;
+    
     .container-image {
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
+        height: 100%;
+
+        img {       height: 100%;   }
     }
 }
 
@@ -45,7 +48,7 @@
     text-align: center;
 }
 
-#section-huiles-essentielles {
+#page-huiles-essentielles #section-huiles-essentielles {
     height: 700px;
     .display-flex-texte {
         padding: 40px;

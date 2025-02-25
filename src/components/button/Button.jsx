@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router';
 
 // CSS
-import '../../scss/custom.scss'
 import './button.scss';
 
 const Button = (props) => {

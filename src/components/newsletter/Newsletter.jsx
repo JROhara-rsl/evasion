@@ -29,8 +29,8 @@ const Newsletter = () => {
         <div className='grid4'>
             <p>Inscrivez-vous à notre newsletter et recevez en avant-première nos nouveautés, conseils bien-être et offres exclusives. Offrez-vous une parenthèse de douceur directement dans votre boîte mail !</p>
             <form className='container-button' onSubmit={handleSubmit} onChange={handleChange} >
-                <Input name="mail" placeholder="votre-mail@contact.com" type="mail" />
-                <ButtonForm name="Envoyez" type="submit" />
+                <Input id="mail" name="mail" placeholder="votre-mail@contact.com" type="mail" />
+                <ButtonForm id="envoyer" name="Envoyez" type="submit" />
             </form>
             <div id="form-information">{check ? "C'est bien reçu, merci" : ''}</div>
         </div>
