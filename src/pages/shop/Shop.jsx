@@ -131,7 +131,7 @@ const Shop = () => {
             </div>
             <div id="container-shop">
               {items.map((item) => (
-                <div key={item.uuid} className={'container-product product-' + item.categorieId}   >
+                <div key={item.uuid} className={'container-product fade-in-element product-' + item.categorieId}   >
                   <div className='border'>
                       <div className='prix'>{item.prix}€</div>
                   </div>

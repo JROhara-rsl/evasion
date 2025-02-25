@@ -45,6 +45,9 @@
 
     .container-product {
         position: relative;
+        opacity: 1;
+
+        transition: opacity 0.2s ease-in;
 
         .container-product-meta {
             display: flex;

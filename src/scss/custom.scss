@@ -2,7 +2,7 @@
 @import "./variables.scss";
 @import "./font.scss";
 @import "./responsive/mediaqueries.scss";
-
+@import "./animation.scss";
 
 a {
     color: $dark-color;
@@ -20,7 +20,8 @@ a {
 
 hr {    
     width: 100%;
-    border: 1px solid $dark-color
+    border: 1px solid $dark-color;
+    margin: 30px 0;
 }
 
 button:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="mail"]:focus, textarea:focus {
@@ -37,7 +38,7 @@ body, main, section, #root {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
-    padding: 70px 0;
+    padding: 100px 0;
 }
 
 .container-first {
