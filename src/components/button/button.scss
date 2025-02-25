@@ -78,6 +78,7 @@
 .button-toggle, .button-form {
     width: 100%;
     padding: 0;
+    min-width: fit-content;
 
     .border-button {
         font-size: 0.9rem;

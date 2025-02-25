@@ -25,7 +25,7 @@ const Home = () => {
             <div className='grid6'>
               <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
             </div>
-            <div className='display-flex-texte grid3d'>
+            <div className='display-flex-texte grid3'>
               <h2>Nos produits</h2>
               <p>
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
@@ -41,14 +41,14 @@ const Home = () => {
             <div className='background-texte'></div>
           </div>
           <div className='container-grid container'>
-            <div className='part-image container-dark'>
+            <div className='part-image grid5 container-dark'>
               <div className='border'>
               </div>
               <div className='container-image'>
                 <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
             </div>
-            <div className='part-texte display-flex-texte'>
+            <div className='part-texte grid3 display-flex-texte'>
               <h2 className='title-XH'>Prenez le temps pour l’essentiel</h2>
               <p>
                 <span className='paragraphe-chapeau'>Nos soins sont conçus pour vous accompagner dans cette quête de bien-être, en vous offrant des instants de plaisir et de sérénité. Car l'essentiel, c'est vous.<br/></span>

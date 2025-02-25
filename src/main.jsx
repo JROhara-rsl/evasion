@@ -8,6 +8,7 @@ import App from './App.jsx'
 import './scss/variables.scss';
 import './scss/font.scss';
 import './scss/custom.scss';
+import './scss/responsive/mediaqueries.scss';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

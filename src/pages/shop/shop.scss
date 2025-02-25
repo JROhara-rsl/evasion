@@ -6,11 +6,11 @@
     h1 {    display: none;  }
 
     #container-filter {
-        grid-column: 1/2;
+        grid-column: span 1;
     }
 
     #container-shop {
-        grid-column: 2/10;
+        grid-column: span 8;
     }
 }
 
@@ -41,6 +41,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 
     .container-product {
         position: relative;
