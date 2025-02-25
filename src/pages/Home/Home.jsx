@@ -83,7 +83,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section id="section-huiles-essentielles">
+        <section id="section-huiles-essentielles" className='container-image-large'>
             <div className='container-image'>
               <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>

@@ -58,13 +58,13 @@ const HuilesEssentielles = () => {
               <p className='grid8'>Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France.</p>
             </div>
           </section>
-          <section id="section-huiles-essentielles">
+          <section id="section-huiles-essentielles" className='container-image-large'>
             <div className='container-image'>
               <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>
             <div className='container container-grid'>
               <div className='display-flex-texte container-white grid4'>
-                <h2 className='title-XH'>Savoir-faire d’exellence</h2>
+                <h2 className='title-XH'>Nous contacter</h2>
                 <p><span className='paragraphe-chapeau'>L'excellence au service de votre bien-être.</span></p>
                 <p>Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence, en partenariat avec des experts en cosmétologie et des producteurs locaux, pour garantir une qualité et une efficacité optimales.</p>
                 <p>Nous privilégions des ingrédients bruts d'exception, sélectionnés avec soin pour leurs bienfaits reconnus. Nos processus de fabrication respectueux préservent toute la richesse des huiles essentielles et des actifs naturels afin d'offrir des soins à la fois doux, efficaces et sensoriels. Chaque produit est conçu pour s’intégrer parfaitement à votre rituel beauté et bien-être.</p>
