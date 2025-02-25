@@ -19,6 +19,7 @@ import Contact from './pages/contact/Contact';
 import PostItem from './pages/shop/PostItem';
 import Panier from './pages/panier/Panier.jsx'
 import Compte from './pages/compte/Compte.jsx';
+import { UpdatePassword } from '@supabase/auth-ui-react';
 
 const helmetContext = {};
 
@@ -39,6 +40,7 @@ function App() {
               <Route path="/contact" element={<Contact/>} />  
               <Route path="/panier" element={<Panier/>} />  
               <Route path="/compte" element={<Compte />} />
+              <Route path="/update-password" element={<UpdatePassword />} />
               <Route path='*' element={<Nothing/>} />
             </Route>      
             

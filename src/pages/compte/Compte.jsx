@@ -5,6 +5,7 @@ import supabase from "../../supabase";
 
 // CSS
 import './compte.scss';
+import '../../components/button/button.scss';
 
 const Compte = () => {
   const [session, setSession] = useState(null);
@@ -30,11 +31,16 @@ const Compte = () => {
       {session ? (
         <div className="container">
           <h2>Bienvenue, {session.user.email} !</h2>
-          <button onClick={() => supabase.auth.signOut()}>Se déconnecter</button>
+          <div className='button'>
+            <button className="border-button" onClick={() => supabase.auth.signOut()}>Se déconnecter</button>
+          </div>
         </div>
       ) : (
         <div className="container container-auth">
-          <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} providers={null} />
+          <Auth supabaseClient={supabase} 
+                appearance={{ theme: ThemeSupa }} 
+                providers={null}
+                redirectTo="/update-password" />
         </div>
       )}
     </section>
