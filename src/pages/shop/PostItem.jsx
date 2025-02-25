@@ -87,8 +87,8 @@ const PostItem = () => {
                   <h3 className='name-category'>Ingrédients</h3>
                 </div>
                 <div className='container-button'>
-                  <ButtonPanier name='Ajouter au panier' add="true" uuid={post.uuid}/>
-                  <ButtonPanier name="Acheter" add="true" lien="/panier" uuid={post.uuid} />
+                  <ButtonPanier name='Ajouter au panier' action="add" uuid={post.uuid}/>
+                  <ButtonPanier name="Acheter" action="add" lien="/panier" uuid={post.uuid} />
                 </div>
               </div>
             </div>

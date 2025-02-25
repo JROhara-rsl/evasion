@@ -7,12 +7,15 @@
     flex-direction: column;
 
     input {
-        max-width: 200px;
-        padding: 10px 20px;
-        margin: 10px 0;
+        max-width: 240px;
+        min-width: 200px;
+        padding: 13px 20px;
+        margin: 10px 0 0;
 
         border-radius: 30px;
         border: 1px solid $grey-color;
+
+        text-align: center;
     }
 }
 

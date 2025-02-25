@@ -123,3 +123,10 @@ body, main, section, #root {
         margin-right: 10px;
     }
 }
+
+.container-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+}

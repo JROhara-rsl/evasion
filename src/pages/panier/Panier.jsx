@@ -88,7 +88,11 @@ const Panier = () => {
                                 </div>
                                 <hr></hr>
                                 <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
-                                <ButtonPanier name='Retirer du panier' delete="true" uuid={item.uuid}/>
+                                <div class="container-button">
+                                    <ButtonPanier name='Retirer du panier' action="delete" uuid={item.uuid} />
+                                    <ButtonPanier name='-' action="less" uuid={item.uuid} />
+                                    <ButtonPanier name='+' action="add" uuid={item.uuid} />
+                                </div>
                             </div>
                             </div>
                         </div>
