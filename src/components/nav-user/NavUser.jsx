@@ -11,7 +11,7 @@ import ButtonPicto from '../button/ButtonPicto';
 const NavUser = () => {
   return (
     <div id='nav-user'>
-        <ButtonPicto name='Compte utilisateur' img='../../public/assets/picto/picto-user.svg'/>
+        <ButtonPicto name='Compte utilisateur'      lien='/compte' img='../../public/assets/picto/picto-user.svg'/>
         <ButtonPicto name="Panier de l'utilisateur" lien='/panier' img='../../public/assets/picto/picto-panier.svg'/>
         <ButtonPicto name='Rechercher' img='../../public/assets/picto/picto-search.svg'/>
     </div>

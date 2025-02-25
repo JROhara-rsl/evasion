@@ -1,0 +1,60 @@
+
+// Utilities
+@import "../../scss/variables.scss";
+
+// ************* COMPTE CSS ************ */
+/* ************************************* */
+
+#compte-container {
+    .container-auth {
+        max-width: 540px;
+
+        form {
+            font-family: $base-font;
+            &>div {
+              display: flex;
+              align-items: stretch;  
+            }
+
+            input {
+                border-color: $dark-color;
+                border-width: 2px;
+                border-radius: 30px;
+
+                padding: 15px;
+            }
+
+            button {
+                background-color: transparent;
+                border-color: $dark-color;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 40px;
+                color: $dark-color;
+                
+                max-width: 200px;
+                padding: 15px;
+                align-self: center;
+                
+                transition: border 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.1s ease-in-out;
+                
+                &:focus {
+                    border-color: $violet-color;
+                    color: $violet-color;
+                }
+
+                &:hover {
+                    border-color: $base-color;
+                    border-width: 3px;
+                    color: $base-color;
+                }
+
+                &:active {
+                    border-color: $background-color;
+                    background-color: $background-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router'
 import { HelmetProvider } from 'react-helmet-async'
-import supabase from "./supabase.js"
 
 // CSS
 import './App.css'
@@ -20,9 +18,9 @@ import Article from './pages/actualite/Article';
 import Contact from './pages/contact/Contact';
 import PostItem from './pages/shop/PostItem';
 import Panier from './pages/panier/Panier.jsx'
+import Compte from './pages/compte/Compte.jsx';
 
 const helmetContext = {};
-
 
 function App() {
 
@@ -40,6 +38,7 @@ function App() {
               <Route path='/actualite/article/:id' element={<Article/>} /> 
               <Route path="/contact" element={<Contact/>} />  
               <Route path="/panier" element={<Panier/>} />  
+              <Route path="/compte" element={<Compte />} />
               <Route path='*' element={<Nothing/>} />
             </Route>      
             
