@@ -70,9 +70,9 @@ const PostItem = () => {
           <section key={post.uuid} id="container-post-product"> 
             <div id="background-post-product"></div>
             <div id="container-post-meta" className='container container-grid'>
-              <div className="container-image">
+              <div className="container-image fade-in-element">
                 <img alt={post.name} src={ 'http://localhost:5173/public/assets/img/'+(post.img)} />
-                <div className='border'></div>
+                <div className='border border-scale-bot'></div>
               </div>
               <div className="container-meta display-flex-texte">
                 <span id="link-breadcrumb"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
@@ -86,7 +86,7 @@ const PostItem = () => {
                 <div>
                   <h3 className='name-category'>Ingrédients</h3>
                 </div>
-                <div className='container-button'>
+                <div className='container-double'>
                   <ButtonPanier name='Ajouter au panier' action="add" uuid={post.uuid}/>
                   <ButtonPanier name="Acheter" action="add" lien="/panier" uuid={post.uuid} />
                 </div>
@@ -105,8 +105,8 @@ const PostItem = () => {
             </div>
             <div id="container-shop" className='grid6d'>
               {items.map((item) => (
-                <div key={item.uuid} className={'container-product product-' + item.categorieId} >
-                  <div className='border'></div>
+                <div key={item.uuid} className={'container-product fade-in-element product-' + item.categorieId} >
+                  <div className='border border-scale-bot'></div>
                   <div  className='container-product-meta'>
                     <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
                       <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />

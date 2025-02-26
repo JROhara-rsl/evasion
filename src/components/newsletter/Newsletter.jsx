@@ -28,9 +28,17 @@ const Newsletter = () => {
         <h2 className='grid3'>Ne manquez aucun instant d'évasion !</h2>
         <div className='grid4'>
             <p>Inscrivez-vous à notre newsletter et recevez en avant-première nos nouveautés, conseils bien-être et offres exclusives. Offrez-vous une parenthèse de douceur directement dans votre boîte mail !</p>
-            <form className='container-button' onSubmit={handleSubmit} onChange={handleChange} >
-                <Input id="mail" name="mail" placeholder="votre-mail@contact.com" type="mail" />
-                <ButtonForm id="envoyer" name="Envoyez" type="submit" />
+            <form id="form-newsletter" className='container-double' onSubmit={handleSubmit} onChange={handleChange} >
+                <Input  id="mail" 
+                        name="mail" 
+                        placeholder="votre-mail@contact.com" 
+                        type="mail" 
+                />
+                <ButtonForm 
+                        id="envoyer" 
+                        name="Envoyez" 
+                        type="submit" 
+                />
             </form>
             <div id="form-information">{check ? "C'est bien reçu, merci" : ''}</div>
         </div>

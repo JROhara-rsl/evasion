@@ -140,11 +140,13 @@ body, main, section, #root {
     }
 }
 
-.container-button {
+.container-double {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: space-between;
     gap: 20px;
+    width: 100%;
 }
 
 .container-image-large {

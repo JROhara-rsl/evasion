@@ -85,6 +85,7 @@
             border: 2px solid $dark-color;
             border-radius: 40px;
             z-index: -1;
+            transform: scaleY(1);
             transition: transform 0.2s ease-in-out;
 
             .prix {
@@ -112,7 +113,7 @@
     }
 
     .border {
-        transform: scale(0.975);
+        transform: scale(0.975) !important;
     }
 }
 
@@ -137,6 +138,7 @@
         .container-image {
             margin: 0 auto;
             position: relative;
+            opacity: 1;
 
             img {
                 width: 100%;
@@ -151,6 +153,7 @@
                 border: 2px solid $dark-color;
                 border-radius: 40px;
                 z-index: -1;
+                transform: scaleY(1);
                 transition: transform 0.2s ease-in-out;
             }
         }

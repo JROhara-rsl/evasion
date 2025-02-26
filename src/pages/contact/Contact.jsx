@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 
 // CSS
@@ -8,6 +7,9 @@ import './contact.scss'
 // Component
 import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
+import TextArea from '../../components/form/TextArea';
+import ButtonForm from '../../components/button/ButtonForm';
+import Input from '../../components/form/Input';
 
 const Contact = () => {
   return (
@@ -21,13 +23,35 @@ const Contact = () => {
             <img alt="" src="../../public/assets/img/photos/plage-france.jpg"></img>
           </div>
           <div className='container container-grid'>
-            <div className='display-flex-texte container-white grid4'>
+            <form className='display-flex-texte container-white grid5'>
               <h1 className='title-XH'>Nous contacter</h1>
               <hr></hr>
-              <p><span className='paragraphe-chapeau'>L'excellence au service de votre bien-être.</span></p>
-              <p>Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence, en partenariat avec des experts en cosmétologie et des producteurs locaux, pour garantir une qualité et une efficacité optimales.</p>
-              <Button name="En savoir plus" lien='/huiles-essentielles'/>
-            </div>
+              <div className='container-double'>
+                <Input  
+                      name="Prénom" 
+                      id="prenom"
+                      placeholder="Votre prénom" />
+
+                <Input  
+                      name="Nom" 
+                      id="nom" 
+                      placeholder="Votre nom" />
+
+              </div>
+              <Input  
+                      id="mail" 
+                      name="mail" 
+                      class="input-large"
+                      placeholder="votre-mail@contact.com" 
+                      type="mail" />
+
+              <TextArea 
+                      name="Message" 
+                      id="message" 
+                      placeholder="Votre message" />
+
+              <ButtonForm id="envoyer" name="Envoyez" type="submit" />
+            </form>
           </div>
       </section>
       <Newsletter/>

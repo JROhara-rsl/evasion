@@ -132,7 +132,7 @@ const Shop = () => {
             <div id="container-shop">
               {items.map((item) => (
                 <div key={item.uuid} className={'container-product fade-in-element product-' + item.categorieId}   >
-                  <div className='border'>
+                  <div className='border border-scale-bot'>
                       <div className='prix'>{item.prix}€</div>
                   </div>
                   <div  className='container-product-meta'>
