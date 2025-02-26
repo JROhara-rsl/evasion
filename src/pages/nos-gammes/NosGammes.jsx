@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
 
 // CSS
 import './nosgammes.scss'
@@ -10,20 +8,10 @@ import './nosgammes.scss'
 // Component
 import ButtonToggle from '../../components/button/ButtonToggle';
 import Button from '../../components/button/Button';
-
-const buttonStyle = {
-  width: "40px",
-  background: 'none',
-  border: '0px'
-};
-
-const properties = {
-  prevArrow: <button style={{ ...buttonStyle }}><img src="../../public/assets/picto/picto-back.svg" /></button>,
-  nextArrow: <button style={{ ...buttonStyle }}><img src="../../public/assets/picto/picto-next.svg" /></button>
-}
+import SliderGamme from '../../components/slider/SliderGamme';
+import Newsletter from '../../components/newsletter/Newsletter'
 
 const NosGammes = () => {
-
   return (
     <>
       <Helmet>
@@ -60,29 +48,9 @@ const NosGammes = () => {
       <Button name="Découvrir nos produits" lien='/shop'/>
       </section>
       <section id="container-slider-gammes">
-        <Slide {...properties}>
-          <div className="each-slide slide-child slide-provence">
-              <div className="container container-grid">
-                  <span>Slide 1</span>
-              </div>
-          </div>
-          <div className="each-slide slide-child slide-corse">
-              <div className="container container-grid">
-                  <span>Slide 2</span>
-              </div>
-          </div>
-          <div className="each-slide slide-child slide-coteazur">
-              <div className="container container-grid">
-                  <span>Slide 3</span>
-              </div>
-          </div>
-          <div className="each-slide slide-child slide-bretagne">
-              <div className="container container-grid">
-                  <span>Slide 3</span>
-              </div>
-          </div>
-        </Slide>
+        <SliderGamme />
       </section>
+      <Newsletter/>
     </>
   )
 }

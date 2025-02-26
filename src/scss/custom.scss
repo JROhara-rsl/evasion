@@ -45,6 +45,21 @@ body, main, section, #root {
     padding: 0;
 }
 
+.container-color-dark {
+    h1, h2, h3, h4, h5, h6, p, span {
+        color: $white-color;
+    }
+
+    .border {
+        border-color: $white-color !important;
+    }
+    
+    .border-button {
+        border-color: $white-color !important;
+        color: $white-color  !important;
+    }
+}
+
 .container-dark {
     background-color: $background-color;
 
@@ -168,5 +183,15 @@ body, main, section, #root {
         img {
             width: 100%;
         }
+    }
+}
+
+.container-board {
+    display: grid;  
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+
+    .container-image {
+        grid-column: span 3;
     }
 }

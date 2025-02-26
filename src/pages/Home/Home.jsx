@@ -42,8 +42,7 @@ const Home = () => {
           </div>
           <div className='container-grid container'>
             <div className='part-image grid5 container-dark'>
-              <div className='border'>
-              </div>
+              <div className='border'></div>
               <div className='container-image'>
                 <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
