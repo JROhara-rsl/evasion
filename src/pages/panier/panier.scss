@@ -38,7 +38,16 @@
                     height: 100%;
                 }
             }
+            .container-more-less {
+                justify-content: center;
+                gap:10px;
+                width: fit-content;
 
+                .button .border-button {
+                    padding: 8px 20px;
+                    font-size: 2rem;
+                }
+            }
         }
 
         .border {

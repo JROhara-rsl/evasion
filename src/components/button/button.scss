@@ -5,6 +5,7 @@
 .button, .button-toggle, .button-form {
     display: flex;
     width: fit-content;
+    min-width: fit-content;
     height: auto;
     background-color: transparent;
     border:  none;
