@@ -38,6 +38,48 @@ body, main, section, #root {
     margin: 0;
 }
 
+
+// - NAV HEADER ET FOOTER
+/* ********************/
+
+.border-nav { 
+    display: flex;
+    width: 100%;
+
+    border: 2px solid $dark-color;
+    transition: border 0.1s ease-in;
+
+    font-family: $base-font;
+    font-weight: 400;
+    font-size: 1.1rem;    
+}
+
+.border-nav:hover {
+    border: 0px solid $dark-color;
+}
+
+.display-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#link-breadcrumb {
+    margin: 0 0 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;  
+    margin: 0;
+
+    .button-picto {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+}
+
 // - TYPE DE CONTAINER
 /* ********************/
 
@@ -95,6 +137,9 @@ body, main, section, #root {
     }
 }
 
+// - VARIANTE DE CONTAINER DE COULEUR
+/* ********************/
+
 .container-dark {
     background-color: $background-color;
 
@@ -125,44 +170,6 @@ body, main, section, #root {
         .button {
             align-self: flex-end;
         }
-    }
-}
-
-.border-nav { 
-    display: flex;
-    width: 100%;
-
-    border: 2px solid $dark-color;
-    transition: border 0.1s ease-in;
-
-    font-family: $base-font;
-    font-weight: 400;
-    font-size: 1.1rem;    
-}
-
-.border-nav:hover {
-    border: 0px solid $dark-color;
-}
-
-.display-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-#link-breadcrumb {
-    margin: 0 0 50px;
-    display: flex;
-    align-items: center;
-    gap: 5px;  
-    margin: 0;
-
-    .button-picto {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
     }
 }
 
@@ -206,3 +213,48 @@ body, main, section, #root {
         grid-column: span 3;
     }
 }
+
+// - VARIANTE DE CONTAINER DE COULEUR
+/* ********************/
+
+.container-post-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    .container-post {
+        position: relative;
+        opacity: 1;
+
+        transition: opacity 0.2s ease-in;
+
+        .container-post-meta {
+            display: flex;
+            flex-direction: column;
+            max-width: 237px;
+
+            .container-meta {
+                .meta-post-title {
+
+                }
+                .meta-post-category {
+
+                }
+            }
+        }
+    }
+
+    .border {
+        width: 100%;
+        height: 320px;
+        position: absolute;
+        bottom: 0;
+        border: 2px solid $dark-color;
+        border-radius: 40px;
+        z-index: 1;
+        transform: scaleY(1);
+        transition: transform 0.2s ease-in-out;
+    }
+}
+    

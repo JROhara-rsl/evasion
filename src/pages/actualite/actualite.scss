@@ -7,10 +7,50 @@
 #page-actualite {
     
     #container-articles {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
+        .container-post {
+            max-width: 237px;
+            
+            .container-post-meta {
+                max-width: fit-content;
+                margin: 9px 12px;
+
+                a {
+                    margin: 0 auto;
+                    border-radius: 34px;
+                    overflow: hidden;
+                    max-height: 160px;
+                    
+                    img {
+                        width: 100%;
+                        transition: transform 0.3s ease-in-out;
+                    }
+                }
+                .container-meta {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .border {
+            height: 100%;
+            z-index: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+
+            .meta-post-date {
+                pointer-events: none;
+            }
+
+            .button {
+                position: relative;
+                bottom: -25px;
+                pointer-events: auto;
+            }
+        }
     }
 
 }

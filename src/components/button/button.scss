@@ -133,3 +133,10 @@
         box-shadow: inset 0px 5px 3px 0px rgba($background-color, 0.25);
     }
 }
+
+.border-button.button-read {
+    font-size: 0.9rem;
+    color: $background-color;
+    background-color: $white-color;
+    border: none;
+}
