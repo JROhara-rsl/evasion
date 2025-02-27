@@ -61,7 +61,7 @@ const PostItem = () => {
     }, [gamme]);
 
   return (
-    <>  
+    <div id="page-post">  
         <Helmet>
           <title>{post.name}</title>
           <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
@@ -126,7 +126,7 @@ const PostItem = () => {
             </div>
           </div>
         </section>
-    </>
+    </div>
   )
 }
 

@@ -13,7 +13,7 @@ import Input from '../../components/form/Input';
 
 const Contact = () => {
   return (
-    <>    
+    <div id="page-contact">    
       <Helmet>
         <title>Contactez Évasion</title>
         <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
@@ -23,7 +23,7 @@ const Contact = () => {
             <img alt="" src="../../public/assets/img/photos/plage-france.jpg"></img>
           </div>
           <div className='container container-grid'>
-            <form className='display-flex-texte container-white grid5'>
+            <form className='container-flex-texte container-white grid5'>
               <h1 className='title-XH'>Nous contacter</h1>
               <hr></hr>
               <div className='container-double'>
@@ -55,7 +55,7 @@ const Contact = () => {
           </div>
       </section>
       <Newsletter/>
-    </>
+    </div>
   )
 }
 

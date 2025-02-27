@@ -12,7 +12,7 @@ import Newsletter from '../../components/newsletter/Newsletter'
 
 const Home = () => {
   return (
-    <>
+    <div id="page-home">
         <Helmet>
           <title>Évasion - cosmétique & hygiène sensorielle</title>
           <meta name='description' content="Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
@@ -25,7 +25,7 @@ const Home = () => {
             <div className='grid6'>
               <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
             </div>
-            <div className='display-flex-texte grid3'>
+            <div className='container-flex-texte grid3'>
               <h2>Nos produits</h2>
               <p>
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
@@ -47,7 +47,7 @@ const Home = () => {
                 <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
             </div>
-            <div className='part-texte grid3 display-flex-texte'>
+            <div className='part-texte grid3 container-flex-texte'>
               <h2 className='title-XH'>Prenez le temps pour l’essentiel</h2>
               <p>
                 <span className='paragraphe-chapeau'>Nos soins sont conçus pour vous accompagner dans cette quête de bien-être, en vous offrant des instants de plaisir et de sérénité. Car l'essentiel, c'est vous.<br/></span>
@@ -60,7 +60,7 @@ const Home = () => {
         </section>
         <section id="section-nouveau">
           <div className='container container-grid'>
-            <div className='display-flex-texte grid1'>
+            <div className='container-flex-texte grid1'>
               <h2>Nouveau</h2>
               <p>
                 <span className='paragraphe-chapeau'>L’huile satinée aux huiles essentielles de fleurs d’oranger<br/></span>
@@ -87,14 +87,14 @@ const Home = () => {
               <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>
             <div className='container container-grid'>
-              <div className='display-flex-texte grid5'>
+              <div className='container-flex-texte grid5'>
                 <h2 className='title-XH'>Huiles essentielles</h2>
                 <Button name="En savoir plus" lien='/huiles-essentielles' class="button-white"/>
               </div>
             </div>
         </section>
         <Newsletter/>
-    </>
+    </div>
   )
 }
 

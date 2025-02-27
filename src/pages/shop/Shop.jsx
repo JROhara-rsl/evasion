@@ -12,7 +12,6 @@ import ButtonToggle from '../../components/button/ButtonToggle.jsx';
 
 const Shop = () => {
   const [items, setItems] = useState([]);
-
   const [categorieOn, setCategorieOn] = useState(false);
   const [gammeOn, setGammeOn] = useState(false);
 
@@ -102,7 +101,7 @@ const Shop = () => {
   }, [gamme]); 
 
   return (
-    <>  
+    <div id="page-shop">  
       <Helmet>
         <title>Shop Évasion - cosmétique & hygiène</title>
         <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
@@ -153,7 +152,7 @@ const Shop = () => {
               ))}
             </div>
       </div>
-    </>
+    </div>
   )
 }
 

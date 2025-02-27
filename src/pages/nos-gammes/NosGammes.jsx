@@ -13,7 +13,7 @@ import Newsletter from '../../components/newsletter/Newsletter'
 
 const NosGammes = () => {
   return (
-    <>
+    <div id="page-nos-gammes">
       <Helmet>
         <title>Nos gammes cosmétiques Évasion</title>
         <meta name='description' content="Évasion vous propose des produits cosmétiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
@@ -51,7 +51,7 @@ const NosGammes = () => {
         <SliderGamme />
       </section>
       <Newsletter/>
-    </>
+    </div>
   )
 }
 

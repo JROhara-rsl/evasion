@@ -1,4 +1,3 @@
-
 // Utilities
 @import "../../scss/variables.scss";
 
@@ -13,7 +12,7 @@
         align-self: flex-end;
     }
 
-    .display-flex-texte {
+    .container-flex-texte {
         justify-content: flex-end;
     }
 }
@@ -118,7 +117,7 @@
 #section-huiles-essentielles {
     min-height: 450px;
 
-    .display-flex-texte {
+    .container-flex-texte {
         align-items: flex-start;
         color: $white-color;
     }

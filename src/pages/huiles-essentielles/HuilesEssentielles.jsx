@@ -23,7 +23,7 @@ const HuilesEssentielles = () => {
           </div>
           <section id="container-header-texte">
             <div className='container container-grid'>
-              <div className='display-flex-texte grid5'>
+              <div className='container-flex-texte grid5'>
                 <h1 className='title-XXH'>Huiles essentielles</h1>
               </div>
             </div>
@@ -41,7 +41,7 @@ const HuilesEssentielles = () => {
                 </div>
               </div>
 
-              <div className='display-flex-texte grid5'>
+              <div className='container-flex-texte grid5'>
                 <h2>S’évader un moment</h2>
                 <p><span className='paragraphe-chapeau'>Prendre soin de soi, c’est aussi s’accorder le luxe de ralentir, de fermer les yeux et de respirer profondément</span></p>
                 <p>Un parfum, une texture, une sensation... et vous voici transporté(e) en Bretagne, sur la Côte d'Azur ou au cœur du maquis corse. Nos soins sont pensés pour vous offrir une expérience sensorielle unique, inspirée des plus belles régions françaises.</p>
@@ -63,7 +63,7 @@ const HuilesEssentielles = () => {
               <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>
             <div className='container container-grid'>
-              <div className='display-flex-texte container-white grid4'>
+              <div className='container-flex-texte container-white grid4'>
                 <h2 className='title-XH'>Nous contacter</h2>
                 <p><span className='paragraphe-chapeau'>L'excellence au service de votre bien-être.</span></p>
                 <p>Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence, en partenariat avec des experts en cosmétologie et des producteurs locaux, pour garantir une qualité et une efficacité optimales.</p>

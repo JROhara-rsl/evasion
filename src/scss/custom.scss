@@ -4,6 +4,10 @@
 @import "./responsive/mediaqueries.scss";
 @import "./animation.scss";
 
+
+// - CSS DE BASE
+/* ********************/
+
 a {
     color: $dark-color;
     text-decoration-thickness: 2px;
@@ -34,6 +38,10 @@ body, main, section, #root {
     margin: 0;
 }
 
+// - TYPE DE CONTAINER
+/* ********************/
+
+
 .container {
     max-width: 1140px;
     width: 100%;
@@ -41,8 +49,35 @@ body, main, section, #root {
     padding: 100px 0;
 }
 
-.container-first {
-    padding: 0;
+.container-first {    padding: 0;   }
+
+
+.container-grid {
+    display: grid;  
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 20px;
+
+    .grid1  {   grid-column: span 1;   }
+    .grid2c  {   grid-column: 4/7;   }
+    .grid3  {   grid-column: span 3;  }
+    .grid3d  {   grid-column: 7/10;  }
+    .grid4  {   grid-column: span 4;  }
+    .grid5  {   grid-column: span 5;  }
+    .grid6  {   grid-column: span 6;   } 
+    .grid6d  {   grid-column: 4/10;   } 
+    .grid7  {   grid-column: span 7;   } 
+    .grid8  {   grid-column: 2/9;}
+
+    img {
+        width: 100%;
+    }
+}
+
+.container-flex-texte {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .container-color-dark {
@@ -67,6 +102,10 @@ body, main, section, #root {
         color: $white-color;
     }
 
+    hr {
+        border-color: $white-color;
+    }
+
     .border {
         border-color: $white-color !important;
     }
@@ -79,41 +118,13 @@ body, main, section, #root {
         color: $dark-color;
     }
 
-    &.display-flex-texte {
+    &.container-flex-texte {
         padding: 40px;
         border-radius: 40px;
 
         .button {
             align-self: flex-end;
         }
-    }
-}
-
-.display-flex-texte {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.container-grid {
-    display: grid;  
-    grid-template-columns: repeat(9, 1fr);
-    column-gap: 20px;
-
-    .grid1  {   grid-column: span 1;   }
-    .grid2c  {   grid-column: 4/7;   }
-    .grid3  {   grid-column: span 3;  }
-    .grid3d  {   grid-column: 7/10;  }
-    .grid4  {   grid-column: span 4;  }
-    .grid5  {   grid-column: span 5;  }
-    .grid6  {   grid-column: span 6;   } 
-    .grid6d  {   grid-column: 4/10;   } 
-    .grid7  {   grid-column: span 7;   } 
-    .grid8  {   grid-column: 2/9;}
-
-    img {
-        width: 100%;
     }
 }
 

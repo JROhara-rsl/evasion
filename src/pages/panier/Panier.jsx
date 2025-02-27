@@ -58,7 +58,7 @@ const Panier = () => {
 
 
   return (
-    <>
+    <div id="page-panier">
         <Helmet>
             <title>Votre panier - Évasion</title>
             <meta name='description' content="Sélectionnez votre commande et finalisez l'achat." />
@@ -99,7 +99,7 @@ const Panier = () => {
                         </div>
                     ))}
                 </div>
-                <div id="container-recap" className='grid3 display-flex-texte'>
+                <div id="container-recap" className='grid3 container-flex-texte'>
                     <h2 className='title-H'>Récapitulatif</h2>
                     <ul>
                         {items.map((item) => (
@@ -110,7 +110,7 @@ const Panier = () => {
                 </div>
             </div>
         </div>
-    </>
+    </div>
   )
 }
 
