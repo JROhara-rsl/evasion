@@ -1,0 +1,16 @@
+// Utilities
+@import "../../scss/variables.scss";
+
+// *********** ACTUALITE CSS *********** */
+/* ************************************* */
+
+#page-actualite {
+    
+    #container-articles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+}
