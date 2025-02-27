@@ -14,10 +14,10 @@ const ItemArticle = (props) => {
     <div className='container-post container-article'>
       <div className='border'>
         <span className='meta-post-date'>{functionActu.dateMonthDay(props.date)}</span>
-        <Button to={+props.lien} class='button-read' name='Lire la suite'/>
+        <Button lien={props.lien} class='button-read' name='Lire la suite'/>
       </div>
       <div  className='container-post-meta'>
-        <Link href={props.lien} className='article-image'>
+        <Link to={props.lien} className='article-image'>
           <img alt={props.title} src={ 'http://localhost:5173'+(props.image)+'-400px.jpg'} />
         </Link>
         <div className='container-meta'>
@@ -30,8 +30,6 @@ const ItemArticle = (props) => {
     </div>
   )
 }
-
-
 
 const Actualite = () => {
   const [articles, setArticles] = useState([]);
@@ -52,8 +50,6 @@ const Actualite = () => {
     fetchSlides()
     
   }, []);
-
-  
 
   return (
      <div id="page-actualite">    

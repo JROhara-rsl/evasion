@@ -1,21 +1,34 @@
-const urlArticle = (props) => {
-    if (props) {
-        const safeUrl = props.replace(/ /g, "-").replace(/@/g, "").replace(/ ?/g, "").replace(/ !/g, "").replace(/#/g, "").toLowerCase();
+const urlArticle = (title) => {
+    if (title) {
+        var safeUrl = title.replace(/^\s+|\s+$/g, '').toLowerCase();
+
+        var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+        var to   = "aaaaeeeeiiiioooouuuunc------";
+        for (var i=0, l=from.length ; i<l ; i++) {
+            safeUrl = safeUrl.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+        }
+
+        safeUrl = safeUrl.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                         .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                         .replace(/-+/g, '-'); // collapse dashes
+
         const urlArticle = '/actualite/'+safeUrl
+        console.log(urlArticle);
+        
         return urlArticle;
       }
 }
 
-const resume = (props) => {
-    if (props) {
-        const resume = props.substr(0, 96)+'...'
+const resume = (content) => {
+    if (content) {
+        const resume = content.substr(0, 96)+'...'
         return resume;
       }
 }
 
-const dateMonthDay = (props) => {
-    if (props) {
-        const date = props.substr(5)
+const dateMonthDay = (value) => {
+    if (value) {
+        const date = value.substr(5)
         return date;
     }
 }
