@@ -257,4 +257,9 @@ body, main, section, #root {
         transition: transform 0.2s ease-in-out;
     }
 }
-    
+
+#page-nothing {
+    .container {
+        text-align: center;
+    }
+}

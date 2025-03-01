@@ -35,12 +35,22 @@
 
 #container-evader {
     padding: 40px 0;
+    .container-grid {
+        grid-template-areas: 
+        "a a a a . b b b b";
 
-    .container-image {
-        border-radius: 40px;
-        overflow: hidden;
+        .container-image {
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .container-flex-texte {
+            grid-area: b;
+            p, .button {
+                margin-left: 26%;
+            }
+        }
     }
-
 }
 
 #container-citation {

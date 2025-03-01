@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router'
 import { Helmet } from 'react-helmet-async'
 import supabase from "../../supabase.js"
-import functionActu from './actualite.js'
+import functionActu from './functionActualite.js'
 
 // CSS
 import './actualite.scss'
@@ -71,7 +71,7 @@ const Actualite = () => {
                     key={article.id} 
                     id={article.id}
                     title={article.title} 
-                    lien={functionActu.urlArticle(article.title)}
+                    lien={functionActu.urlArticle(article.title, article.id)}
                     date={article.date} 
                     category={article.category}
                     image={article.image}

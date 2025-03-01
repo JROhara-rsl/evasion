@@ -74,8 +74,8 @@ const PostItem = () => {
                 <img alt={post.name} src={ 'http://localhost:5173/public/assets/img/'+(post.img)} />
                 <div className='border border-scale-bot'></div>
               </div>
-              <div className="container-meta display-flex-texte">
-                <span id="link-breadcrumb"><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
+              <div className="container-meta container-flex-texte">
+                <span id="link-breadcrumb"><ButtonPicto name="Retour à la page d'accueil" lien='/' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
                 <span className="brand">{post.gamme}</span>
                 <h1 className='title-X'>{post.name}</h1>
                 <hr></hr>
@@ -97,7 +97,7 @@ const PostItem = () => {
         <section id="container-proposition">
           <div className='container container-grid'>
           <hr></hr>
-            <div className='grid3 display-flex-texte'>
+            <div className='grid3 container-flex-texte'>
             <h2>Vous pourriez aimer aussi...</h2>
               <p>
               Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature.               </p>
