@@ -7,6 +7,9 @@
 #page-actualite {
     
     #container-articles {
+        margin-top: 20px;
+        gap: 40px 20px;
+        
         .container-post {
             max-width: 237px;
             
@@ -27,7 +30,18 @@
                 }
                 .container-meta {
                     margin-bottom: 30px;
+
+                    span    {  margin: 5px 0;  }
+                    hr      {  margin: 5px 0;  }
+                    h3      {   margin: 10px 0 0;  }
                 }
+            }
+            &:hover .border{
+                transform: scale(0.98);
+            }
+
+            &:hover img {
+                transform: scale(1.08);
             }
         }
 
@@ -40,9 +54,19 @@
             justify-content: space-between;
             align-items: center;
             pointer-events: none;
+            
+            transform: scale(1);
+            transition: transform 0.3s ease-in;
 
+            
             .meta-post-date {
                 pointer-events: none;
+                font-family: $title-font;
+                font-size: 3.6rem;
+                font-weight: 400;
+                position: relative;
+                top: -8px;
+                left: -20px;
             }
 
             .button {
@@ -79,7 +103,8 @@
             "a a a a a a"
             ". b b b b ."
             ". c c c c ."
-            ". d d d d .";
+            ". d d d d ."
+            ". . . . e .";
             margin-bottom: 10%;
 
             .container-image {
@@ -93,7 +118,7 @@
                 display: flex;
                 align-items: center;
             }
-            span {
+            .meta {
                 grid-area: b;
                 margin: 0 0 15px 0;
             }
@@ -101,7 +126,6 @@
             h1 {    
                 grid-area: c; 
             }
-
 
             .content {
                 grid-area: d;
@@ -113,15 +137,29 @@
                 }
                 p { margin-bottom: 10px;    }
             }
+
+            .author {
+                grid-area: e;
+                text-align: right;
+                margin: 10px 0;
+            }
         }
     }    
 
-    #container-articles {
+    #container-item-articles {
         border-style: solid;
         border-width: 2px;
         border-color: $white-color;
         border-radius: 40px;
 
-        h3 {    text-align: center; }
+        h3 {    
+            text-align: center; 
+        }
+
+        .container-post-item {
+            .container-post-meta {
+                max-width: 270px;
+            }
+        }
     }
 }

@@ -64,11 +64,11 @@ const HuilesEssentielles = () => {
             </div>
             <div className='container container-grid'>
               <div className='container-flex-texte container-white grid4'>
-                <h2 className='title-XH'>Nous contacter</h2>
+                <h2 className='title-XH'>Savoir-faire d'excellence</h2>
                 <p><span className='paragraphe-chapeau'>L'excellence au service de votre bien-être.</span></p>
                 <p>Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence, en partenariat avec des experts en cosmétologie et des producteurs locaux, pour garantir une qualité et une efficacité optimales.</p>
                 <p>Nous privilégions des ingrédients bruts d'exception, sélectionnés avec soin pour leurs bienfaits reconnus. Nos processus de fabrication respectueux préservent toute la richesse des huiles essentielles et des actifs naturels afin d'offrir des soins à la fois doux, efficaces et sensoriels. Chaque produit est conçu pour s’intégrer parfaitement à votre rituel beauté et bien-être.</p>
-                <Button name="En savoir plus" lien='/huiles-essentielles'/>
+                <Button name="En savoir plus" lien='/actualite/article/9/les-bienfaits-des-huiles-essentielles'/>
               </div>
             </div>
           </section>

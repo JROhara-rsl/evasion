@@ -6,30 +6,11 @@ import functionActu from './functionActualite.js'
 
 // CSS
 import './actualite.scss'
+
+// COMPONENT
 import Newsletter from '../../components/newsletter/Newsletter.jsx'
 import Button from '../../components/button/Button.jsx'
-
-const ItemArticle = (props) => {
-  return (
-    <div className='container-post container-article'>
-      <div className='border'>
-        <span className='meta-post-date'>{functionActu.dateMonthDay(props.date)}</span>
-        <Button lien={props.lien} class='button-read' name='Lire la suite'/>
-      </div>
-      <div  className='container-post-meta'>
-        <Link to={props.lien} className='article-image'>
-          <img alt={props.title} src={ 'http://localhost:5173'+(props.image)+'-400px.jpg'} />
-        </Link>
-        <div className='container-meta'>
-          <h3 className='meta-post-title title-post-item'>{props.title}</h3>
-          <span className='meta-post-category'>{props.category}</span>
-          <hr></hr>
-          <p>{functionActu.resume(props.chapeau)}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
+import ItemArticle from './ItemArticle.jsx'
 
 const Actualite = () => {
   const [articles, setArticles] = useState([]);
@@ -48,7 +29,6 @@ const Actualite = () => {
       }
     }
     fetchSlides()
-    
   }, []);
 
   return (
@@ -65,7 +45,7 @@ const Actualite = () => {
             <div className='container-grid'>
               <div id='container-filter' className='grid1'>
               </div>
-              <div id="container-articles" className='container-post-item grid7'>
+              <div id="container-articles" className='container-post-item grid8'>
                 {articles.map(article => 
                   <ItemArticle 
                     key={article.id} 
@@ -73,7 +53,7 @@ const Actualite = () => {
                     title={article.title} 
                     lien={functionActu.urlArticle(article.title, article.id)}
                     date={article.date} 
-                    category={article.category}
+                    category={article.category_article}
                     image={article.image}
                     chapeau={article.chapeau}
                   />)}
