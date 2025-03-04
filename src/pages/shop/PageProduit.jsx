@@ -3,16 +3,19 @@ import { useParams, Link } from 'react-router'
 import supabase from "../../supabase.js"
 import { Helmet } from 'react-helmet-async';
 
-
 // CSS
 import './shop.scss'
 
+// JS
+import functionProduit from './functionProduit.js'
+
 // Component
-import Button from '../../components/button/Button'
+import Button from '../../components/button/Button.jsx'
 import ButtonPicto from '../../components/button/ButtonPicto.jsx';
 import ButtonPanier from '../../components/button/ButtonPanier.jsx';
+import ItemProduit from './ItemProduit.jsx';
 
-const PostItem = () => {
+const PageProduit = () => {
     const params = useParams()
     const { id } = params;  
 
@@ -104,25 +107,19 @@ const PostItem = () => {
               <Button name='Profitez de toute la gamme !' lien='/nos-gammes' />
             </div>
             <div id="container-shop" className='grid6d'>
-              {items.map((item) => (
-                <div key={item.uuid} className={'container-product fade-in-element product-' + item.categorieId} >
-                  <div className='border border-scale-bot'></div>
-                  <div  className='container-product-meta'>
-                    <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
-                      <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />
-                    </Link>
-                    <div className='container-meta'>
-                      <h3 className='title-post-item'>{item.name}</h3>
-                      <div className='meta'>
-                        <span>{item.gamme}</span>
-                        <span>{item.format}ml</span>
-                      </div>
-                      <hr></hr>
-                      <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {items.map(item => 
+                <ItemProduit 
+                  key={item.id} 
+                  id={item.id}
+                  name={item.name} 
+                  uuid={item.uuid}
+                  lien={functionProduit.urlProduit(item.name, item.uuid)}
+                  gamme={item.gamme}
+                  img={item.img}
+                  prix={item.prix}
+                  format={item.format}
+                  chapeau={item.chapeau}
+                />)}
             </div>
           </div>
         </section>
@@ -130,4 +127,4 @@ const PostItem = () => {
   )
 }
 
-export default PostItem
+export default PageProduit

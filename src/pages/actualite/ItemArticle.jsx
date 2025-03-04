@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router'
-import supabase from "../../supabase.js"
-import functionActu from './functionActualite.js'
 
 // CSS
 import './actualite.scss'
+
+//JS
+import functionActu from './functionActualite.js'
 
 // COMPONENT
 import Button from '../../components/button/Button.jsx'

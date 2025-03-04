@@ -6,9 +6,13 @@ import supabase from "../../supabase.js"
 // CSS
 import './shop.scss'
 
+// JS
+import functionProduit from './functionProduit.js'
+
 // Component
 import Button from '../../components/button/Button'
 import ButtonToggle from '../../components/button/ButtonToggle.jsx';
+import ItemProduit from './ItemProduit.jsx';
 
 const Shop = () => {
   const [items, setItems] = useState([]);
@@ -129,27 +133,19 @@ const Shop = () => {
               </div>
             </div>
             <div id="container-shop">
-              {items.map((item) => (
-                <div key={item.uuid} className={'container-product fade-in-element product-' + item.categorieId}   >
-                  <div className='border border-scale-bot'>
-                      <div className='prix'>{item.prix}€</div>
-                  </div>
-                  <div  className='container-product-meta'>
-                    <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
-                      <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />
-                    </Link>
-                    <div className='container-meta'>
-                      <h3 className='title-post-item'>{item.name}</h3>
-                      <div className='meta'>
-                        <span>{item.gamme}</span>
-                        <span>{item.format}ml</span>
-                      </div>
-                      <hr></hr>
-                      <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {items.map(item => 
+                <ItemProduit 
+                  key={item.id} 
+                  id={item.id}
+                  name={item.name} 
+                  uuid={item.uuid}
+                  lien={functionProduit.urlProduit(item.name, item.uuid)}
+                  gamme={item.gamme}
+                  img={item.img}
+                  prix={item.prix}
+                  format={item.format}
+                  chapeau={item.chapeau}
+                />)}
             </div>
       </div>
     </div>
@@ -157,3 +153,4 @@ const Shop = () => {
 }
 
 export default Shop
+

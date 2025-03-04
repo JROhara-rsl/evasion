@@ -16,7 +16,7 @@ import HuilesEssentielles from './pages/huiles-essentielles/HuilesEssentielles';
 import Actualite from './pages/actualite/Actualite';
 import Article from './pages/actualite/Article';
 import Contact from './pages/contact/Contact';
-import PostItem from './pages/shop/PostItem';
+import PageProduit from './pages/shop/PageProduit';
 import Panier from './pages/panier/Panier.jsx';
 import Compte from './pages/compte/Compte.jsx';
 import { UpdatePassword } from '@supabase/auth-ui-react';
@@ -32,7 +32,7 @@ function App() {
             <Route path="/" element={<Layout/>}>
               <Route index element={<Home/>} />  
               <Route path="/shop" element={<Shop/>} /> 
-              <Route path='/shop/item/:id' element={<PostItem/>} /> 
+              <Route path='/shop/item/:name/:id' element={<PageProduit/>} /> 
               <Route path="/nos-gammes" element={<NosGammes/>} />
               <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
               <Route path="/actualite" element={<Actualite/>} />

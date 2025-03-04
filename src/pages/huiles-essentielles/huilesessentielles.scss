@@ -56,6 +56,16 @@
 #container-citation {
     padding: 70px 0;
     text-align: center;
+
+    .container {
+    grid-template-areas: 
+    ". a a a a a a a ."
+    ". . . b b b . . ."
+    ". c c c c c c c .";
+        h3 {    grid-area: a;   }
+        hr {    grid-area: b;}
+        p { grid-area: c;}
+    }
 }
 
 #page-huiles-essentielles #section-huiles-essentielles {
