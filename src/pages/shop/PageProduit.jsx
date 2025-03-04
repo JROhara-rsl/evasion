@@ -78,7 +78,7 @@ const PageProduit = () => {
                 <div className='border border-scale-bot'></div>
               </div>
               <div className="container-meta container-flex-texte">
-                <span id="link-breadcrumb"><ButtonPicto name="Retour à la page d'accueil" lien='/' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
+                <span id="link-breadcrumb"><ButtonPicto name="Retour à la page d'accueil" lien='/' img='http://localhost:5173/public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
                 <span className="brand">{post.gamme}</span>
                 <h1 className='title-X'>{post.name}</h1>
                 <hr></hr>

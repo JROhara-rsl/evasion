@@ -20,9 +20,11 @@ const Home = () => {
         </Helmet>
         <section id="hero">
           <div className='container'>
+            <div className='border border-scale-center'></div>
             <div className='header-logo'>
               <h1>Évasion</h1>
               <Logo2 />
+              <h2 className='title-H'>Cosmétique sensorielle</h2>
             </div>
             <div className='header-button'>
               <Button name='Découvrir nos produits' lien='/shop' /> 
