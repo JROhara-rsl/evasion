@@ -207,13 +207,13 @@ body, main, section, #root {
 .container-board {
     display: grid;  
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 20px;
+    column-gap: 30px;
 
     .container-image {
         grid-column: span 3;
     }
 }
-
+ 
 // - VARIANTE DE CONTAINER DE COULEUR
 /* ********************/
 

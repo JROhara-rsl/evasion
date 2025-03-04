@@ -9,6 +9,7 @@ import './home.scss';
 // Component
 import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
+import Logo2 from '../../components/logo/Logo2';
 
 const Home = () => {
   return (
@@ -17,8 +18,19 @@ const Home = () => {
           <title>Évasion - cosmétique & hygiène sensorielle</title>
           <meta name='description' content="Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
         </Helmet>
-        <section className="hero container">
-          <h1>Évasion</h1>
+        <section id="hero">
+          <div className='container'>
+            <div className='header-logo'>
+              <h1>Évasion</h1>
+              <Logo2 />
+            </div>
+            <div className='header-button'>
+              <Button name='Découvrir nos produits' lien='/shop' /> 
+            </div>
+            <div className='header-pack'>
+              <img src="../../public/assets/img/pack/gel-douche/GEL-DOUCHE-600-2-EVASION-01-2000px.png"/>
+            </div>
+          </div>
         </section>
         <section id="section-intro-produit" className='container-dark'>
           <div className='container container-grid'>
@@ -34,6 +46,14 @@ const Home = () => {
               <Button name='Découvrir nos gammes' lien='/nos-gammes' class="button-white" />
             </div>
           </div>
+        </section>
+        <section id="section-defilement">
+          <hr></hr>
+          <div className='container-defilement'>
+            <h2 className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h2>
+            <h2 aria-hidden="true" className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h2>
+          </div>
+          <hr></hr>
         </section>
         <section id="section-temps">
           <div className='background'>

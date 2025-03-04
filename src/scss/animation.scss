@@ -31,3 +31,18 @@
     transform: scaleY(0);
     animation: borderScaleBot 0.6s ease-in-out;
 }
+
+.defilement {
+    //display: inline-block; 
+    white-space: nowrap;
+    animation: defilement 15s infinite linear;
+}
+
+@keyframes defilement {
+    0% {
+      transform: translate3d(0,0,0);      /* position initiale à droite */
+    }
+    100% {
+      transform: translate3d(-100%,0,0);  /* position finale à gauche */
+    }
+}

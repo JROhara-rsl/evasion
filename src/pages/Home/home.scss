@@ -4,6 +4,74 @@
 // ************** HOME CSS ************* */
 /* ************************************* */
 
+#hero {
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+        flex-direction: column;
+
+        position: relative;
+        padding: 0;
+        .header-logo {
+            position: absolute;
+            top: 35%;
+            width: 40%;
+            max-height: 400px;
+
+            h1 {    display: none;  }
+        }
+        .header-pack {
+            width: 100%;
+            position: relative;
+            top: 0;
+            img {
+                width: 100%;
+            }
+        }
+
+        .header-button {
+            align-self: flex-start;
+            position: absolute;
+            bottom: 50px;
+            z-index: 2;
+        }
+    }
+}
+
+// - SECTION TEXTES DEFILEMENT
+/* ********************/
+
+#section-defilement {
+    overflow: hidden; 
+    max-height: 250px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+
+    hr {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .container-defilement {
+        margin: 0 auto;
+        padding: 20px 0;
+        max-width: 100%;
+        overflow: hidden;
+        display: flex;
+        gap: 20px;
+
+        &:hover .defilement  {
+            animation-play-state: paused;
+        }
+
+        h2 {    flex: 0 0 100%;    }
+    }
+}
+
+
 // - SECTION NOS PRODUITS
 /* ********************/
 
