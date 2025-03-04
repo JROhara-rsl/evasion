@@ -12,21 +12,12 @@ import Button from '../../components/button/Button';
 import ButtonPanier from '../../components/button/ButtonPanier';
 import ButtonPicto from '../../components/button/ButtonPicto';
 
+// Context
+import { usePanier } from "../../context/PanierContext";
+
 const Panier = () => {
     const [total, setTotal] = useState(0);
-
-    // Importer dans le panier du localStorage 
-    const [panier, setPanier] = useState(() => {
-        const saved = localStorage.getItem('panier');
-        if (saved !== null) {
-            try {
-                return JSON.parse(saved);
-            } catch {
-                return null;
-            }
-        }
-        return null;
-    })    
+    const { panier } = usePanier();
 
     const [items, setItems] = useState([]);
 
@@ -51,10 +42,7 @@ const Panier = () => {
           }
         }
         fetchItem()
-    }, []);
-
-   
-
+    }, [panier]);    
 
 
   return (
@@ -64,9 +52,9 @@ const Panier = () => {
             <meta name='description' content="Sélectionnez votre commande et finalisez l'achat." />
         </Helmet>
         <div className="container">
-            <header className='container-grid'>
-                <span id="link-breadcrumb" className='grid6'><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
-                <h1 className='grid3d'>Votre panier</h1>
+            <header>
+                <h1 className=''>Votre panier</h1>
+                <span id="link-breadcrumb" className=''><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
             </header>
             <div className='container-grid'>
                 <div id="container-commande" className='grid6'>
@@ -82,8 +70,9 @@ const Panier = () => {
                             <div className='container-meta'>
                                 <h3 className='title-post-item'>{item.name}</h3>
                                 <div className='meta'>
-                                <span>{item.gamme}</span>
-                                <span>{item.format}ml</span>
+                                    <span>{item.gamme}</span>
+                                    <span>{item.format}ml</span>
+                                    <span>Quantité : {panier[item.uuid].quantite}</span>
                                 </div>
                                 <hr></hr>
                                 <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
@@ -103,7 +92,7 @@ const Panier = () => {
                     <h2 className='title-H'>Récapitulatif</h2>
                     <ul>
                         {items.map((item) => (
-                            <li key={item.uuid}><span>{panier[item.uuid].quantite}x - {item.name} {item.gamme} - {item.format}ml</span> <span>{item.prix*panier[item.uuid].quantite}€</span></li>
+                            <li key={item.uuid}><span>{panier[item.uuid] && panier[item.uuid].quantite}x - {item.name} {item.gamme} - {item.format}ml</span> <span>{panier[item.uuid] ? item.prix*panier[item.uuid].quantite : item.prix }€</span></li>
                         ))}
                     </ul>
                     <div id="text-total">= {total}€</div>
