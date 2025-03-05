@@ -23,6 +23,7 @@ import { UpdatePassword } from '@supabase/auth-ui-react';
 
 // Context
 import { PanierProvider } from "./context/PanierContext.jsx";
+import { ProfilProvider } from './context/ProfilContext.jsx';
 
 const helmetContext = {};
 
@@ -31,24 +32,26 @@ function App() {
   return (
     <>
       <HelmetProvider context={helmetContext}>
-        <PanierProvider>
-          <Routes>
-              <Route path="/" element={<Layout/>}>
-                <Route index element={<Home/>} />  
-                <Route path="/shop" element={<Shop/>} /> 
-                <Route path='/shop/item/:name/:id' element={<PageProduit/>} /> 
-                <Route path="/nos-gammes" element={<NosGammes/>} />
-                <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
-                <Route path="/actualite" element={<Actualite/>} />
-                <Route path='/actualite/article/:id/:name' element={<Article/>} /> 
-                <Route path="/contact" element={<Contact/>} />  
-                <Route path="/panier" element={<Panier/>} />  
-                <Route path="/compte" element={<Compte />} />
-                <Route path="/update-password" element={<UpdatePassword />} />
-                <Route path='*' element={<Nothing/>} />
-              </Route>      
-          </Routes>
-        </PanierProvider>
+        <ProfilProvider>
+          <PanierProvider>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                  <Route index element={<Home/>} />  
+                  <Route path="/shop" element={<Shop/>} /> 
+                  <Route path='/shop/item/:name/:id' element={<PageProduit/>} /> 
+                  <Route path="/nos-gammes" element={<NosGammes/>} />
+                  <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
+                  <Route path="/actualite" element={<Actualite/>} />
+                  <Route path='/actualite/article/:id/:name' element={<Article/>} /> 
+                  <Route path="/contact" element={<Contact/>} />  
+                  <Route path="/panier" element={<Panier/>} />  
+                  <Route path="/compte" element={<Compte />} />
+                  <Route path="/update-password" element={<UpdatePassword />} />
+                  <Route path='*' element={<Nothing/>} />
+                </Route>      
+            </Routes>
+          </PanierProvider>
+        </ProfilProvider>
       </HelmetProvider>
     </>
   )

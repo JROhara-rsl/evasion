@@ -57,4 +57,19 @@
             }
         }
     }
+
+    .container {
+        width: 840px;
+        padding: 40px;
+        border: 2px solid $dark-color;
+        border-radius: 40px;
+
+        form {
+            .form-input {
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+    }
 }

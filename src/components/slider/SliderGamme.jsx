@@ -18,8 +18,11 @@ const SliderGamme = () => {
             const {data, status, error} = await supabase
                                           .from("slideGamme")
                                           .select("*");
-            
-            if(status === 200) setSlides(data)          
+            console.log("Données récupérées depuis Supabase:", data);
+            if (status === 200) {
+                const sortedSlides = data.sort((a, b) => a.id - b.id); // Trie par ID croissant
+                setSlides(sortedSlides);
+            }        
             
           } catch(error) {
             console.log("Error fetching: ", error);
@@ -29,7 +32,7 @@ const SliderGamme = () => {
         
       }, []);
 
-    const composition2 = (img1, img2, img3, title) => {
+    const composition1 = (img1, img2, img3, title) => {
         return (
             <>
                 <div className='container-image'>
@@ -47,7 +50,7 @@ const SliderGamme = () => {
         )
     }
 
-    const composition1 = (img1, img2, img3, title) => {
+    const composition2 = (img1, img2, img3, title) => {
         return (
             <>
                 <div className='container-image'>
@@ -76,20 +79,17 @@ const SliderGamme = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        initialSlide: 2,
+        initialSlide: 0,
         slidesToShow: 1,
         slidesToScroll: 1,
-        beforeChange: (oldIndex, newIndex) => {
-            //console.log("Avant transition - Index réel :", getRealIndex());
-            setActiveSlide(newIndex);
-        }
+        beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
       };
 
   return (
     <Slider {...settings} ref={sliderRef}>
         {slides.map((slide, index) => {
-            console.log(`Slide ${slide.title} (id ${slide.id}) (index ${index}) (active ${activeSlide})`);
-            const isActive = index === (activeSlide % slides.length);
+            console.log(`Slide ${slide.title} (index ${index}) (active ${activeSlide})`);
+            const isActive = index === activeSlide; 
             return (
                 <div key={slide.id}  
                 className={isActive ? 'active slide-child slide-' + slide.gamme  : 'slide-child slide-' + slide.gamme}>
