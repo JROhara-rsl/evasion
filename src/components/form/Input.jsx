@@ -9,11 +9,13 @@ const Input = (props) => {
         <label htmlFor={props.id ? props.id : ''}>{props.name ? props.name : ''}</label>
         <input  id={props.id ? props.id : ''} 
                 name={props.name ? props.name : ''} 
-                type={props.type ? props.type : ''}
-                className={props.class ? props.class : ''}
+                className={props.class && props.class}
+                type={props.type ? props.type : undefined}
+                value={props.value ? props.value : undefined}
+                onChange={props.change ? props.change : undefined}
                 placeholder={props.placeholder ? props.placeholder : ''} 
-                pattern={props.type === 'mail' ? ".+@example\.com" : ''} 
-                required />
+                pattern={props.type === 'mail' ? ".+@example\.com" : undefined} 
+                required={props.required ? 'required' : undefined} />
     </div>
   )
 }

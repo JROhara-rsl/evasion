@@ -59,16 +59,38 @@
     }
 
     .container {
-        width: 840px;
+        width: 640px;
         padding: 40px;
         border: 2px solid $dark-color;
         border-radius: 40px;
+
+        hr {    margin: 20px 0;    }
 
         form {
             .form-input {
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
                 gap: 30px;
+                //padding: 8px 20px;
+                margin: 5px 0;
+
+                label { font-size: 1rem;    }
+                input { margin: 0; width: 400px; }
+            }
+
+            .button {
+                margin: 10px 0 0;
+                align-self: flex-end;
+
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                width: 100%;
+
+                .border-button {    padding: 15px 27px;    }
+                span {      width: 100%;     }
             }
         }
     }

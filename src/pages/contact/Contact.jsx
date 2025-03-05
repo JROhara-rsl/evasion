@@ -30,12 +30,14 @@ const Contact = () => {
                 <Input  
                       name="Prénom" 
                       id="prenom"
-                      placeholder="Votre prénom" />
+                      placeholder="Votre prénom" 
+                      required='true'/>
 
                 <Input  
                       name="Nom" 
                       id="nom" 
-                      placeholder="Votre nom" />
+                      placeholder="Votre nom"
+                      required='true' />
 
               </div>
               <Input  
@@ -43,14 +45,16 @@ const Contact = () => {
                       name="mail" 
                       class="input-large"
                       placeholder="votre-mail@contact.com" 
-                      type="mail" />
+                      type="mail"
+                      required='true' />
 
               <TextArea 
                       name="Message" 
                       id="message" 
-                      placeholder="Votre message" />
+                      placeholder="Votre message"
+                      required='true' />
 
-              <ButtonForm id="envoyer" name="Envoyez" type="submit" />
+              <ButtonForm id="envoyer" name="envoyez" placeholder="Envoyez" type="submit" />
             </form>
           </div>
       </section>

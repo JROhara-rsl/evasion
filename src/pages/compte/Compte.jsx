@@ -12,6 +12,7 @@ import '../../components/button/button.scss';
 // Component
 import Input from '../../components/form/Input';
 import ButtonPicto from '../../components/button/ButtonPicto';
+import ButtonForm from '../../components/button/ButtonForm';
 
 // Context
 import { useProfil } from "../../context/ProfilContext";
@@ -19,9 +20,49 @@ import { useProfil } from "../../context/ProfilContext";
 const Compte = () => {
   const { profile } = useProfil();
   const { session } = useProfil();
+  const [maj, setMaj] = useState(false);
+
+  const updateProfile = async (updatedFields) => {
+    if (!session.user) {
+      console.error("Utilisateur non connecté !");
+      return;
+    }
   
+    const { error } = await supabase
+      .from("profiles")
+      .update(updatedFields) // Met à jour uniquement les champs fournis
+      .eq("id", session.user.id);
+      
+    if (error) {
+      console.error("Erreur lors de la mise à jour du profil :", error.message);
+    } else {
+      console.log("Profil mis à jour avec succès !");
+    }
+  };
+
+  const [formData, setFormData] = useState({
+    username: profile?.username || "",
+    birthdate: profile?.birthdate || "",
+    address: profile?.address || "",
+    city: profile?.city || "",
+  });
+  
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+    console.log(formData);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const cleanedData = Object.fromEntries(
+      Object.entries(formData).filter(([_, value]) => value !== "")
+    );
+    await updateProfile(cleanedData); // Envoie uniquement les données modifiées
+    setMaj(true)
+  };
+
   return (
-    <section id="compte-container" className="container">
+    <section id="compte-container"  className="container">
       <Helmet>
           <title>Votre compte - Évasion</title>
           <meta name='description' content="Personaliser les paramètres de votre compte évasion." />
@@ -37,32 +78,51 @@ const Compte = () => {
             <Input  
                 name="Username" 
                 id="username"
-                placeholder={profile ? profile.username : "Chargement..."} />
-            <Input  
-                name="Mail" 
-                id="mail"
-                placeholder={session ? session.user.email : "Chargement..."}
-                type="mail"  
-                />    
+                value={formData.username}
+                change={handleChange}
+                placeholder={profile ? profile.username : "Chargement..."} 
+                />  
             <Input  
                 name="Date de naissance" 
                 id="birthdate"
-                placeholder={session ? session.user.birthdate : "Chargement..."}
                 type="date"  
+                value={formData.date}
+                change={handleChange}
+                placeholder={session ? session.user.birthdate : "Chargement..."}
                 />    
             <hr></hr>
             <Input  
                 name="Adresse" 
-                id="adress"
-                placeholder={profile ? profile.adress : "Chargement..."} />
+                id="address"
+                type="text" 
+                value={formData.address}
+                change={handleChange}
+                placeholder={profile ? profile.address : "Chargement..."} />
             <Input  
                 name="Ville" 
                 id="city"
+                type="text" 
+                value={formData.city}
+                change={handleChange}
                 placeholder={profile ? profile.city : "Chargement..."} />
+            <hr></hr>
+            <div className='button'>
+              <span>{maj === true ? 'Profil mis à jour !' : ''}</span>
+              <ButtonForm 
+                id="envoyer" 
+                name="modifier" 
+                placeholder="Modifier" 
+                type="submit" 
+                click={handleSubmit}
+              />
+              <ButtonForm  
+                id="disconnect" 
+                name="disconnect" 
+                placeholder="Se déconnecter" 
+                click={() => supabase.auth.signOut()} 
+              />
+            </div>
           </form>
-          <div className='button'>
-            <button className="border-button" onClick={() => supabase.auth.signOut()}>Se déconnecter</button>
-          </div>
         </div>
       ) : (
         <div className="container container-auth">

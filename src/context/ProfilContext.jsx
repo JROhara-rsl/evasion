@@ -61,7 +61,6 @@ export const ProfilProvider = ({ children }) => {
             fetchProfile();
         }
     }, [session]);
-    console.log(profile);
     return (
         <ProfilContext.Provider value={{ session, user, profile }}>
           {children}
