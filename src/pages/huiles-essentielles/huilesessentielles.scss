@@ -39,9 +39,18 @@
         grid-template-areas: 
         "a a a a . b b b b";
 
-        .container-image {
-            border-radius: 40px;
-            overflow: hidden;
+        .container-image-border {
+            .container-image {
+                border-radius: 40px;
+                overflow: hidden;
+            }
+
+            .border {
+                width: 80%;
+                height: 100%;
+                margin: 0 10%;
+                bottom: 40px;
+            }
         }
 
         .container-flex-texte {

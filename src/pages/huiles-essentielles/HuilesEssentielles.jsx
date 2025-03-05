@@ -33,11 +33,11 @@ const HuilesEssentielles = () => {
           </section>
           <section id="container-evader" className="container-dark">
             <div className='container container-grid'>
-              <div className='grid4'>
-                <div className='border'>
+              <div className='container-image-border grid4'>
+                <div className='border border-scale-center'>
                 </div>
-                <div className='container-image'>
-                  <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
+                <div className='container-image image-zoom'>
+                  <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/photo-nature-1000px.jpg"/>
                 </div>
               </div>
 

@@ -182,6 +182,21 @@ body, main, section, #root {
     width: 100%;
 }
 
+.container-image-border {
+    position: relative;
+    .container-image {
+        overflow: hidden;
+        border-radius: 40px;
+    }
+
+    .border {
+        position: absolute;
+        border-width: 3px;
+        border-style: solid;
+        border-color: $dark-color;
+    }
+}
+
 .container-image-large {
     position: relative;
     height: auto;

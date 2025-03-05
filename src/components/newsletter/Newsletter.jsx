@@ -36,7 +36,8 @@ const Newsletter = () => {
                 />
                 <ButtonForm 
                         id="envoyer" 
-                        name="Envoyez" 
+                        name="envoyez" 
+                        placeholder="Envoyez"
                         type="submit" 
                 />
             </form>

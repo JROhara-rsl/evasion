@@ -63,9 +63,9 @@ const Home = () => {
             <div className='background-texte'></div>
           </div>
           <div className='container-grid container'>
-            <div className='part-image grid5 container-dark'>
-              <div className='border'></div>
-              <div className='container-image'>
+            <div className='container-image-border grid5 container-dark'>
+              <div className='border border-scale-center'></div>
+              <div className='container-image image-zoom'>
                 <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
             </div>
