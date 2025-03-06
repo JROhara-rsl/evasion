@@ -173,6 +173,29 @@ body, main, section, #root {
     }
 }
 
+// CONTAINER FILTER
+#container-filter {
+    grid-column: span 1;
+    .liste-filter {
+        margin: 0 0 30px;
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-inline-start: 0;
+
+            li {
+                list-style-type: none;
+                border: solid 2px $dark-color;
+                border-radius: 30px;
+                padding: 10px 10px;
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
 .container-double {
     display: flex;
     flex-direction: row;
@@ -278,3 +301,4 @@ body, main, section, #root {
         text-align: center;
     }
 }
+

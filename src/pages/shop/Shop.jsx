@@ -32,8 +32,8 @@ const Shop = () => {
     provence: true,
   })
 
-  const [categorieOk, setCategorieOk] = useState(  ['gelDouche', 'huile', 'huileSatinee', 'creme']  );
-  const [gammeOk, setGammeOk] = useState(  ['bretagne', 'corse', 'coteAzur', 'provence']  );
+  const [categorieActive, setCategorieActive] = useState(  ['gelDouche', 'huile', 'huileSatinee', 'creme']  );
+  const [gammeActive, setGammeActive] = useState(  ['bretagne', 'corse', 'coteAzur', 'provence']  );
   
 
   useEffect(() => {
@@ -42,8 +42,8 @@ const Shop = () => {
         const {data, status, error} = await supabase
                                       .from("produits")
                                       .select("*")
-                                      .in("categorieId", categorieOk)
-                                      .in("gammeId", gammeOk);
+                                      .in("categorieId", categorieActive)
+                                      .in("gammeId", gammeActive);
         if(status === 200) setItems(data)          
 
       } catch(error) {
@@ -51,7 +51,7 @@ const Shop = () => {
       }
     }
     fetchItem()
-  }, [categorieOk, gammeOk]);
+  }, [categorieActive, gammeActive]);
   
   const handleToggle = (filtre, name, value) => {
     if(filtre === 'categorie') {
@@ -68,7 +68,6 @@ const Shop = () => {
         // Sinon, on toggle juste l'état du bouton cliqué
         return { ...prevCategorie, [name]: !prevCategorie[name] };
       });
-
     }
     if (filtre === 'gamme') {
       setGamme((prevGamme) => {
@@ -89,7 +88,7 @@ const Shop = () => {
 
   // Permet de voir les mises à jour en temps réel
   useEffect(() => {
-    setCategorieOk(
+    setCategorieActive(
       Object.entries(categorie)
             .filter(([key, value]) => value === true)
             .map(([key]) => key)
@@ -97,7 +96,7 @@ const Shop = () => {
   }, [categorie]); 
 
   useEffect(() => {
-    setGammeOk(
+    setGammeActive(
       Object.entries(gamme)
             .filter(([key, value]) => value === true)
             .map(([key]) => key)
@@ -116,19 +115,19 @@ const Shop = () => {
               <div className='liste-filter'>
                 <h2 className='name-category'>Nos produits</h2>
                 <ul>
-                  <ButtonToggle filtre="categorie" name='Gel douche' value="gelDouche" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="categorie" name='Huile douche' value="huile" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="categorie" name='Huile satinée'  value="huileSatinee" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="categorie" name='Crème'  value="creme" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="categorie" placeHolder='Gel douche' name="gelDouche" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="categorie" placeHolder='Huile douche' name="huile" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="categorie" placeHolder='Huile satinée'  name="huileSatinee" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="categorie" placeHolder='Crème'  name="creme" onToggle={handleToggle}/>
                 </ul>
               </div>
               <div className='liste-filter'>
                 <h2 className='name-category'>Nos gammes</h2>
                 <ul>
-                  <ButtonToggle filtre="gamme" name='Bretagne'  value="bretagne" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="gamme" name='Corse'  value="corse" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="gamme" name="Côte d'Azur"  value="coteAzur" onToggle={handleToggle}/>
-                  <ButtonToggle filtre="gamme" name='Provence'  value="provence" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="gamme" placeHolder='Bretagne'  name="bretagne" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="gamme" placeHolder='Corse'  name="corse" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="gamme" placeHolder="Côte d'Azur"  name="coteAzur" onToggle={handleToggle}/>
+                  <ButtonToggle filtre="gamme" placeHolder='Provence'  name="provence" onToggle={handleToggle}/>
                 </ul>
               </div>
             </div>

@@ -10,26 +10,75 @@ import './actualite.scss'
 // COMPONENT
 import Newsletter from '../../components/newsletter/Newsletter.jsx'
 import Button from '../../components/button/Button.jsx'
+import ButtonToggle from '../../components/button/ButtonToggle.jsx';
 import ItemArticle from './ItemArticle.jsx'
 
 const Actualite = () => {
   const [articles, setArticles] = useState([]);
+  const [categorieOn, setCategorieOn] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [categorieActive, setCategorieActive] = useState([]);
 
+  // Importer les catégories des articles de SUPABASE
   useEffect(() => {
-    const fetchSlides = async () => {
+    const fetchCategoryArticle = async () => {
       try{
         const {data, status, error} = await supabase
                                       .from("articles")
-                                      .select("*");
-        
-        if(status === 200) setArticles(data)          
-        
-      } catch(error) {
+                                      .select("category_article");
+         
+          if(status === 200) {
+            // Filter seulement les catégories pour en avoir un seule exemplaire.
+            const uniqueCategories = [...new Set(data.map(item => item.category_article))]       
+            setCategories(uniqueCategories) 
+          }            
+          } catch(error) {
         console.log("Error fetching: ", error);
       }
     }
-    fetchSlides()
+    fetchCategoryArticle()
   }, []);
+
+  
+  const handleToggle = (filtre, name) => {    
+    if(filtre === 'categorie') {
+      setCategorieActive((prevCategories) => {
+        // Si la catégorie est déjà activée, on l'enlève (désactivation)
+        if (prevCategories.includes(name)) {
+          return prevCategories.filter((cat) => cat !== name);
+        }
+        // Sinon, on l'ajoute (activation)
+        return [...prevCategories, name];
+      });
+    }
+  };
+
+  // Importer les articles de SUPABASE en filtrant par catégories activées
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        let query = supabase.from("articles").select("*");
+  
+        // Si des catégories sont activées, on filtre
+        if (categorieActive.length > 0) {
+          query = query.in("category_article", categorieActive);
+        }
+  
+        const { data, error } = await query;
+  
+        if (error) {
+          console.error("Erreur lors du chargement des articles :", error);
+        } else {
+          setArticles(data);
+        }
+      } catch (error) {
+        console.error("Erreur de requête :", error);
+      }
+    };
+  
+    fetchArticle();
+  }, [categorieActive]); 
+  
 
   return (
      <div id="page-actualite">    
@@ -43,8 +92,23 @@ const Actualite = () => {
                   <h1>Actualité</h1>
             </div>
             <div className='container-grid'>
-              <div id='container-filter' className='grid1'>
-              </div>
+            <div id='container-filter' className='grid1'>
+                    <div className='liste-filter'>
+                      <h2 className='name-category'>Catégories</h2>
+                      <ul>
+                      {categories.map((categorie, index) => 
+                        <ButtonToggle 
+                          key={index}
+                          class="button-white"
+                          filtre="categorie" 
+                          name={categorie} 
+                          placeHolder={categorie}
+                          onToggle={handleToggle} 
+                        />
+                      )}
+                      </ul>
+                    </div>
+                  </div>  
               <div id="container-articles" className='container-post-item grid8'>
                 {articles.map(article => 
                   <ItemArticle 

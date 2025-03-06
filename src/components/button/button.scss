@@ -97,6 +97,12 @@
             color: $white-color;
         }
     }
+    &.button-white .toggle {
+        border-color: $background-color;
+        border-width: 0px;
+        background-color: $white-color;
+        color: $background-color;
+    }
 }
 
 .button-picto {

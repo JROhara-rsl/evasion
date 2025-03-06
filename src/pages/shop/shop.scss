@@ -14,28 +14,6 @@
     }
 }
 
-// CATEGORY CSS
-#container-filter {
-    .liste-filter {
-        margin: 0 0 30px;
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding-inline-start: 0;
-
-            li {
-                list-style-type: none;
-                border: solid 2px $dark-color;
-                border-radius: 30px;
-                padding: 10px 10px;
-                margin: 10px 0;
-                text-align: center;
-            }
-        }
-    }
-}
-
 // CONTAINER SHOP
 #container-shop {
     display: flex;
