@@ -91,7 +91,7 @@ const Actualite = () => {
             <div className="header-articles">
                   <h1>Actualité</h1>
             </div>
-            <div className='container-grid'>
+            <div id="container-section-articles" className='container-grid'>
             <div id='container-filter' className='grid1'>
                     <div className='liste-filter'>
                       <h2 className='name-category'>Catégories</h2>
@@ -109,7 +109,7 @@ const Actualite = () => {
                       </ul>
                     </div>
                   </div>  
-              <div id="container-articles" className='container-post-item grid8'>
+              <div id="container-articles" className='container-post-item'>
                 {articles.map(article => 
                   <ItemArticle 
                     key={article.id} 

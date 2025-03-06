@@ -109,7 +109,7 @@ body, main, section, #root {
     .grid6d  {   grid-column: 4/10;   } 
     .grid7  {   grid-column: span 7;   } 
     .grid8  {   grid-column: span 8;}
-
+    hr.grid8{   grid-column: 2/9;}
     img {
         width: 100%;
     }

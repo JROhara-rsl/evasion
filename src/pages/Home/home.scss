@@ -165,14 +165,18 @@
             max-height: 455px;
         }
 
-        &.grid4     {    height: 440px;    }
+        &.grid5     {    
+            display: flex;
+            justify-content: center;
+            height: 440px;    
+        }
     }
 
-    .grid4 img {
+    .grid5 img {
         height: 100%;
     }
 
-    .grid3d {
+    .grid3 {
         display: flex;
         flex-direction: column;
         gap: 20px;

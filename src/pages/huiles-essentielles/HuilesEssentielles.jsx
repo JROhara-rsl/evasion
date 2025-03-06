@@ -53,7 +53,7 @@ const HuilesEssentielles = () => {
           </section>
           <section id="container-citation" className='container-white'>
             <div className='container container-grid'>
-              <h3 className='title-XH grid8'>Plongez dans un univers où chaque soin devient une invitation au voyage.</h3>
+              <h3 className='title-XH grid8 hightlight-text'><mark>Plongez</mark> dans un univers où chaque soin devient une invitation au <mark>voyage</mark>.</h3>
               <hr className='grid2c'></hr>
               <p className='grid8'>Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France.</p>
             </div>

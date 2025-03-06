@@ -4,22 +4,16 @@
 // GRID SYSTEM - SHOP
 #container-section-shop {
     h1 {    display: none;  }
-
-    #container-filter {
-        grid-column: span 1;
-    }
-
-    #container-shop {
-        grid-column: span 8;
-    }
 }
+#container-filter {    grid-column: span 1; }
+#container-shop {    grid-column: span 8;   }
 
 // CONTAINER SHOP
 #container-shop {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
 
     .container-product {
         position: relative;

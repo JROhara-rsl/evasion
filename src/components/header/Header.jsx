@@ -44,6 +44,8 @@ const Header = () => {
             <hr></hr>
             <Link onClick={handleClick} to='/huiles-essentielles'><div>Huiles essentielles</div></Link>
             <hr></hr>
+            <Link onClick={handleClick} to='/actualite'><div>Actualité</div></Link>
+            <hr></hr>
             <Link onClick={handleClick} to='/contact'><div>Contact</div></Link>
         </div>
     </header>

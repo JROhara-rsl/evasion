@@ -59,10 +59,12 @@
     }
 
     .container {
-        width: 640px;
+        max-width: 640px;
         padding: 40px;
+        margin: 20px auto;
         border: 2px solid $dark-color;
         border-radius: 40px;
+        box-sizing: border-box;
 
         hr {    margin: 20px 0;    }
 
@@ -95,3 +97,4 @@
         }
     }
 }
+

@@ -80,3 +80,29 @@
     pointer-events: none;
     z-index: 1;
 }
+
+
+
+// ANIMATION TEXTE
+
+.hightlight-text mark {
+    z-index: -1;
+    animation: 2s highlight 1.5s infinite;
+    background: linear-gradient(90deg, $base-color 50%, rgba(255, 255, 255, 0) 50%);
+	background-size: 200% 100%;
+	background-position: 100% 0;
+}
+
+@keyframes highlight {
+	0% {
+		background-position: 100% 0;
+	}
+	30%, 70% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -100% 0;
+	}
+}
+
+

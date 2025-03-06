@@ -8,6 +8,10 @@
 
     margin: 100px 0;
 
+    .container {
+        max-height: 80vh;
+    }
+
     .slick-list,.slick-slider,.slick-track{
         position:relative;
         display:block
@@ -121,7 +125,7 @@
             position: relative;
             display: flex;
             align-items: center;
-
+            height: 80vh;
             .border {
                 width: 90%;
                 height: 90%;
@@ -138,6 +142,13 @@
                 width: 100%;
                 &:nth-child(2) {
                     margin-top: 20px;
+                }
+                .container-image {
+                    height: 40vh;
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -157,6 +168,21 @@
                 opacity: 1;
                 animation: fadeIn 1s ease-in-out;
             }
+        }
+    }
+
+    .slick-slide {
+        .container {    
+            grid-template-areas: "a a a b b b b b b";
+            .grid3 {    grid-area: a;   }
+            .grid6 {    grid-area: b;   }
+        }
+    }
+    .slick-slide:nth-child(2n+1) {
+        .container {    
+            grid-template-areas: "a a a a a a b b b";
+            .grid3 {    grid-area: b;   }
+            .grid6 {    grid-area: a;   }
         }
     }
 }

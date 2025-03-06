@@ -19,6 +19,43 @@
         width: 96%;
         margin: 20px 2%;
     }
+
+    .container {    padding: 60px 0;    }
+    
+    // HOME
+    #hero .container .header-button {   bottom: 0;  }
+    #section-temps {
+        .container-grid {
+            grid-template-areas: "a a a a . b b b b";
+
+            .container-image-border {
+                .container-image {
+                    width:80%;
+                }
+
+                .border {   width: 90%; }
+            }
+                
+        }
+        .background {
+            .background-image, .background-texte {  width: 50%  }
+        }
+    }
+
+    // SHOP
+    #container-filter   {    grid-column: span 2;    }
+    #container-shop     {    grid-column: span 7;    }  
+    // ACTU
+    #container-articles {    grid-column: span 7;    }  
+    //NOS GAMMES 
+    #header-gammes {
+        grid-template-columns: repeat(8, 1fr);
+        #container-filter   {  display: none; }
+    }
+    // HUILES ESSENTIELLES
+    #container-evader .container-grid .container-flex-texte p, #container-evader .container-grid .container-flex-texte .button {
+        margin-left: 0;
+    }
 }
 
 /* ///////////////////////////////////////// 980px //////////////// */
@@ -40,6 +77,12 @@
         }
     }
 
+    // Home
+    #section-nouveau {
+        .grid5  {    grid-column: span 4; }
+        .grid3 {   grid-column: span 4;  }
+    }
+
     #container-section-shop {
         grid-template-columns: repeat(8, 1fr);
 
@@ -55,6 +98,8 @@
             }
         }
     }
+
+    footer .border-nav {    padding: 30px 50px;     }
 }
 
 /* ///////////////////////////////////////// 840px //////////////// */
@@ -75,6 +120,34 @@
             }
         }
     }
+
+    #container-newsletter {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    // Home
+    #hero .container .header-button {   display: none;  }
+    #section-nouveau {
+        .grid5  {    grid-column: span 4; }
+        .grid3 {   grid-column: span 4;  }
+    }
+   
+    footer .border-nav {    
+        align-items: center;
+        padding: 30px 50px; 
+        .display-nav {
+            flex-wrap: wrap;
+            justify-content: center;
+            ul{ display: none;  }
+        }    
+        #container-copyright {
+            justify-content: center;
+            padding-inline-start: 0;
+        }
+    }
 }
 
 /* ///////////////////////////////////////// 768px //////////////// */
@@ -92,18 +165,38 @@
             grid-column: 2/6;
         }
     }
-    #container-section-shop {
-        grid-template-columns: repeat(6, 1fr);
-        #container-filter {
-            grid-column: span 2;
-        }
+
+    // Home 
+    #section-temps {
+        .background {    background-color: $background-color;    }
+        .container  {   color: $white-color;    }
+    }
+    #section-nouveau {
+        .container-flex-texte { justify-content: center;    }
+        .grid1  {   grid-column: span 3;    }
+        .grid5  {    grid-column: span 3; }
+        .grid3 {   display: none;  }
+    }
     
+    #container-section-shop, #container-section-articles {
+        grid-template-columns: repeat(6, 1fr);
+        
+        #container-filter {    grid-column: span 1;     }
+    
+        #container-articles {    grid-column: span 5;    }  
         #container-shop {
-            grid-column: span 4;
+            grid-column: span 5;
 
             .container-product .container-product-meta {
                 max-width: 224px;
             }
+        }
+    }
+    // NOS GAMMES
+    #container-slider-gammes {
+        .container-flex-texte { justify-content: center;}
+        .container-board > .container-image:nth-child(2) {
+                display: none;
         }
     }
 }
@@ -113,7 +206,7 @@
 
 @media screen and (max-width: 640px) {
 
-    #container-section-shop {
+    #container-section-shop, #container-section-articles {
         display: flex;
         flex-direction: column;
         align-items: self-start;
@@ -127,5 +220,19 @@
             .container-product .container-product-meta {
             }
         }
+    }
+}
+
+
+/* ///////////////////////////////////////// 560px //////////////// */
+/* Pour le format smartphone */
+
+@media screen and (max-width: 560px) {
+
+    // Page compte
+    #compte-container header {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        gap: 10px;
     }
 }

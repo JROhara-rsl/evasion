@@ -37,10 +37,10 @@ const NosGammes = () => {
             <div className='liste-filter'>
               <h2 className='name-category'>Nos produits</h2>
               <ul>
-                <ButtonToggle name='Gel douche' value="gelDouche"/>
-                <ButtonToggle name='Huile' value="huile"/>
-                <ButtonToggle name='Huile satinée'  value="huileSatinee"/>
-                <ButtonToggle name='Crème'  value="creme"/>
+                <ButtonToggle placeHolder='Gel douche' value="gelDouche"/>
+                <ButtonToggle placeHolder='Huile' value="huile"/>
+                <ButtonToggle placeHolder='Huile satinée'  value="huileSatinee"/>
+                <ButtonToggle placeHolder='Crème'  value="creme"/>
               </ul>
             </div>
         </div>

@@ -94,7 +94,7 @@ const Home = () => {
             <div className='grid5 container-image'>
               <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg"></img>
             </div>
-            <div className='grid3d'>
+            <div className='grid3'>
               <div className='container-image'>
                 <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-03-1000px.jpg"></img>
               </div>
