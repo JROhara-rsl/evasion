@@ -78,6 +78,7 @@ const Article = () => {
                     </div>
                     <span className='meta'>{article.date} / {article.category_article}</span>
                     <h1 className='title-X'>{article.title}</h1>
+                    <div className='chapeau'>{article.chapeau}</div>
                     <div className='content' dangerouslySetInnerHTML={{ __html: article.content }}></div>
                     <span className='author'>{article.author}</span>
                   </div>

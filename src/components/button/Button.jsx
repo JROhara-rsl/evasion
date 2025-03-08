@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import './button.scss';
 
 const Button = (props) => {
+
   return (
     <div className="button">
         <Link to={props.lien} className={'border-button ' + props.class}>

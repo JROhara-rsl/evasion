@@ -18,7 +18,7 @@ const HuilesEssentielles = () => {
           </Helmet>
           <div id="container-header-huile">   
             <div className='container-image'>
-              <img alt="" src="../../public/assets/img/photos/pipette.jpg"></img>
+              <img alt="" src="../../public/assets/img/photos/pipette2.png"></img>
             </div>
           </div>
           <section id="container-header-texte">

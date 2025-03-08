@@ -25,13 +25,14 @@
                     max-height: 160px;
                     height: 160px;
                     width: 213px;
-                    
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        transition: transform 0.3s ease-in-out;
+                        filter: brightness(70%);
+                        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
                     }
+                    &:hover img {   filter: brightness(100%);    }
                 }
                 .container-meta {
                     margin-bottom: 30px;
@@ -109,7 +110,8 @@
             ". b b b b ."
             ". c c c c ."
             ". d d d d ."
-            ". . . . e .";
+            ". e e e e ."
+            ". . . . f .";
             margin-bottom: 10%;
 
             .container-image {
@@ -128,12 +130,17 @@
                 margin: 0 0 15px 0;
             }
 
-            h1 {    
-                grid-area: c; 
+            h1       {    grid-area: c;     }
+            .chapeau {    
+                grid-area: d;
+                font-weight: 600;     
+                margin-top: 20px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid $dark-color;
             }
 
             .content {
-                grid-area: d;
+                grid-area: e;
                 h2 {
                     font-size: 2rem; 
                     line-height: 1; 
@@ -144,7 +151,7 @@
             }
 
             .author {
-                grid-area: e;
+                grid-area: f;
                 text-align: right;
                 margin: 10px 0;
             }
@@ -159,7 +166,7 @@
 
         &>h3 {    
             text-align: center; 
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
         .container-post-item {
@@ -194,7 +201,6 @@
                         overflow: hidden;
                         display: flex;
                         max-height: 170px;
-
                     }
 
                     .container-meta {
