@@ -43,7 +43,7 @@ const Panier = () => {
         }
         fetchItem()
     }, [panier]);    
-
+    
 
   return (
     <div id="page-panier">
@@ -59,12 +59,13 @@ const Panier = () => {
             <div className='container-grid'>
                 <div id="container-commande" className='grid6'>
                     {items.map((item) => (
+                        panier[item.uuid] && (
                         <div key={item.uuid} className={'container-product product-' + item.categorieId}   >
                             <div className='border'>
                                 <div className='prix'>{item.prix}€</div>
                             </div>
                             <div  className='container-product-meta'>
-                            <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
+                            <Link to={'/shop/item/'+(item.categorieId)+'/'+(item.uuid)} className='product-image'>
                                 <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)+'-350px.png'} />
                             </Link>
                             <div className='container-meta'>
@@ -72,7 +73,7 @@ const Panier = () => {
                                 <div className='meta'>
                                     <span>{item.gamme}</span>
                                     <span>{item.format}ml</span>
-                                    <span>Quantité : {panier[item.uuid].quantite}</span>
+                                    <span>Quantité : {panier[item.uuid]?.quantite || 0}</span>
                                 </div>
                                 <hr></hr>
                                 <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
@@ -86,13 +87,19 @@ const Panier = () => {
                             </div>
                             </div>
                         </div>
+                        )
                     ))}
                 </div>
                 <div id="container-recap" className='grid3 container-flex-texte'>
                     <h2 className='title-H'>Récapitulatif</h2>
                     <ul>
                         {items.map((item) => (
-                            <li key={item.uuid}><span>{panier[item.uuid] && panier[item.uuid].quantite}x - {item.name} {item.gamme} - {item.format}ml</span> <span>{panier[item.uuid] ? item.prix*panier[item.uuid].quantite : item.prix }€</span></li>
+                            panier[item.uuid] && (
+                                <li key={item.uuid}>
+                                    <span>{panier[item.uuid] && panier[item.uuid].quantite}x - {item.name} {item.gamme} - {item.format}ml</span> 
+                                    <span>{panier[item.uuid] ? item.prix*panier[item.uuid].quantite : item.prix }€</span>
+                                </li>
+                            )
                         ))}
                     </ul>
                     <div id="text-total">= {total}€</div>

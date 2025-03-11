@@ -30,7 +30,7 @@ const SliderGamme = () => {
         }
         fetchSlides()
         
-      }, []);
+    }, []);
 
     const composition1 = (img1, img2, img3, title) => {
         return (
