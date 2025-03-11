@@ -11,8 +11,8 @@ const ItemProduit = (props) => {
             <div className='prix'>{props.prix}€</div>
         </div>
         <div  className='container-product-meta'>
-        <Link to={props.lien} className='product-image'>
-            <img alt={props.name + ' ' + props.gamme} src={ 'http://localhost:5173/public/assets/img/'+(props.img)} />
+        <Link to={'/shop/item/'+props.categorieId+'/'+props.uuid} className='product-image'>
+            <img alt={props.name + ' ' + props.gamme} src={'http://localhost:5173/public/assets/img/'+(props.img)+'-350px.png'} />
         </Link>
         <div className='container-meta'>
             <h3 className='title-post-item'>{props.name}</h3>

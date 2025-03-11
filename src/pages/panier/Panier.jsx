@@ -65,7 +65,7 @@ const Panier = () => {
                             </div>
                             <div  className='container-product-meta'>
                             <Link to={'/shop/item/'+(item.uuid)} className='product-image'>
-                                <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)} />
+                                <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)+'-350px.png'} />
                             </Link>
                             <div className='container-meta'>
                                 <h3 className='title-post-item'>{item.name}</h3>

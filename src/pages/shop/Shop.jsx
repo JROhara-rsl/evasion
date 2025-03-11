@@ -136,9 +136,11 @@ const Shop = () => {
                 <ItemProduit 
                   key={item.id} 
                   id={item.id}
+                  uudid={item.uuid}
+                  categorieId={item.categorieId}
                   name={item.name} 
                   uuid={item.uuid}
-                  lien={functionProduit.urlProduit(item.name, item.uuid)}
+                  lien={functionProduit.urlProduit(item.categorieId, item.uuid)}
                   gamme={item.gamme}
                   img={item.img}
                   prix={item.prix}

@@ -21,7 +21,7 @@ const PageProduit = () => {
 
     const [post, setPost] = useState([])
     const [gamme, setGamme] = useState()
-    
+
     // Importer la BDD du produit BDD
     useEffect(() => {
       const fetchItem = async () => {
@@ -74,7 +74,7 @@ const PageProduit = () => {
             <div id="background-post-product"></div>
             <div id="container-post-meta" className='container container-grid'>
               <div className="container-image fade-in-element">
-                <img alt={post.name} src={ 'http://localhost:5173/public/assets/img/'+(post.img)} />
+                <img alt={post.name} src={ 'http://localhost:5173/public/assets/img/'+(post.img)+'.png'} />
                 <div className='border border-scale-bot'></div>
               </div>
               <div className="container-meta container-flex-texte">
@@ -111,9 +111,11 @@ const PageProduit = () => {
                 <ItemProduit 
                   key={item.id} 
                   id={item.id}
+                  uudid={item.uuid}
+                  categorieId={item.categorieId}
                   name={item.name} 
                   uuid={item.uuid}
-                  lien={functionProduit.urlProduit(item.name, item.uuid)}
+                  lien={functionProduit.urlProduit(item.categorieId, item.uuid)}
                   gamme={item.gamme}
                   img={item.img}
                   prix={item.prix}

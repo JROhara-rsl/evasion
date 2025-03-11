@@ -10,6 +10,7 @@ import './home.scss';
 import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Logo2 from '../../components/logo/Logo2';
+import SliderGamme from '../../components/slider/SliderGamme';
 
 const Home = () => {
   return (

@@ -38,7 +38,7 @@ function App() {
                 <Route path="/" element={<Layout/>}>
                   <Route index element={<Home/>} />  
                   <Route path="/shop" element={<Shop/>} /> 
-                  <Route path='/shop/item/:name/:id' element={<PageProduit/>} /> 
+                  <Route path='/shop/item/:categorieId/:id' element={<PageProduit/>} /> 
                   <Route path="/nos-gammes" element={<NosGammes/>} />
                   <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
                   <Route path="/actualite" element={<Actualite/>} />

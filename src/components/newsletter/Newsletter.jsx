@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import supabase from "../../supabase";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 
 // CSS
 import '../../scss/custom.scss'
@@ -8,17 +11,39 @@ import './newsletter.scss'
 import ButtonForm from '../button/ButtonForm';
 import Input from '../form/Input';
 
+// Context
+import { useProfil } from "../../context/ProfilContext";
+
 const Newsletter = () => {
+  const { session } = useProfil();
   const [mails, setMails] = useState([]);
   const [check, setCheck]  = useState(false);
+
+  const updateNewsletter = async (updatedMail) => {
+    if (!session.user) {
+      console.error("Utilisateur non connecté !");
+      return;
+    }
+  
+    const { error } = await supabase
+      .from("newsletter")
+      .insert({ mail: updatedMail }); // Ajoute un nouveau champs
+      
+    if (error) {
+      console.error("Erreur lors de la mise à jour du profil :", error.message);
+    } else {
+      console.log("Profil mis à jour avec succès !");
+    }
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target
     setMails(prevMails => ({...prevMails, [name]:value}))
   }
   
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(mails.mail);
+    await updateNewsletter(mails.mail);
     setCheck(true)
     console.log(mails);
   }
@@ -31,7 +56,7 @@ const Newsletter = () => {
             <form id="form-newsletter" className='container-double' onSubmit={handleSubmit} onChange={handleChange} >
                 <Input  id="mail" 
                         name="mail" 
-                        placeholder="votre-mail@contact.com" 
+                        placeholder="votremail@contact.com" 
                         type="mail" 
                 />
                 <ButtonForm 

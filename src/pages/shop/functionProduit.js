@@ -1,6 +1,6 @@
 const urlProduit = (name, uuid) => {
     if (name) {
-        var safeString = name.replace(/^\s+|\s+$/g, '').toLowerCase();
+        /*var safeString = name.replace(/^\s+|\s+$/g, '').toLowerCase();
 
         var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
         var to   = "aaaaeeeeiiiioooouuuunc------";
@@ -10,9 +10,9 @@ const urlProduit = (name, uuid) => {
 
         safeString = safeString.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
                          .replace(/\s+/g, '-') // collapse whitespace and replace by -
-                         .replace(/-+/g, '-'); // collapse dashes
+                         .replace(/-+/g, '-'); // collapse dashes*/
 
-        const urlProduit = '/shop/item/'+safeString+'/'+uuid
+        const urlProduit = '/shop/item/'+name+'/'+uuid
         
         return urlProduit;
       }
