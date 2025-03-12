@@ -11,6 +11,7 @@ import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Logo2 from '../../components/logo/Logo2';
 import SliderGamme from '../../components/slider/SliderGamme';
+import SliderHeader from '../../components/slider/SliderHeader';
 
 const Home = () => {
   return (
@@ -30,8 +31,8 @@ const Home = () => {
             <div className='header-button'>
               <Button name='Découvrir nos produits' lien='/shop' /> 
             </div>
-            <div className='header-pack'>
-              <img src="../../public/assets/img/pack/gel-douche/GEL-DOUCHE-600-2-EVASION-01-2000px.png"/>
+            <div id="container-slider-gammes" className='header-pack'>
+              <SliderHeader />
             </div>
           </div>
         </section>

@@ -84,7 +84,7 @@ const SliderGamme = () => {
         slidesToScroll: 1,
         beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
       };
-
+      
   return (
     <Slider {...settings} ref={sliderRef}>
         {slides.map((slide, index) => {
