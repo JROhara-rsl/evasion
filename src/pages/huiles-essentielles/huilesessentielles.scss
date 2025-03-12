@@ -17,8 +17,21 @@
         justify-content: center;
         overflow: hidden;
         height: 100%;
+        transform: scale(105%);
 
-        img {       height: 100%;   }
+        img {    
+            position: relative;
+            height: 100%;   
+        }
+    }
+    svg {
+        position: absolute;
+
+        #circle {
+            stroke-width: 1px;
+            stroke: $dark-color;
+            fill: none;
+        }
     }
 }
 
