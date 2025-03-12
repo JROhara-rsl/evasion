@@ -59,30 +59,27 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            pointer-events: none;
             
             transform: scale(1);
             transition: transform 0.3s ease-in;
 
-            
-            .meta-post-date {
-                pointer-events: none;
-                font-family: $title-font;
-                font-size: 3.6rem;
-                font-weight: 400;
-                position: relative;
-                top: -8px;
-                left: -20px;
-            }
-
             .button {
                 position: relative;
                 bottom: -25px;
-                pointer-events: auto;
             }
         }
     }
 
+}
+
+.meta-post-date {
+    pointer-events: none;
+    font-family: $title-font;
+    font-size: 3.6rem;
+    font-weight: 400;
+    position: relative;
+    top: -8px;
+    left: -20px;
 }
 
 #container-post-article {
@@ -181,11 +178,11 @@
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    pointer-events: none;
 
                     .button {
                         bottom: -25px;
                         position: absolute;
+                        pointer-events: all;
                     }
                 }
                 .container-post-meta {

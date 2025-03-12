@@ -10,7 +10,7 @@ import Button from '../button/Button';
 
 const SliderHeader = () => {
     const [produits, setProduits] = useState([]);
-    const [formats, setFormats] = useState([500]);
+    const [formats, setFormats] = useState([500, 250]);
     const [mouse, ref] = useMouse();
     const sliderRef = useRef(null);
 
@@ -25,8 +25,10 @@ const SliderHeader = () => {
                                           .from("produits")
                                           .select("*")
                                           .in("format", [formats]);
-            if(status === 200) setProduits(data)       
-            console.log(data);
+            if(status === 200) {
+              const dataSort = data.sort(() => 0.5 - Math.random()); // Trie par ID croissant
+              setProduits(dataSort);
+            }        
                 
           } catch(error) {
             console.log("Error fetching: ", error);
@@ -57,7 +59,7 @@ const SliderHeader = () => {
                     <span>{slide.gamme}</span>
                     <span>{slide.format}</span>
                   </div>
-                  <img src={'http://localhost:5173/public/assets/img/'+slide.img2+'-2000px.png'}  alt={slide.name} className='floating-in-element' />
+                  <img src={'http://localhost:5173/public/assets/img/'+slide.img2+'-1200px.png'}  alt={slide.name} className='floating-in-element' />
               </Link>
           ))}
       </Slider>

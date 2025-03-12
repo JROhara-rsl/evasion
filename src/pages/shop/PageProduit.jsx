@@ -36,7 +36,7 @@ const PageProduit = () => {
           }
         }
         fetchItem()
-      }, []);
+      }, [id]);
       
       useEffect(() => {
         //console.log(gamme);
@@ -61,7 +61,7 @@ const PageProduit = () => {
         }
       }
       fetchItem()
-    }, [gamme]);
+    }, [id, gamme]);
 
   return (
     <div id="page-post">  

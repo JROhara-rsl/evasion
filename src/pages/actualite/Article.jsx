@@ -34,7 +34,7 @@ const Article = () => {
         }
       }
       fetchArticle()
-    }, []);
+    }, [id]);
 
     useEffect(() => {
       const fetchSlides = async () => {
@@ -56,7 +56,7 @@ const Article = () => {
         }
       }
       fetchSlides()
-    }, [categoryArticle]);
+    }, [id, categoryArticle]);
 
   return (
     <div>

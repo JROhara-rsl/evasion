@@ -10,12 +10,19 @@
             //display: none !important;
             bottom: 20%;
             top: auto;
+            opacity: 1;
+
+            transition: opacity 0.2s ease-in-out 0.5s;
         }
 
         .slide-child {
             img {
                 opacity: 1;
                 transition: opacity 0.3s ease-in-out;
+
+                @starting-style {
+                    opacity: 0;
+                }
             }
             .bandeau {
                 display: flex;
@@ -149,12 +156,12 @@
         color: $dark-color;
     }
     
-    .slick-prev:before{content:'◀︎'}
-    .slick-next:before,[dir=rtl] .slick-prev:before{content:'▶︎'}
+    .slick-prev:before{content:'❮'}
+    .slick-next:before,[dir=rtl] .slick-prev:before{content:'❯'}
 
     .slick-next{right :0}[dir=rtl] 
     .slick-next{right:auto;left:-25px}[dir=rtl] 
-    .slick-next:before{content:'◀︎'}
+    .slick-next:before{content:'❮'}
     
     .slide-child {
         display: flex !important;
