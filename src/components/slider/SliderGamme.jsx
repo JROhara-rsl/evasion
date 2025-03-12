@@ -11,7 +11,7 @@ const SliderGamme = () => {
     const [slides, setSlides] = useState([]);
     const [activeSlide, setActiveSlide] = useState(0);
     const sliderRef = useRef(null);
-
+    
     useEffect(() => {
         const fetchSlides = async () => {
           try{

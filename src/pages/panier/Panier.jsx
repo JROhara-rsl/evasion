@@ -103,6 +103,7 @@ const Panier = () => {
                         ))}
                     </ul>
                     <div id="text-total">= {total}€</div>
+                    <Button name='Commandez' lien='/panier/commande' />
                 </div>
             </div>
         </div>

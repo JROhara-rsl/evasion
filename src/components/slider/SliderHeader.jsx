@@ -14,7 +14,7 @@ const SliderHeader = () => {
     const [mouse, ref] = useMouse();
     const sliderRef = useRef(null);
 
-    const xIntersecting = mouse.elementX > (screen.width/4) && mouse.elementX < ((screen.width/4)*2);
+    const xIntersecting = mouse.elementX > (screen.width/6) && mouse.elementX < ((screen.width/4)*2);
     const yIntersecting = mouse.elementY >  (screen.height/5) && mouse.elementY < ((screen.height/5)*4);
     const isIntersecting = xIntersecting && yIntersecting;
     

@@ -37,10 +37,6 @@ const PageProduit = () => {
         }
         fetchItem()
       }, [id]);
-      
-      useEffect(() => {
-        //console.log(gamme);
-    }, [gamme])
 
     // Partie propositions produits
     const [items, setItems] = useState([]);

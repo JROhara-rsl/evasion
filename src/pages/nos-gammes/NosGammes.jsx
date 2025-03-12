@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 
@@ -8,10 +8,28 @@ import './nosgammes.scss'
 // Component
 import ButtonToggle from '../../components/button/ButtonToggle';
 import Button from '../../components/button/Button';
-import SliderGamme from '../../components/slider/SliderGamme';
-import Newsletter from '../../components/newsletter/Newsletter'
-
+import Newsletter from '../../components/newsletter/Newsletter';
+const SliderGamme = React.lazy(() => import('../../components/slider/SliderGamme'));
+  
 const NosGammes = () => {
+  const [scrollY, setScrollY] = useState(0);
+  
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+      
+  useEffect(() => {
+    console.log(scrollY);
+  }, [scrollY]); 
+
   return (
     <div id="page-nos-gammes">
       <Helmet>
@@ -21,18 +39,22 @@ const NosGammes = () => {
       <section className="container container-first">
           <h1 className='title-XH'>Nos gammes</h1>
       <div id="header-gammes" className='container container-grid'>
-        <div className='container-image'>
+        <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateT' : ''}`} >
+          <figcaption>Corse</figcaption>
           <img alt="" src="../../public/assets/img/photos/maillot-rayure-orange-1000px.jpg"></img>
-        </div>
-        <div className='container-image'>
+        </figure>
+        <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateB' : ''}`}>
+          <figcaption>Côte d'azur</figcaption>
           <img alt="" src="../../public/assets/img/photos/maillot-jaune-azur-1000px.jpg"></img>
-        </div>
-        <div className='container-image'>
+        </figure>
+        <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateT' : ''}`}>
+          <figcaption>Provence</figcaption>
           <img alt="" src="../../public/assets/img/photos/soiree-plaid-1000px.jpg"></img>
-        </div>
-        <div className='container-image'>
+        </figure>
+        <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateB' : ''}`}>
+          <figcaption>Bretagne</figcaption>
           <img alt="" src="../../public/assets/img/photos/homme-torse-nue-ciel-1000px.jpg"></img>
-        </div>
+        </figure>
         <div id='container-filter'>
             <div className='liste-filter'>
               <h2 className='name-category'>Nos produits</h2>

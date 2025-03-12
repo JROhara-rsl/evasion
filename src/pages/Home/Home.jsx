@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router'
 import { Helmet } from 'react-helmet-async'
@@ -10,10 +10,27 @@ import './home.scss';
 import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Logo2 from '../../components/logo/Logo2';
-import SliderGamme from '../../components/slider/SliderGamme';
-import SliderHeader from '../../components/slider/SliderHeader';
+const SliderHeader = React.lazy(() => import('../../components/slider/SliderHeader'));
 
-const Home = () => {
+  const Home = () => {
+    const [scrollY, setScrollY] = useState(0);
+    
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+  
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+      
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+    
+    useEffect(() => {
+      console.log(scrollY);
+    }, [scrollY]); 
+  
   return (
     <div id="page-home">
         <Helmet>
@@ -22,7 +39,7 @@ const Home = () => {
         </Helmet>
         <section id="hero">
           <div className='container'>
-            <div className='border border-scale-center'></div>
+            <div className={`border pre-anim ${scrollY < '600' ? 'border-scale-center' : ''}`}></div>
             <div className='header-logo'>
               <h1>Évasion</h1>
               <Logo2 />
@@ -38,10 +55,10 @@ const Home = () => {
         </section>
         <section id="section-intro-produit" className='container-dark'>
           <div className='container container-grid'>
-            <div className='grid6'>
+            <div className={`grid6 pre-anim ${scrollY > '400' ? 'translateL' : ''}`}>
               <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
             </div>
-            <div className='container-flex-texte grid3'>
+            <div className={`container-flex-texte grid3 pre-anim ${scrollY > '400' ? 'translateR' : ''}`}>
               <h2>Nos produits</h2>
               <p>
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
@@ -66,8 +83,8 @@ const Home = () => {
           </div>
           <div className='container-grid container'>
             <div className='container-image-border grid5 container-dark'>
-              <div className='border border-scale-center'></div>
-              <div className='container-image image-zoom'>
+              <div className={`border pre-anim ${scrollY > '1600' && scrollY < '2800' ? 'border-scale-center' : ''}`}></div>
+              <div className={`container-image image-zoom pre-anim ${scrollY > '1600' && scrollY < '2800' ? 'fade-in-element' : ''}`}>
                 <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
             </div>

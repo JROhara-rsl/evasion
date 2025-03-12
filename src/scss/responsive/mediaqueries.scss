@@ -46,7 +46,21 @@
     #container-filter   {    grid-column: span 2;    }
     #container-shop     {    grid-column: span 7;    }  
     // ACTU
-    #container-articles {    grid-column: span 7;    }  
+    #container-articles {    grid-column: span 7;    }
+    #container-post-article { 
+        .container {
+            width: 90%;
+            margin: 0 5%;
+            .container-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                #container-item-articles {
+                    padding-bottom: 40px;
+                }
+            }
+        }
+    }  
     //NOS GAMMES 
     #header-gammes {
         grid-template-columns: repeat(8, 1fr);
@@ -251,6 +265,19 @@
 
 @media screen and (max-width: 640px) {
 
+    #container-slider-gammes {        height: 82vh !important;    }           
+    #container-slider-gammes .slide-child {    height: 80vh !important;    }   
+    #section-intro-produit .container-grid {   display: flex;    flex-direction: column-reverse;  gap: 20px;  }
+    #section-temps .container-grid {   
+        display: flex;    
+        flex-direction: column-reverse;  
+        gap: 20px;  
+        .container-image-border {
+            display: none;
+        }
+    }
+
+    // SHOP
     #container-section-shop, #container-section-articles {
         display: flex;
         flex-direction: column;

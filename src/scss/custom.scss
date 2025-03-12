@@ -38,6 +38,14 @@ body, main, section, #root {
     margin: 0;
 }
 
+figure {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
 
 // - NAV HEADER ET FOOTER
 /* ********************/
@@ -47,7 +55,7 @@ body, main, section, #root {
     width: 100%;
 
     border: 2px solid $dark-color;
-    transition: border 0.1s ease-in;
+    transition: border 0.1s ease-in !important;
 
     font-family: $base-font;
     font-weight: 400;
