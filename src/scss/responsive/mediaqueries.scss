@@ -24,7 +24,7 @@
     
     // HOME
     #hero .container .header-button {   bottom: 0;  }
-    #section-temps {
+    #sectionTemps {
         .container-grid {
             grid-template-areas: "a a a a . b b b b";
 
@@ -67,9 +67,9 @@
         #container-filter   {  display: none; }
     }
     // HUILES ESSENTIELLES
-    #container-evader .container-grid .container-flex-texte p, #container-evader .container-grid .container-flex-texte .button {
+    #sectionEvader .container-grid .container-flex-texte p, #sectionEvader .container-grid .container-flex-texte .button {
         margin-left: 0; }
-    #section-huiles-essentielles .container-flex-texte {    grid-column: span 5;    }
+    #sectionHuilesEssentielles .container-flex-texte {    grid-column: span 5;    }
 
     // Contact
     #section-contact .container-flex-texte {
@@ -97,7 +97,7 @@
     }
 
     // Home
-    #section-nouveau {
+    #sectionNouveau {
         .grid5  {    grid-column: span 4; }
         .grid3 {   grid-column: span 4;  }
     }
@@ -118,7 +118,7 @@
         }
     }
     // HUILES ESSENTIELLES 
-    #section-huiles-essentielles .container-flex-texte {    grid-column: 2/9;    }
+    #sectionHuilesEssentielles .container-flex-texte {    grid-column: 2/9;    }
 
     footer .border-nav {    padding: 30px 50px;     }
 
@@ -156,7 +156,7 @@
 
     // Home
     #hero .container .header-button {   display: none;  }
-    #section-nouveau {
+    #sectionNouveau {
         .grid5  {    grid-column: span 4; }
         .grid3 {   grid-column: span 4;  }
     }
@@ -206,11 +206,11 @@
     }
 
     // Home 
-    #section-temps {
+    #sectionTemps {
         .background {    background-color: $background-color;    }
         .container  {   color: $white-color;    }
     }
-    #section-nouveau {
+    #sectionNouveau {
         .container-flex-texte { justify-content: center;    }
         .grid1  {   grid-column: span 3;    }
         .grid5  {    grid-column: span 3; }
@@ -238,8 +238,15 @@
         }
     }
     // Huiles essentielles
-    #section-huiles-essentielles .container-flex-texte {    grid-column: span 6 !important;    }
-    #container-citation .container {
+    #sectionEvader .container-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        .container-image-border {
+            display: none;
+        }
+    }
+    #sectionHuilesEssentielles .container-flex-texte {    grid-column: span 6 !important;    }
+    #sectionCitation .container {
         grid-template-areas:
         "a a a a a a"
         ". . b b . ."
@@ -267,8 +274,8 @@
 
     #container-slider-gammes {        height: 82vh !important;    }           
     #container-slider-gammes .slide-child {    height: 80vh !important;    }   
-    #section-intro-produit .container-grid {   display: flex;    flex-direction: column-reverse;  gap: 20px;  }
-    #section-temps .container-grid {   
+    #sectionIntroProduit .container-grid {   display: flex;    flex-direction: column-reverse;  gap: 20px;  }
+    #sectionTemps .container-grid {   
         display: flex;    
         flex-direction: column-reverse;  
         gap: 20px;  
@@ -288,7 +295,7 @@
         }
     }
     // Huiles essentielles 
-    #container-evader {
+    #sectionEvader {
         .container {
             display: flex;
             flex-direction: column;

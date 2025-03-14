@@ -6,6 +6,9 @@ import { Helmet } from 'react-helmet-async'
 // CSS
 import './home.scss';
 
+// JS
+import resizeListener from '../../script/functionResizeListener.js';
+
 // Component
 import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
@@ -14,23 +17,39 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
 
   const Home = () => {
     const [scrollY, setScrollY] = useState(0);
-    
+    const [heightContent, setHeightContent] = useState({
+      'hero': 0,
+      'sectionIntroProduit': 0,
+      'sectionDefilement': 0,
+      'sectionTemps': 0,
+      'sectionNouveau': 0,
+      'section-huiles-essentielles': 0
+    })
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-  
+    
     useEffect(() => {
+    // Deux événements :
+    // - au Scroll -> active la fonction handleScroll
+    // - quand la fenêtre est redimensionné -> active la fonction handleResize
       window.addEventListener("scroll", handleScroll);
       
+      const handleResize = () => resizeListener(heightContent, setHeightContent);
+      window.addEventListener("resize", handleResize);
+      handleResize(); // Exécuter une première fois au montage
+
       return () => {
         window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleResize);
       };
     }, []);
     
     useEffect(() => {
-      console.log(scrollY);
-    }, [scrollY]); 
-  
+      console.log(heightContent);
+    }, [heightContent]); 
+    
   return (
     <div id="page-home">
         <Helmet>
@@ -39,7 +58,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
         </Helmet>
         <section id="hero">
           <div className='container'>
-            <div className={`border pre-anim ${scrollY < '600' ? 'border-scale-center' : ''}`}></div>
+            <div className={`border pre-anim ${scrollY < heightContent.hero ? 'border-scale-center' : ''}`}></div>
             <div className='header-logo'>
               <h1>Évasion</h1>
               <Logo2 />
@@ -53,12 +72,12 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
             </div>
           </div>
         </section>
-        <section id="section-intro-produit" className='container-dark'>
+        <section id="sectionIntroProduit" className='container-dark'>
           <div className='container container-grid'>
-            <div className={`grid6 pre-anim ${scrollY > '400' ? 'translateL' : ''}`}>
+            <div className={`grid6 pre-anim ${scrollY > heightContent.hero/2 ? 'translateL' : ''}`}>
               <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
             </div>
-            <div className={`container-flex-texte grid3 pre-anim ${scrollY > '400' ? 'translateR' : ''}`}>
+            <div className={`container-flex-texte grid3 pre-anim ${scrollY > heightContent.hero/2 ? 'translateR' : ''}`}>
               <h2>Nos produits</h2>
               <p>
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
@@ -68,7 +87,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
             </div>
           </div>
         </section>
-        <section id="section-defilement">
+        <section id="sectionDefilement">
           <hr></hr>
           <div className='container-defilement'>
             <h2 className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h2>
@@ -76,19 +95,19 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
           </div>
           <hr></hr>
         </section>
-        <section id="section-temps">
+        <section id="sectionTemps">
           <div className='background'>
             <div className='background-image'></div>
             <div className='background-texte'></div>
           </div>
           <div className='container-grid container'>
             <div className='container-image-border grid5 container-dark'>
-              <div className={`border pre-anim ${scrollY > '1600' && scrollY < '2800' ? 'border-scale-center' : ''}`}></div>
-              <div className={`container-image image-zoom pre-anim ${scrollY > '1600' && scrollY < '2800' ? 'fade-in-element' : ''}`}>
+              <div className={`border pre-anim ${scrollY > (heightContent.sectionIntroProduit/5)*4 && scrollY < heightContent.sectionTemps ? 'border-scale-center' : ''}`}></div>
+              <div className={`container-image image-zoom pre-anim ${scrollY > (heightContent.sectionIntroProduit/5)*4 && scrollY < heightContent.sectionTemps ? 'fade-in-element' : ''}`}>
                 <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
             </div>
-            <div className='part-texte grid3 container-flex-texte'>
+            <div className={`part-texte grid3 container-flex-texte pre-anim  ${scrollY > (heightContent.sectionIntroProduit/5)*4 && scrollY < heightContent.sectionTemps ? 'translateR' : ''}`}>
               <h2 className='title-XH'>Prenez le temps pour l’essentiel</h2>
               <p>
                 <span className='paragraphe-chapeau'>Nos soins sont conçus pour vous accompagner dans cette quête de bien-être, en vous offrant des instants de plaisir et de sérénité. Car l'essentiel, c'est vous.<br/></span>
@@ -99,7 +118,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
             </div>
           </div>
         </section>
-        <section id="section-nouveau">
+        <section id="sectionNouveau">
           <div className='container container-grid'>
             <div className='container-flex-texte grid1'>
               <h2>Nouveau</h2>

@@ -4,7 +4,7 @@
 // ************** HUILES ESSENTIELLES CSS ************* */
 /* ************************************* */
 
-#container-header-huile {
+#sectionHeaderHuile {
     position: fixed;
     top: 0;
     z-index: -1;
@@ -35,7 +35,7 @@
     }
 }
 
-#container-header-texte {
+#sectionHeaderTexte {
     svg {
         position: relative;
         top: 10px;
@@ -46,7 +46,7 @@
     }
 }
 
-#container-evader {
+#sectionEvader {
     padding: 40px 0;
     .container-grid {
         grid-template-areas: 
@@ -75,7 +75,7 @@
     }
 }
 
-#container-citation {
+#sectionCitation {
     padding: 70px 0;
     text-align: center;
 
@@ -90,6 +90,6 @@
     }
 }
 
-#page-huiles-essentielles #section-huiles-essentielles {
+#page-huiles-essentielles #sectionHuilesEssentielles {
     //height: 700px;
 }

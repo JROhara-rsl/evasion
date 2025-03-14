@@ -61,7 +61,7 @@
 // - SECTION TEXTES DEFILEMENT
 /* ********************/
 
-#section-defilement {
+#sectionDefilement {
     overflow: hidden; 
     max-height: 250px;
     width: 100%;
@@ -94,7 +94,7 @@
 // - SECTION NOS PRODUITS
 /* ********************/
 
-#section-intro-produit {
+#sectionIntroProduit {
     .button {
         align-self: flex-end;
     }
@@ -107,7 +107,7 @@
 // - SECTION TEMPS
 /* ********************/
 
-#section-temps {
+#sectionTemps {
     position: relative;
     .container-grid {
         grid-template-areas:
@@ -158,14 +158,20 @@
 // - SECTION NOUVEAU
 /* ********************/
 
-#section-nouveau {
+#sectionNouveau {
     .container-image {
         border-radius: 40px;
         overflow: hidden;
-
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
         img {
             width: auto;
             max-height: 455px;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
         }
 
         &.grid5     {    
