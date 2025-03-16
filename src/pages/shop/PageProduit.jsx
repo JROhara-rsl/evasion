@@ -84,6 +84,7 @@ const PageProduit = () => {
                 <hr></hr>
                 <div>
                   <h3 className='name-category'>Ingrédients</h3>
+                  <p className='ingredients'>{post.ingredient}</p>
                 </div>
                 <div className='container-double'>
                   <ButtonPanier name='Ajouter au panier' action="add" uuid={post.uuid}/>
