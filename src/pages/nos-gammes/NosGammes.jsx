@@ -41,19 +41,19 @@ const NosGammes = () => {
       <div id="header-gammes" className='container container-grid'>
         <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateT' : ''}`} >
           <figcaption>Corse</figcaption>
-          <img alt="" src="../../public/assets/img/photos/maillot-rayure-orange-1000px.jpg"></img>
+          <img alt="" src="../../assets/img/photos/maillot-rayure-orange-1000px.jpg"></img>
         </figure>
         <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateB' : ''}`}>
           <figcaption>Côte d'azur</figcaption>
-          <img alt="" src="../../public/assets/img/photos/maillot-jaune-azur-1000px.jpg"></img>
+          <img alt="" src="../../assets/img/photos/maillot-jaune-azur-1000px.jpg"></img>
         </figure>
         <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateT' : ''}`}>
           <figcaption>Provence</figcaption>
-          <img alt="" src="../../public/assets/img/photos/soiree-plaid-1000px.jpg"></img>
+          <img alt="" src="../../assets/img/photos/soiree-plaid-1000px.jpg"></img>
         </figure>
         <figure className={`container-image pre-anim ${scrollY < '700' ? 'translateB' : ''}`}>
           <figcaption>Bretagne</figcaption>
-          <img alt="" src="../../public/assets/img/photos/homme-torse-nue-ciel-1000px.jpg"></img>
+          <img alt="" src="../../assets/img/photos/homme-torse-nue-ciel-1000px.jpg"></img>
         </figure>
         <div id='container-filter'>
             <div className='liste-filter'>

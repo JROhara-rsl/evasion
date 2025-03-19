@@ -60,7 +60,7 @@ const HuilesEssentielles = () => {
           <circle cx="100" cy="150" r="57" id="circle" transform="rotate(-90,100,100)" />  
         </svg>
         <div className='container-image' ref={ref}>
-          <img alt="" src="../../public/assets/img/photos/pipette2.png"  style={{ top: (-mouse.elementY/40), left: (10-mouse.elementX/40) }}></img>
+          <img alt="" src="../../assets/img/photos/pipette2.png"  style={{ top: (-mouse.elementY/40), left: (10-mouse.elementX/40) }}></img>
         </div>
       </div>
       <section id="sectionHeaderTexte">
@@ -79,7 +79,7 @@ const HuilesEssentielles = () => {
             <div className='border border-scale-center'>
             </div>
             <div className='container-image image-zoom'>
-              <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/photo-nature-1000px.jpg"/>
+              <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../assets/img/photos/photo-nature-1000px.jpg"/>
             </div>
           </div>
 
@@ -102,7 +102,7 @@ const HuilesEssentielles = () => {
       </section>
       <section id="sectionHuilesEssentielles" className='container-image-large'>
         <div className='container-image'>
-          <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
+          <img alt="" src="../../assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
         </div>
         <div className='container container-grid'>
           <div className={`container-flex-texte container-white grid4 pre-anim ${scrollY > heightContent.sectionHeaderTexte ? 'translateT' : ''}`}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router';
+import { useParams, Link } from 'react-router'
 import { Helmet } from 'react-helmet-async';
 import supabase from "../../supabase.js"
 
@@ -15,6 +15,10 @@ import ButtonToggle from '../../components/button/ButtonToggle.jsx';
 import ItemProduit from './ItemProduit.jsx';
 
 const Shop = () => {
+  const params = useParams()
+  const { categorieParams } = params;  
+  console.log(params);
+  
   const [items, setItems] = useState([]);
   const [categorieOn, setCategorieOn] = useState(false);
   const [gammeOn, setGammeOn] = useState(false);
@@ -37,6 +41,11 @@ const Shop = () => {
   
 
   useEffect(() => {
+    if(categorieParams) {
+      setGammeActive(categorieParams);
+      console.log(gammeActive); 
+    }
+
     const fetchItem = async () => {
       try{
         const {data, status, error} = await supabase

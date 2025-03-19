@@ -104,7 +104,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
             <div className='container-image-border grid5 container-dark'>
               <div className={`border pre-anim ${scrollY > (heightContent.sectionIntroProduit/5)*4 && scrollY < heightContent.sectionTemps ? 'border-scale-center' : ''}`}></div>
               <div className={`container-image image-zoom pre-anim ${scrollY > (heightContent.sectionIntroProduit/5)*4 && scrollY < heightContent.sectionTemps ? 'fade-in-element' : ''}`}>
-                <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../public/assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
+                <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../assets/img/photos/femme-maillot-jaune-ete-1000px.jpg"/>
               </div>
             </div>
             <div className={`part-texte grid3 container-flex-texte pre-anim  ${scrollY > (heightContent.sectionIntroProduit/5)*4 && scrollY < heightContent.sectionTemps ? 'translateR' : ''}`}>
@@ -130,21 +130,21 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
               <Button name="Pour l'adopter" lien='/shop'/>
             </div>
             <div className='grid5 container-image'>
-              <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg"></img>
+              <img alt="" src="../../assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg"></img>
             </div>
             <div className='grid3'>
               <div className='container-image'>
-                <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-03-1000px.jpg"></img>
+                <img alt="" src="../../assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-03-1000px.jpg"></img>
               </div>
               <div className='container-image'>
-                <img alt="" src="../../public/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-02-1000px.jpg"></img>
+                <img alt="" src="../../assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-02-1000px.jpg"></img>
               </div>
             </div>
           </div>
         </section>
         <section id="section-huiles-essentielles" className='container-image-large'>
             <div className='container-image'>
-              <img alt="" src="../../public/assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
+              <img alt="" src="../../assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>
             <div className='container container-grid'>
               <div className='container-flex-texte grid5'>

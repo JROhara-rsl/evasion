@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import emailjs from '@emailjs/browser'; 
 
 // CSS
 import './contact.scss'
@@ -10,8 +11,40 @@ import Newsletter from '../../components/newsletter/Newsletter'
 import TextArea from '../../components/form/TextArea';
 import ButtonForm from '../../components/button/ButtonForm';
 import Input from '../../components/form/Input';
+import validator from "validator";
 
 const Contact = () => {
+  const form = useRef(); 
+  const [emailError, setEmailError] = useState("");
+
+  const validateEmail = (e) => {
+      const email = e.target.value;
+
+      if (validator.isEmail(email)) {
+          setEmailError("Email Valide :)");
+      } else {
+          setEmailError("Entrez un email valide !");
+      }
+  };
+
+  const sendEmail = (e) => { 
+    e.preventDefault(); 
+    emailjs 
+      .sendForm( 
+        import.meta.env.VITE_APP_SERVICE_ID, 
+        import.meta.env.VITE_APP_TEMPLATE_ID, 
+        form.current, 
+        import.meta.env.VITE_APP_PUBLIC_KEY
+      ) 
+      .then( (result) => { 
+          alert('message envoyé avec succès...'); 
+          console.log(result.text); 
+        }, (error) => { 
+          console.log(error.text); 
+        } 
+      ); 
+  }; 
+
   return (
     <div id="page-contact">    
       <Helmet>
@@ -23,12 +56,12 @@ const Contact = () => {
             <img alt="" src="../../public/assets/img/photos/plage-france.jpg"></img>
           </div>
           <div className='container container-grid'>
-            <form className='container-flex-texte container-white grid5'>
+            <form ref={form} name="contact_form" onSubmit={sendEmail} className='container-flex-texte container-white grid5'>
               <h1 className='title-XH'>Nous contacter</h1>
               <hr></hr>
               <div className='container-double'>
                 <Input  
-                      name="Prénom" 
+                      name="Prenom" 
                       id="prenom"
                       placeholder="Votre prénom" 
                       required='true'/>
@@ -41,13 +74,15 @@ const Contact = () => {
 
               </div>
               <Input  
-                      id="mail" 
+                      id="Mail" 
                       name="mail" 
                       class="input-large"
                       placeholder="votre-mail@contact.com" 
-                      type="mail"
-                      required='true' />
-
+                      type="text"
+                      required='true'
+                      onChange={(e) => validateEmail(e)}
+                      />
+              {emailError}
               <TextArea 
                       name="Message" 
                       id="message" 

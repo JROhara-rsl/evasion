@@ -35,3 +35,13 @@ form {
     }
 }
 
+form .form-input input, 
+form .form-input textarea, 
+form .form-textarea input,
+form .form-textarea textarea {
+    color: $background-color;
+
+    &::placeholder {
+        color: $violet-color;
+    }
+}

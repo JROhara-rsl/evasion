@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router'
 import { HelmetProvider } from 'react-helmet-async'
 import { Suspense, lazy } from 'react'
+import emailjs from '@emailjs/browser'; 
 
 // CSS
 import './App.css'
