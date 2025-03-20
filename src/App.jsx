@@ -20,6 +20,7 @@ const Article = lazy(() => import('./pages/actualite/Article'));
 import Contact from './pages/contact/Contact';
 const PageProduit = lazy(() => import('./pages/shop/PageProduit'));
 import Panier from './pages/panier/Panier.jsx';
+const Recherche = lazy(() => import('./pages/recherche/Recherche'));
 import Commande from './pages/panier/Commande.jsx';
 import Compte from './pages/compte/Compte.jsx';
 import { UpdatePassword } from '@supabase/auth-ui-react';
@@ -51,6 +52,7 @@ function App() {
                     <Route path="/panier" element={<Panier/>} />  
                     <Route path="/panier/commande" element={<Commande/>} />  
                     <Route path="/compte" element={<Compte />} />
+                    <Route path="/recherche/:searchTerm" element={<Recherche />} />
                     <Route path="/update-password" element={<UpdatePassword />} />
                     <Route path='*' element={<Nothing/>} />
                   </Route>      

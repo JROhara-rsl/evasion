@@ -13,6 +13,7 @@ import resizeListener from '../../script/functionResizeListener.js';
 import Button from '../../components/button/Button'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Logo2 from '../../components/logo/Logo2';
+
 const SliderHeader = React.lazy(() => import('../../components/slider/SliderHeader'));
 
   const Home = () => {
@@ -45,11 +46,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
         window.addEventListener("resize", handleResize);
       };
     }, []);
-    
-    useEffect(() => {
-      console.log(heightContent);
-    }, [heightContent]); 
-    
+   
   return (
     <div id="page-home">
         <Helmet>
@@ -83,7 +80,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
                 Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France. Parce que prendre soin de soi, c'est aussi s'offrir un moment d'évasion.
               </p>
-              <Button name='Découvrir nos gammes' lien='/nos-gammes' class="button-white" />
+              <Button name='Découvrir nos gammes' lien='/nos-gammes' className="button-white" />
             </div>
           </div>
         </section>
@@ -142,14 +139,14 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
             </div>
           </div>
         </section>
-        <section id="section-huiles-essentielles" className='container-image-large'>
+        <section id="sectionHuilesEssentielles" className='container-image-large'>
             <div className='container-image'>
               <img alt="" src="../../assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
             </div>
             <div className='container container-grid'>
               <div className='container-flex-texte grid5'>
                 <h2 className='title-XH'>Huiles essentielles</h2>
-                <Button name="En savoir plus" lien='/huiles-essentielles' class="button-white"/>
+                <Button name="En savoir plus" lien='/huiles-essentielles' className="button-white"/>
               </div>
             </div>
         </section>

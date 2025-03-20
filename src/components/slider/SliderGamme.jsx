@@ -18,7 +18,6 @@ const SliderGamme = () => {
             const {data, status, error} = await supabase
                                           .from("slideGamme")
                                           .select("*");
-            console.log("Données récupérées depuis Supabase:", data);
             if (status === 200) {
                 const sortedSlides = data.sort((a, b) => a.id - b.id); // Trie par ID croissant
                 setSlides(sortedSlides);
@@ -88,7 +87,7 @@ const SliderGamme = () => {
   return (
     <Slider {...settings} ref={sliderRef}>
         {slides.map((slide, index) => {
-            console.log(`Slide ${slide.title} (index ${index}) (active ${activeSlide})`);
+            //console.log(`Slide ${slide.title} (index ${index}) (active ${activeSlide})`);
             const isActive = index === activeSlide; 
             return (
                 <div key={slide.id}  

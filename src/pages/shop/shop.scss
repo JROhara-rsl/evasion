@@ -82,7 +82,7 @@
     }
 }
 
-.container-product:hover {
+.container-product:hover, .container-post:hover {
     img {
         transform: scale(1.05);
     }

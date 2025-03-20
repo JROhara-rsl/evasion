@@ -14,7 +14,7 @@ const Input = (props) => {
                 value={props.value ? props.value : undefined}
                 onChange={props.change ? props.change : undefined}
                 placeholder={props.placeholder ? props.placeholder : ''} 
-                pattern={props.type === 'mail' ? "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]" : undefined} 
+                //pattern={props.type === 'mail' ? "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]" : undefined} 
                 required={props.required ? 'required' : undefined} />
     </div>
   )

@@ -23,7 +23,7 @@
     .container {    padding: 60px 0;    }
     
     // HOME
-    #hero .container .header-button {   bottom: 0;  }
+    #hero .container .header-button {   bottom: 0; margin-bottom: 20px;  }
     #sectionTemps {
         .container-grid {
             grid-template-areas: "a a a a . b b b b";
@@ -100,6 +100,7 @@
     }
 
     header {
+        .container .header-logo {    width: 50%;    }
         align-items: flex-end;
         nav {
             margin-bottom: 10px;
@@ -270,6 +271,7 @@
     }
 
     // Home 
+    #hero .container .header-logo {    width: 60%;    }
     #sectionTemps {
         .background {    background-color: $background-color;    }
         .container  {   color: $white-color;    }
@@ -359,6 +361,10 @@
         .container-image-border {
             display: none;
         }
+        .border-button {
+            border-color: $white-color;
+            color: $white-color;
+        }
     }
 
     // SHOP
@@ -399,6 +405,10 @@
 /* Pour le format smartphone */
 
 @media screen and (max-width: 560px) {
+    #hero .container .header-logo {    
+        width: 80%; 
+        top: 15vh;   
+    }
 
     // Page compte
     #compte-container header {

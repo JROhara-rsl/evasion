@@ -8,11 +8,11 @@
     align-items: center;
 }*/
 
-#container-commande {
-    .container-product {
+#container-commande, #container-search-post {
+    .container-product, .container-post {
         position: relative;
 
-        .container-product-meta {
+        .container-product-meta, .container-post-meta {
             display: flex;
             flex-direction: row;
             align-items: flex-end;
@@ -29,7 +29,7 @@
                 }
             }
 
-            .product-image {
+            .product-image, .post-image {
                 max-height: 380px;
                 max-width: 210px;
                 

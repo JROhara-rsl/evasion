@@ -19,6 +19,13 @@ footer {
         li {
             font-size: 0.8rem;
 
+            a {    
+                text-decoration: none;   
+                &:hover {
+                    color: $base-color;
+                }
+            }
+            
             ul {
                 padding-inline-start: 30px;
                 li {

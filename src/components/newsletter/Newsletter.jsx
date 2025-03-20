@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import supabase from "../../supabase";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import validator from "validator";
 
 // CSS
 import '../../scss/custom.scss'
@@ -18,6 +19,7 @@ const Newsletter = () => {
   const { session } = useProfil();
   const [mails, setMails] = useState([]);
   const [check, setCheck]  = useState(false);
+  const [emailError, setEmailError] = useState("");
 
   const updateNewsletter = async (updatedMail) => {
     if (!session.user) {
@@ -27,7 +29,7 @@ const Newsletter = () => {
   
     const { error } = await supabase
       .from("newsletter")
-      .insert({ mail: updatedMail }); // Ajoute un nouveau champs
+      .insert({ email: updatedMail }); // Ajoute un nouveau champs
       
     if (error) {
       console.error("Erreur lors de la mise à jour du profil :", error.message);
@@ -43,9 +45,11 @@ const Newsletter = () => {
   
   const handleSubmit = async (event) => {
     event.preventDefault(mails.mail);
-    await updateNewsletter(mails.mail);
+    
+    if (!validator.isEmail(mails.email)) return setEmailError("Entrez un email valide !");
+    setEmailError('')
+    await updateNewsletter(mails.email);
     setCheck(true)
-    console.log(mails);
   }
 
   return (
@@ -54,8 +58,8 @@ const Newsletter = () => {
         <div className='grid4'>
             <p>Inscrivez-vous à notre newsletter et recevez en avant-première nos nouveautés, conseils bien-être et offres exclusives. Offrez-vous une parenthèse de douceur directement dans votre boîte mail !</p>
             <form id="form-newsletter" className='container-double' onSubmit={handleSubmit} onChange={handleChange} >
-                <Input  id="mail" 
-                        name="mail" 
+                <Input  id="email" 
+                        name="email" 
                         placeholder="votremail@contact.com" 
                         type="mail" 
                 />
@@ -66,7 +70,7 @@ const Newsletter = () => {
                         type="submit" 
                 />
             </form>
-            <div id="form-information">{check ? "C'est bien reçu, merci" : ''}</div>
+            <div id="form-information">{check ? "C'est bien reçu, merci" : ''} {emailError}</div>
         </div>
         <hr className='grid8'></hr>
     </section>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser'; 
+import validator from "validator";
 
 // CSS
 import './contact.scss'
@@ -11,7 +12,6 @@ import Newsletter from '../../components/newsletter/Newsletter'
 import TextArea from '../../components/form/TextArea';
 import ButtonForm from '../../components/button/ButtonForm';
 import Input from '../../components/form/Input';
-import validator from "validator";
 
 const Contact = () => {
   const form = useRef(); 
@@ -19,7 +19,7 @@ const Contact = () => {
 
   const validateEmail = (e) => {
       const email = e.target.value;
-
+    
       if (validator.isEmail(email)) {
           setEmailError("Email Valide :)");
       } else {
@@ -29,6 +29,7 @@ const Contact = () => {
 
   const sendEmail = (e) => { 
     e.preventDefault(); 
+    
     emailjs 
       .sendForm( 
         import.meta.env.VITE_APP_SERVICE_ID, 

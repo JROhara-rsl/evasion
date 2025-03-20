@@ -17,7 +17,6 @@ import ItemProduit from './ItemProduit.jsx';
 const Shop = () => {
   const params = useParams()
   const { categorieParams } = params;  
-  console.log(params);
   
   const [items, setItems] = useState([]);
   const [categorieOn, setCategorieOn] = useState(false);

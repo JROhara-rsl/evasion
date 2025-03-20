@@ -45,10 +45,6 @@ const HuilesEssentielles = () => {
       };
   }, []);
       
-  useEffect(() => {
-    console.log(heightContent);
-  }, [heightContent]);   
-  
   return (
     <div id="page-huiles-essentielles">
       <Helmet>

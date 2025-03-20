@@ -25,10 +25,6 @@ const NosGammes = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-      
-  useEffect(() => {
-    console.log(scrollY);
-  }, [scrollY]); 
 
   return (
     <div id="page-nos-gammes">

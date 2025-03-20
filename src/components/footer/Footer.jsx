@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router';
+import { HashLink as Link } from 'react-router-hash-link';
 
 // CSS
 import './footer.scss';
@@ -18,16 +18,16 @@ const Footer = () => {
             <div>
               <Link to='/'><div>Home</div></Link>
               <ul> 
-                <li>Nos produits</li>
-                <li>Nouveau produit</li>
-                <li>Notre philosophie</li>
-                <li>Nos huiles essentielles</li>
+                <li><Link to='/#sectionIntroProduit'>Nos produits</Link></li>
+                <li><Link to='/#sectionTemps'>Notre philosophie</Link></li>
+                <li><Link to='/#sectionNouveau'>Nouveau produit</Link></li>
+                <li><Link to='/#sectionHuilesEssentielles'>Nos huiles essentielles</Link></li>
               </ul>
             </div>
             <div>
               <Link to='/shop'><div>Shop</div></Link>
               <ul> 
-                <li>Nos produits</li>
+                <li><Link to='/#container-section-shop'>Nos produits</Link></li>
               </ul>
             </div>
             <div>
@@ -47,11 +47,11 @@ const Footer = () => {
             <div>
               <Link to='/huiles-essentielles'><div>Huiles essentielles</div></Link>
               <ul> 
-                <li>Nos produits</li>
-                <li>Notre savoir-faire</li>
-                <li>S’évader</li>
-                <li>Nos engagements</li>
-                <li>Actualité</li>
+                <li><Link to='/huiles-essentielles#page-huiles-essentielles'>Nos produits</Link></li>
+                <li><Link to='/huiles-essentielles#sectionEvader'>S’évader</Link></li>
+                <li><Link to='/huiles-essentielles#sectionHuilesEssentielles'>Notre savoir-faire</Link></li>
+                <li><Link to='/huiles-essentielles'>Nos engagements</Link></li>
+                <li><Link to='/actualite#page-actualite'>Actualité</Link></li>
               </ul>
             </div>
             <div>
