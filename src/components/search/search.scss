@@ -23,8 +23,19 @@
         form {
             width: 90%;
             padding: 2% 5%;
+            gap: 2%;
             border-radius: 100px;
             align-items: end;
+            flex-wrap: wrap;
+
+            .button-form, .form-input {  
+                width: 40%;
+                input {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+            }
+
 
             .button-form .border-button {
                 max-width: 200px;

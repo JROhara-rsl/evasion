@@ -3,17 +3,18 @@ import { useParams, Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import supabase from "../../supabase.js"
 
+// Component
 import ButtonPicto from '../../components/button/ButtonPicto.jsx';
-import Button from '../../components/button/Button.jsx';
+import ResultItem from './ResultItem.jsx';
+import Search from '../../components/search/Search.jsx';
 
 // CSS
-import '../shop/Shop.jsx'
-import '../panier/Panier.jsx'
+import './recherche.scss'
 
 const Recherche = () => {
     const params = useParams()
     const { searchTerm } = params;  
-    const [posts, setPosts] = useState([]);
+    const [results, setResults] = useState([]);
 
     useEffect(() => {
         const fetchSearch = async () => {
@@ -44,8 +45,8 @@ const Recherche = () => {
                     allResults.push({ table: "articles", results: articles });
                 }
 
-                setPosts(allResults[0].results);
-                console.log("Résultats de recherche :", allResults[0].results);
+                setResults(allResults);
+                //console.log("Résultats de recherche :", allResults);
 
             } catch (error) {
                 console.error("Erreur lors de la recherche :", error);
@@ -53,6 +54,7 @@ const Recherche = () => {
         }
         fetchSearch()
     }, [searchTerm]);   
+    console.log("Résultats avant rendu :", results);
 
   return (
     <div>
@@ -60,33 +62,24 @@ const Recherche = () => {
             <title>Votre recherche</title>
             <meta name='description' content="Recherche : " />
         </Helmet>
-        <div className="container">
+        <div id="page-rechercher" className="container">
             <header>
                 <h1 className=''>Votre recherche</h1>
                 <span id="link-breadcrumb" className=''><ButtonPicto name="Retour à l'accueil" lien='/' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link></span>
             </header>
             <div className='container-grid'>
-                <div id="container-search-post" className='grid6'>
-                    {posts.map((post) => (
-                        <div key={post.uuid} className='container-post'>
-                            <div className='border'></div>
-                            <div  className='container-post-meta'>
-                            <Link to={'/shop/post/'+(post.categorieId)+'/'+(post.uuid)} className='post-image'>
-                                <img alt={post.name} src={ 'http://localhost:5173/public/assets/img/'+(post.img)+'-350px.png'} />
-                            </Link>
-                            <div className='container-meta'>
-                                <h3 className='title-post-post'>{post.name}</h3>
-                                <div className='meta'>
-                                    <span>{post.gamme}</span>
-                                    <span>{post.format}ml</span>
-                                </div>
-                                <hr></hr>
-                                <p>Huile de douche aux huiles essentielles avec des notes d’agrumes.</p>
-                                <Button name={'Découvrir le ' + post.name} lien={'/shop/post/'+(post.categorieId)+'/'+(post.uuid)} />
-                            </div>
-                            </div>
-                        </div>
-                    ))}     
+                <Search active='true' />
+                <div id="container-search-post">
+                    {results.length === 0 ? (
+                        <p>Aucun résultat trouvé.</p>
+                        ) : (
+                            results.map((group, index) => (
+                                    group.results.map((item) => (
+                                        <ResultItem key={item.uuid} result={{ table: group.table, ...item }} />
+                                    ))
+                            ))
+                        )
+                    }
                 </div>
             </div>
         </div>

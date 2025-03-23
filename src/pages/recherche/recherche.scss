@@ -2,48 +2,85 @@
 @import "../../scss/variables.scss";
 
 #container-search-post {
-    .container-post {
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        grid-column: span 7;
 
-        .container-post-meta {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
+        .container-post {
+            position: relative;
+            border: 2px solid $dark-color;
+            border-radius: 40px;
 
-            .container-meta {
-                margin: 0 20px 20px;
+            .container-post-meta {
                 display: flex;
-                flex-direction: column;
-                gap: 4px;
+                flex-direction: row;
+                align-items: flex-end;
 
-                .meta {
+                .container-meta {
+                    width: 70%;
+                    margin: 20px;
                     display: flex;
-                    justify-content: space-between;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    .meta {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+
+            .post-image {
+                display: block;
+                max-height: 300px;
+                width: 28%;
+                margin: 10px 1%;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    max-height: 320px;
+                    object-fit: contain;
+                    transition: transform 0.3s ease-in;
                 }
             }
         }
 
+    .article-card {
         .post-image {
-            display: block;
-            max-height: 380px;
-            max-width: 210px;
-            
-            img {
-                width: 100%;
-                height: 100%;
-                transition: transform 0.3s ease-in;
-            }
+            border-radius: 40px;
+            overflow: hidden;
+        }
+        .title-post-post {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+        .container-post-meta .container-meta {
+            margin: 20px 20px 20px;
+            hr {    margin: 10px 0; }
         }
 
         .border {
-            width: 100%;
-            height: 260px;
-            position: absolute;
-            bottom: 0;
-            border: 2px solid $dark-color;
-            border-radius: 40px;
-            z-index: -1;
-            transition: transform 0.2s ease-in-out;
+            height: 220px;
         }
+    }
+}
+
+#page-rechercher {
+    #container-search {
+        grid-column: span 7;
+        position: relative;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+
+        #header-search {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    
+    .background-search {
+        display: none;
     }
 }
