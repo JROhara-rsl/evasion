@@ -146,7 +146,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
             <div className='container container-grid'>
               <div className='container-flex-texte grid5'>
                 <h2 className='title-XH'>Huiles essentielles</h2>
-                <Button name="En savoir plus" lien='/huiles-essentielles' className="button-white"/>
+                <Button name="En savoir plus" lien='/huiles-essentielles' class="button-white"/>
               </div>
             </div>
         </section>

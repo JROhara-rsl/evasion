@@ -437,3 +437,46 @@
         }
     }
 }
+
+/* ///////////////////////////////////////// 490px //////////////// */
+/* Pour le format smartphone */
+
+@media screen and (max-width: 490px) {
+    // Shop
+    #container-shop {
+        justify-content: center;
+        margin: 0 4%;
+
+        .container-product {
+            .container-product-meta {
+                max-width: fit-content !important;
+            }
+        }
+    }
+
+
+    // Gammes
+    #header-gammes {    
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        figcaption {    display: none;    }
+        
+        .container-image {
+            width: 100%;
+
+            img {   width: 100% !important;    }
+
+            &.translateB {
+                animation: translateTop 1s ease-in-out;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    // Footer 
+    #logo-footer {
+        display: none;
+    }
+}

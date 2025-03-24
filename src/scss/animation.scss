@@ -54,7 +54,7 @@
 }
 
 .translateT {
-    transform: translateX(200);
+    transform: translateY(200);
     opacity: 0;
     animation: translateTop 1s ease-in-out;
     animation-fill-mode: forwards;
@@ -73,7 +73,7 @@
 }
 
 .translateB {
-    transform: translateB(-200);
+    transform: translateY(-200);
     opacity: 0;
     animation: translateBottom 1s ease-in-out;
     animation-fill-mode: forwards;
