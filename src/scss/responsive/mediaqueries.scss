@@ -166,7 +166,18 @@
     }
     // HUILES ESSENTIELLES 
     #sectionHuilesEssentielles .container-flex-texte {    grid-column: 2/9;    }
-
+    #sectionEngagements {
+        h3 {  font-size: 4.8rem;  }
+        #container-engagements {
+            grid-template-areas: 
+            "a a a . . . b b b"
+            "c c c . . . d d d"
+            !important;
+        }
+        .container-image {
+            img {   max-height: 600px !important;    }
+        }
+    }
     footer .border-nav {    padding: 30px 50px;     }
 
     // Contact
@@ -210,9 +221,6 @@
     // SHOP
     #container-proposition {
         .container-grid {
-            .container-flex-texte {    
-
-            }
             #container-shop {   
                 .container-product {
                     .container-product-meta {
@@ -350,6 +358,10 @@
 /* Pour le format tablette */
 
 @media screen and (max-width: 640px) {
+    .pre-anim {
+        opacity: 1;
+        animation: none !important;
+    }
 
     #container-slider-gammes {        height: 82vh !important;    }           
     #container-slider-gammes .slide-child {    height: 80vh !important;    }   
@@ -434,6 +446,23 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
+        }
+    }
+
+    // Huiles essentielles
+    #sectionEngagements {
+        h3 {    font-size: 2.8rem;  }
+        .container-image {  display: none !important;  }
+        #container-engagements {
+            display: flex !important;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 2% !important;
+            margin: 0 2%;
+            .container-engagements {
+                width: 46%;
+            }
         }
     }
 }

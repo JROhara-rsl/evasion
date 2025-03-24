@@ -90,6 +90,76 @@
     }
 }
 
+#sectionEngagements {
+    width: 100%;
+    background-color: $light-color;
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .container-image {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        svg {
+            position: absolute;
+            z-index: 0;
+            #circle {
+                stroke-width: 1px;
+                stroke: none;
+                fill: $violet-color;
+            }
+        }
+
+        img {
+            max-height: 700px;
+        }
+    }
+
+
+    #container-engagements {
+        display: grid;
+        grid-template-areas: 
+        ". a a . . . b b ."
+        ". c c . . . d d .";
+        gap: 40px;
+        justify-content: space-between;
+        z-index: 2;
+
+        .container-engagements {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: $background-color;
+            transition: transform 0.3s ease-in-out;
+            
+            img {
+                max-height: 70px;
+                max-width: 70px;
+                width: 50%;
+                margin: 20px;
+            }
+            
+            &:nth-child(1) {  grid-area: a;  }
+            &:nth-child(2) {  grid-area: b;  }
+            &:nth-child(3) {  grid-area: c;  }
+            &:nth-child(4) {  grid-area: d;  }
+
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
+    }
+
+}
+
 #page-huiles-essentielles #sectionHuilesEssentielles {
     //height: 700px;
 }
