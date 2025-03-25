@@ -17,7 +17,10 @@ const Commande = () => {
         <div className="container">
             <header>
                 <h1 className=''>Votre commande</h1>
-                <span id="link-breadcrumb" className=''><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link>/<Link to='/panier/commande'>commande</Link></span>
+                <span id="link-breadcrumb" className=''>
+                  <ButtonPicto name='Retour au shop' lien='/shop' img={`${import.meta.env.BASE_URL}/assets/picto/picto-back.svg`}/>
+                  <Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link>/<Link to='/panier/commande'>commande</Link>
+                </span>
             </header>
             <div className='container-grid'>
 

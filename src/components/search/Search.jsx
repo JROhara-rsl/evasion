@@ -29,7 +29,7 @@ const Search = (props) => {
     <div id='container-search' className={activeSearch ? 'active' : ''}>
         <div id='header-search'>
             <form className='border-nav display-nav' onSubmit={searchStart}>
-                <ButtonPicto name='Rechercher' img='http://localhost:5173/public/assets/picto/picto-search.svg'/>
+                <ButtonPicto name='Rechercher' img={`${import.meta.env.BASE_URL}/assets/picto/picto-search.svg`}/>
 
                 <Input  
                         name="Rechercher"  id="search" required='true'

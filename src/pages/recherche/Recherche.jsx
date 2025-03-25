@@ -62,7 +62,7 @@ const Recherche = () => {
         <div id="page-rechercher" className="container">
             <header>
                 <h1 className=''>Votre recherche</h1>
-                <span id="link-breadcrumb" className=''><ButtonPicto name="Retour à l'accueil" lien='/' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link></span>
+                <span id="link-breadcrumb" className=''><ButtonPicto name="Retour à l'accueil" lien='/' img={`${import.meta.env.BASE_URL}/assets/picto/picto-back.svg`}/><Link to='/'>Évasion</Link></span>
             </header>
             <div className='container-grid'>
                 <Search active='true' />

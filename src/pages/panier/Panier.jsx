@@ -51,7 +51,7 @@ const Panier = () => {
         <div className="container">
             <header>
                 <h1 className=''>Votre panier</h1>
-                <span id="link-breadcrumb" className=''><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
+                <span id="link-breadcrumb" className=''><ButtonPicto name='Retour au shop' lien='/shop' img={`${import.meta.env.BASE_URL}/assets/picto/picto-back.svg`}/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to='/panier'>panier</Link></span>
             </header>
             <div className='container-grid'>
                 <div id="container-commande" className='grid6'>
@@ -63,7 +63,7 @@ const Panier = () => {
                             </div>
                             <div  className='container-product-meta'>
                             <Link to={'/shop/item/'+(item.categorieId)+'/'+(item.uuid)} className='product-image'>
-                                <img alt={item.name} src={ 'http://localhost:5173/public/assets/img/'+(item.img)+'-350px.png'} />
+                                <img alt={item.name} src={`${import.meta.env.BASE_URL}/assets/img/'+(item.img)+'-350px.png`} />
                             </Link>
                             <div className='container-meta'>
                                 <h3 className='title-post-item'>{item.name}</h3>

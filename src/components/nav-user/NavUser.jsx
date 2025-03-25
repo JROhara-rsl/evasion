@@ -25,9 +25,9 @@ const NavUser = () => {
     <>
       <Search active={activeSearch ? true : false} click={searchEnd}/>
       <div id='nav-user'>
-        <ButtonPicto name='Compte utilisateur'      lien='/compte' img='http://localhost:5173/public/assets/picto/picto-user.svg'/>
-        <ButtonPicto name="Panier de l'utilisateur" lien='/panier' img='http://localhost:5173/public/assets/picto/picto-panier.svg'/>
-        <ButtonPicto name='Rechercher' click={toSearch} img='http://localhost:5173/public/assets/picto/picto-search.svg'/>
+        <ButtonPicto name='Compte utilisateur'      lien='/compte' img={`${import.meta.env.BASE_URL}assets/picto/picto-user.svg`}/>
+        <ButtonPicto name="Panier de l'utilisateur" lien='/panier' img={`${import.meta.env.BASE_URL}assets/picto/picto-panier.svg`}/>
+        <ButtonPicto name='Rechercher' click={toSearch} img={`${import.meta.env.BASE_URL}assets/picto/picto-search.svg`}/>
       </div>
     </>
   )

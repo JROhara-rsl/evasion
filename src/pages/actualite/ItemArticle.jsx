@@ -19,7 +19,7 @@ const ItemArticle = (props) => {
       </div>
       <div  className='container-post-meta'>
         <Link to={props.lien} className='article-image'>
-          <img alt={props.title} src={ 'http://localhost:5173'+(props.image)+'-400px.jpg'} />
+          <img alt={props.title} src={`${import.meta.env.BASE_URL}+(props.image)+'-400px.jpg`} />
         </Link>
         <div className='container-meta'>
           <h3 className='meta-post-title title-post-item'>{props.title}</h3>

@@ -67,11 +67,11 @@ const PageProduit = () => {
             <div id="background-post-product"></div>
             <div id="container-post-meta" className='container container-grid'>
               <div className="container-image fade-in-element">
-                <img alt={post.name} src={ 'http://localhost:5173/assets/img/'+(post.img)+'.png'} />
+                <img alt={post.name} src={`${import.meta.env.BASE_URL}/assets/img/'+(post.img)+'.png`} />
                 <div className='border border-scale-bot'></div>
               </div>
               <div className="container-meta container-flex-texte">
-                <span id="link-breadcrumb"><ButtonPicto name="Retour à la page d'accueil" lien='/' img='http://localhost:5173/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
+                <span id="link-breadcrumb"><ButtonPicto name="Retour à la page d'accueil" lien='/' img={`${import.meta.env.BASE_URL}/assets/picto/picto-back.svg`}/><Link to='/'>Évasion</Link>/<Link to='/shop'>Shop</Link>/<Link to={'/shop/item/'+(post.uuid)}>{post.name}</Link></span>
                 <span className="brand">{post.gamme}</span>
                 <h1 className='title-X'>{post.name}</h1>
                 <hr></hr>

@@ -59,7 +59,7 @@ const SliderHeader = () => {
                     <span>{slide.gamme}</span>
                     <span>{slide.format}</span>
                   </div>
-                  <img src={'http://localhost:5173/public/assets/img/'+slide.img2+'-1200px.png'}  alt={slide.name} className='floating-in-element' />
+                  <img src={`${import.meta.env.BASE_URL}/assets/img/'+slide.img2+'-1200px.png`}  alt={slide.name} className='floating-in-element' />
               </Link>
           ))}
       </Slider>

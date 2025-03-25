@@ -71,7 +71,7 @@ const Article = () => {
                 <div key={article.uuid} id="container-post-article" className='grid6 container-white'>
                   <div className="container-article grid4">
                     <div className='container-image'>
-                      <img src={'http://localhost:5173'+(article.image)+'-1000px.jpg'} alt={article.title}/>
+                      <img src={`${import.meta.env.BASE_URL}+(article.image)+'-1000px.jpg`} alt={article.title}/>
                     </div>
                     <span className='meta'>{article.date} / {article.category_article}</span>
                     <h1 className='title-X'>{article.title}</h1>
