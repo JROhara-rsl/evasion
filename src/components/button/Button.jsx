@@ -8,7 +8,7 @@ const Button = (props) => {
 
   return (
     <div className="button">
-        <Link to={props.lien} className={'border-button ' + props.class}>
+        <Link to={props.lien} className={props.class ? 'border-button ' + props.class : 'border-button' }>
             {props.name}
         </Link>
     </div>

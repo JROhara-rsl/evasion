@@ -5,8 +5,15 @@
 #container-section-shop {
     h1 {    display: none;  }
 }
-#container-filter {    grid-column: span 1; }
 #container-shop {    grid-column: span 8;   }
+#container-filter {    
+    grid-column: span 1; 
+    ul {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin: 5px 0;
+    }
+}
 
 // CONTAINER SHOP
 #container-shop {

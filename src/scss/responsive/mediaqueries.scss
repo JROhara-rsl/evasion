@@ -283,6 +283,10 @@
     #sectionTemps {
         .background {    background-color: $background-color;    }
         .container  {   color: $white-color;    }
+        .border-button {
+            border-color: $white-color;
+            color: $white-color;
+        }
     }
     #sectionNouveau {
         .container-flex-texte { justify-content: center;    }
@@ -339,10 +343,24 @@
         ". . b b . ."
         "c c c c c c";
     }
+
+    // Panier
+    #page-panier {
+        header {    margin-bottom: 40px;    }
+        .container-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            .container-product-meta {
+                .product-image {        max-width: 30%; }
+                .container-meta {    margin: 0 10px 20px;    }
+            }
+        }
+    }
     // Contact
     #section-contact .container-flex-texte {
         grid-column: 1 / 7 !important;
-        padding: 0 40px;
+        padding: 20px 40px;
         .container-double { 
             flex-direction: column;
             input {     max-width: 100%;    }
@@ -417,6 +435,10 @@
 /* Pour le format smartphone */
 
 @media screen and (max-width: 560px) {
+    :root {
+        font-size: 10px;
+    }
+
     #hero .container .header-logo {    
         width: 80%; 
         top: 15vh;   
@@ -465,6 +487,18 @@
             }
         }
     }
+
+    // Actualite 
+    #page-actualite #container-articles {
+        justify-content: center !important;
+
+        .container-post {
+            max-width: 220px;
+            .container-post-meta a {
+                width: 200px;
+            }
+        }
+    }
 }
 
 /* ///////////////////////////////////////// 490px //////////////// */
@@ -472,6 +506,9 @@
 
 @media screen and (max-width: 490px) {
     // Shop
+    #container-filter .liste-filter {   
+        margin: 0 0 10px;
+    }
     #container-shop {
         justify-content: center;
         margin: 0 4%;
@@ -479,10 +516,12 @@
         .container-product {
             .container-product-meta {
                 max-width: fit-content !important;
+                a img {
+                    max-height: 420px;
+                }
             }
         }
     }
-
 
     // Gammes
     #header-gammes {    
@@ -501,6 +540,37 @@
                 animation: translateTop 1s ease-in-out;
                 animation-fill-mode: forwards;
             }
+        }
+    }
+    #container-slider-gammes {
+        height: auto !important;
+
+        .slide-child {
+            height: auto !important;
+    
+            &>.container {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                max-height: none;
+        
+                .border {   display: none;  }
+            }
+        }
+        
+    }
+    // Actualité
+    #page-actualite #container-articles .container-post {
+        max-width: 300px;
+    }
+
+    //NEwsletter 
+    #form-newsletter {
+        flex-direction: column;
+        #email {
+            width: 100%;
+            padding: 13px 0;
+            max-width: none;
         }
     }
 

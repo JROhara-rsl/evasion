@@ -3,10 +3,6 @@ import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import { useMouse } from "@uidotdev/usehooks";
 
-// CSS
-import './huilesessentielles.scss'
-import '../../scss/responsive/mediaqueries.scss'
-
 // JS
 import resizeListener from '../../script/functionResizeListener.js';
 

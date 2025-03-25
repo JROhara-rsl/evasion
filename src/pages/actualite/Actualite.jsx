@@ -4,9 +4,6 @@ import { Helmet } from 'react-helmet-async'
 import supabase from "../../supabase.js"
 import functionActu from './functionActualite.js'
 
-// CSS
-import './actualite.scss'
-
 // COMPONENT
 import Newsletter from '../../components/newsletter/Newsletter.jsx'
 import Button from '../../components/button/Button.jsx'

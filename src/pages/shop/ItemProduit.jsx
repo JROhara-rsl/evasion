@@ -11,7 +11,13 @@ const ItemProduit = (props) => {
         </div>
         <div  className='container-product-meta'>
         <Link to={'/shop/item/'+props.categorieId+'/'+props.uuid} className='product-image'>
-            <img alt={props.name + ' ' + props.gamme} src={'http://localhost:5173/public/assets/img/'+(props.img)+'-350px.png'} />
+            <img 
+              alt={props.name + ' ' + props.gamme} 
+              src={'http://localhost:5173/public/assets/img/'+(props.img)
+                                                             +(props.mobile ? 
+                                                                    '-mobile.png' : 
+                                                                    '-350px.png')} 
+            />
         </Link>
         <div className='container-meta'>
             <h3 className='title-post-item'>{props.name}</h3>

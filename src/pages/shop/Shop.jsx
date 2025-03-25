@@ -3,9 +3,6 @@ import { useParams, Link } from 'react-router'
 import { Helmet } from 'react-helmet-async';
 import supabase from "../../supabase.js"
 
-// CSS
-import './shop.scss'
-
 // JS
 import functionProduit from './functionProduit.js'
 
@@ -18,10 +15,25 @@ const Shop = () => {
   const params = useParams()
   const { categorieParams } = params;  
   
+  // Pour récupérer la largeur de la page
+  const [widthPage, setWidthPage] = useState(0)
+
+  useEffect(() => {
+    // Function pour définir la largeur de la page dans l'état widthPage
+    const handleResize = () => {  setWidthPage(document.querySelector('#root').offsetWidth)  }
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Lancer la function au chargement 
+
+    return () => {
+      // Dès que la fenêtre est redimensionner, relancer la function
+      window.addEventListener("resize", handleResize);
+    };
+  }, []);
+
   const [items, setItems] = useState([]);
   const [categorieOn, setCategorieOn] = useState(false);
   const [gammeOn, setGammeOn] = useState(false);
-
+  
   const [categorie, setCategorie] = useState({
     gelDouche: true,
     huile: true,
@@ -151,6 +163,7 @@ const Shop = () => {
                   lien={functionProduit.urlProduit(item.categorieId, item.uuid)}
                   gamme={item.gamme}
                   img={item.img}
+                  mobile={widthPage < 490 && true}
                   prix={item.prix}
                   format={item.format}
                   chapeau={item.chapeau}

@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 
-// CSS
-import './nosgammes.scss'
-
 // Component
 import ButtonToggle from '../../components/button/ButtonToggle';
 import Button from '../../components/button/Button';

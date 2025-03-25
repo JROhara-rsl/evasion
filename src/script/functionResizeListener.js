@@ -10,6 +10,6 @@ const resizeListener = (heightContent, setHeightContent) => {
       }
     })
     setHeightContent(newHeights);
-  };
+};
   
-  export default resizeListener; 
+export default resizeListener; 

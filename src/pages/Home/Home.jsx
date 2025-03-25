@@ -3,9 +3,6 @@ import axios from 'axios'
 import { Link } from 'react-router'
 import { Helmet } from 'react-helmet-async'
 
-// CSS
-import './home.scss';
-
 // JS
 import resizeListener from '../../script/functionResizeListener.js';
 
@@ -80,7 +77,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
                 Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France. Parce que prendre soin de soi, c'est aussi s'offrir un moment d'évasion.
               </p>
-              <Button name='Découvrir nos gammes' lien='/nos-gammes' className="button-white" />
+              <Button name='Découvrir nos gammes' lien='/nos-gammes' class="button-white" />
             </div>
           </div>
         </section>
