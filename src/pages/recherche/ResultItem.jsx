@@ -12,7 +12,7 @@ const ResultItem = ({ result }) => {
             <div className="product-card container-post">
                 <div  className='container-post-meta'>
                     <Link to={'/shop/item/'+(result.categorieId)+'/'+(result.uuid)} className='post-image'>
-                        <img alt={result.name} src={`${import.meta.env.BASE_URL}/assets/img/'+(result.img)+'-350px.png`} />
+                        <img alt={result.name} src={`${import.meta.env.BASE_URL+'/assets/img/'+(result.img)+'-350px.png'}`} />
                     </Link>
                     <div className='container-meta'>
                         <h3 className='title-post-post'>{result.name}</h3>
@@ -32,7 +32,7 @@ const ResultItem = ({ result }) => {
             <div className="article-card container-post">
                 <div  className='container-post-meta'>
                     <Link to={functionActu.urlArticle(result.title, result.id)} className='post-image'>
-                        <img alt={result.name} src={`${import.meta.env.BASE_URL}+(result.image)+'-400px.jpg`} />
+                        <img alt={result.name} src={`${import.meta.env.BASE_URL+(result.image)+'-400px.jpg'}`} />
                     </Link>
                     <div className='container-meta'>
                         <h3 className='title-post-post'>{result.title}</h3>

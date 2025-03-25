@@ -7,5 +7,14 @@ export default defineConfig({
   base: '/evasion/',
   optimizeDeps: {
     exclude: ['js-big-decimal']
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/index.js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`
+      }
+    }
   }
 })

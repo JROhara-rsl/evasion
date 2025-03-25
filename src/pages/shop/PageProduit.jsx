@@ -67,7 +67,7 @@ const PageProduit = () => {
             <div id="background-post-product"></div>
             <div id="container-post-meta" className='container container-grid'>
               <div className="container-image fade-in-element">
-                <img alt={post.name} src={`${import.meta.env.BASE_URL}/assets/img/'+(post.img)+'.png`} />
+                <img alt={post.name} src={`${import.meta.env.BASE_URL+'/assets/img/'+(post.img)+'.png'}`} />
                 <div className='border border-scale-bot'></div>
               </div>
               <div className="container-meta container-flex-texte">

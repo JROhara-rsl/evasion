@@ -13,7 +13,7 @@ const ItemProduit = (props) => {
         <Link to={'/shop/item/'+props.categorieId+'/'+props.uuid} className='product-image'>
             <img 
               alt={props.name + ' ' + props.gamme} 
-              src={`${import.meta.env.BASE_URL} + '/assets/img/'+${(props.img) +(props.mobile ?  '-mobile.png' : '-350px.png')}`} 
+              src={`${import.meta.env.BASE_URL + '/assets/img/'+ (props.img) +(props.mobile ?  '-mobile.png' : '-350px.png')}`} 
             />
         </Link>
         <div className='container-meta'>

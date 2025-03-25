@@ -35,14 +35,14 @@ const SliderGamme = () => {
         return (
             <>
                 <div className='container-image'>
-                    <img src={'../../'+img1+'.jpg'} alt={title} />
+                    <img src={import.meta.env.BASE_URL+img1+'.jpg'} alt={title} />
                 </div>
                 <div className='container-image'>
                     <div className='container-image'>
-                        <img src={'../../'+img2+'.jpg'} alt={title} />
+                        <img src={import.meta.env.BASE_URL+img2+'.jpg'} alt={title} />
                     </div>
                     <div className='container-image'>
-                        <img src={'../../'+img3+'.jpg'} alt={title} />
+                        <img src={import.meta.env.BASE_URL+img3+'.jpg'} alt={title} />
                     </div>
                 </div>
             </>
@@ -54,14 +54,14 @@ const SliderGamme = () => {
             <>
                 <div className='container-image'>
                     <div className='container-image'>
-                        <img src={'../../'+img1+'.jpg'} alt={title} />
+                        <img src={import.meta.env.BASE_URL+img1+'.jpg'} alt={title} />
                     </div>
                     <div className='container-image'>
-                        <img src={'../../'+img2+'.jpg'} alt={title} />
+                        <img src={import.meta.env.BASE_URL+img2+'.jpg'} alt={title} />
                     </div>
                 </div>
                 <div className='container-image'>
-                    <img src={'../../'+img3+'.jpg'} alt={title} />
+                    <img src={import.meta.env.BASE_URL+img3+'.jpg'} alt={title} />
                 </div>
             </>
         )
