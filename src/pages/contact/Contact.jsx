@@ -51,7 +51,7 @@ const Contact = () => {
         <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
       <section id="section-contact" className='container-image-large'>
           <div className='container-image'>
-            <img alt="" src="../../public/assets/img/photos/plage-france.jpg"></img>
+            <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/photos/plage-france.jpg`}></img>
           </div>
           <div className='container container-grid'>
             <form ref={form} name="contact_form" onSubmit={sendEmail} 

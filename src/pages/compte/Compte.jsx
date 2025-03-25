@@ -67,7 +67,7 @@ const Compte = () => {
         <div className="container">
           <header>
             <h1 className='title-H'>Bienvenue, {profile ? profile.username : "Chargement..."} !</h1>
-            <span id="link-breadcrumb" className=''><ButtonPicto name='Retour au shop' lien='/shop' img='../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/compte'>Compte</Link></span>
+            <span id="link-breadcrumb" className=''><ButtonPicto name='Retour au shop' lien='/shop' img={`${import.meta.env.BASE_URL}/assets/picto/picto-back.svg`}/><Link to='/'>Évasion</Link>/<Link to='/compte'>Compte</Link></span>
           </header>
           <hr></hr>
           <form>

@@ -64,7 +64,7 @@ const Article = () => {
         <section id="container-post-article" className='container-dark'>
         <div className='container'>
           { article &&
-            <div id="link-breadcrumb" ><ButtonPicto name="Retour à la page d'accueil" lien='/' img='../../../public/assets/picto/picto-back.svg'/><Link to='/'>Évasion</Link>/<Link to='/actualite'>Actualité</Link>/<Link to={functionActu.urlArticle(article.title, article.id)}>{article.title}</Link></div>
+            <div id="link-breadcrumb" ><ButtonPicto name="Retour à la page d'accueil" lien='/' img={`${import.meta.env.BASE_URL}/assets/picto/picto-back.svg`}/><Link to='/'>Évasion</Link>/<Link to='/actualite'>Actualité</Link>/<Link to={functionActu.urlArticle(article.title, article.id)}>{article.title}</Link></div>
           }
           <div className='container-grid'>
             { article &&  

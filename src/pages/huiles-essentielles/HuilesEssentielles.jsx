@@ -50,7 +50,7 @@ const HuilesEssentielles = () => {
           <circle cx="100" cy="150" r="57" id="circle" transform="rotate(-90,100,100)" />  
         </svg>
         <div className='container-image' ref={ref}>
-          <img alt="" src="../../assets/img/photos/pipette2.png"  style={{ top: (-mouse.elementY/40), left: (10-mouse.elementX/40) }}></img>
+          <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/photos/pipette2.png`}  style={{ top: (-mouse.elementY/40), left: (10-mouse.elementX/40) }}></img>
         </div>
       </div>
       <section id="sectionHeaderTexte">
@@ -69,7 +69,7 @@ const HuilesEssentielles = () => {
             <div className='border border-scale-center'>
             </div>
             <div className='container-image image-zoom'>
-              <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src="../../assets/img/photos/photo-nature-1000px.jpg"/>
+              <img alt="Une femme qui se prélasse au soleil pour prendre du temps pour sois" src={`${import.meta.env.BASE_URL}/assets/img/photos/photo-nature-1000px.jpg`}/>
             </div>
           </div>
 
@@ -95,32 +95,32 @@ const HuilesEssentielles = () => {
           <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 300" preserveAspectRatio="none">
             <circle cx="40" cy="150" r="40" id="circle" transform="rotate(-90,100,100)" />  
           </svg>
-          <img alt="Fiole d'huile essentielle" src="../../assets/img/photos/fiole-900px.png" 
+          <img alt="Fiole d'huile essentielle" src={`${import.meta.env.BASE_URL}/assets/img/photos/fiole-900px.png`} 
               className={`pre-anim ${scrollY > heightContent.sectionHeaderTexte && scrollY < heightContent.sectionEngagements ? 'translateT' : ''}`}></img>
         </div>
         <h3 className='title-XXH'>Nos engagements</h3>
         <div id="container-engagements" className='container'>
           <div className='container-engagements'>
-            <img alt="picto arbres" src="../../assets/picto/picto-tree.svg"></img>
+            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-tree.svg`}></img>
             <p><strong>Un engagement RSE fort : </strong>nous participons activement à la protection de l'environnement et soutenons les producteurs locaux.</p>
           </div>
           <div className='container-engagements'>
-            <img alt="picto arbres" src="../../assets/picto/picto-list.svg"></img>
+            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-list.svg`}></img>
             <p><strong>Des compositions épurées : </strong>nous utilisons seulement l'essentiel pour garantir l'efficacité et la tolérance de nos produits.</p>
           </div>
           <div className='container-engagements'>
-            <img alt="picto arbres" src="../../assets/picto/picto-pack.svg"></img>
+            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-pack.svg`}></img>
             <p><strong>Des packagings responsables  : </strong>réduction du plastique, utilisation de plastique 100% recyclé.</p>
           </div>
           <div className='container-engagements'>
-            <img alt="picto arbres" src="../../assets/picto/picto-nature.svg"></img>
+            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-nature.svg`}></img>
             <p><strong>Des formules naturelles : </strong>au minimum 90% d'ingrédients d'origine naturelle.</p>
           </div>
         </div>
       </section>
       <section id="sectionHuilesEssentielles" className='container-image-large'>
         <div className='container-image'>
-          <img alt="Application d'huile essentielles sur des mains" src="../../assets/img/photos/huiles-essentielles-2-1800px.jpg"></img>
+          <img alt="Application d'huile essentielles sur des mains" src={`${import.meta.env.BASE_URL}/assets/img/photos/huiles-essentielles-2-1800px.jpg`}></img>
         </div>
         <div className='container container-grid'>
           <div className={`container-flex-texte container-white grid4 pre-anim ${scrollY > heightContent.sectionHeaderTexte ? 'translateT' : ''}`}>
