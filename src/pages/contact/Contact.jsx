@@ -57,36 +57,32 @@ const Contact = () => {
             <img alt="" src="../../public/assets/img/photos/plage-france.jpg"></img>
           </div>
           <div className='container container-grid'>
-            <form ref={form} name="contact_form" onSubmit={sendEmail} className='container-flex-texte container-white grid5'>
+            <form ref={form} name="contact_form" onSubmit={sendEmail} 
+            className='container-flex-texte container-white grid5'>
               <h1 className='title-XH'>Nous contacter</h1>
               <hr></hr>
               <div className='container-double'>
                 <Input  
-                      name="Prenom" 
-                      id="prenom"
+                      name="Prenom" id="prenom"
                       placeholder="Votre prénom" 
                       required='true'/>
 
                 <Input  
-                      name="Nom" 
-                      id="nom" 
+                      name="Nom"  id="nom" 
                       placeholder="Votre nom"
                       required='true' />
 
               </div>
               <Input  
-                      id="Mail" 
-                      name="mail" 
+                      id="Mail"   name="mail" 
                       class="input-large"
                       placeholder="votre-mail@contact.com" 
-                      type="text"
-                      required='true'
+                      type="text" required='true'
                       onChange={(e) => validateEmail(e)}
                       />
               {emailError}
               <TextArea 
-                      name="Message" 
-                      id="message" 
+                      name="Message"  id="message" 
                       placeholder="Votre message"
                       required='true' />
 

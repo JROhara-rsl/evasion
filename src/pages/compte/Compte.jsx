@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router';
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "../../supabase";
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router';
 
 // CSS
 import './compte.scss';

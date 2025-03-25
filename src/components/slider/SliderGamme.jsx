@@ -87,7 +87,6 @@ const SliderGamme = () => {
   return (
     <Slider {...settings} ref={sliderRef}>
         {slides.map((slide, index) => {
-            //console.log(`Slide ${slide.title} (index ${index}) (active ${activeSlide})`);
             const isActive = index === activeSlide; 
             return (
                 <div key={slide.id}  

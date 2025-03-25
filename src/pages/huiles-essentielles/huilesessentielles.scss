@@ -125,6 +125,7 @@
 
     #container-engagements {
         display: grid;
+        grid-template-columns: repeat(9, 1fr);
         grid-template-areas: 
         ". a a . . . b b ."
         ". c c . . . d d .";
