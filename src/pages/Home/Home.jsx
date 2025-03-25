@@ -64,7 +64,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
         <section id="sectionIntroProduit" className='container-dark'>
           <div className='container container-grid'>
             <div className={`grid6 pre-anim ${scrollY > heightContent.hero/2 ? 'translateL' : ''}`}>
-              <img src="../../public/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg"/>
+              <img src={`${import.meta.env.BASE_URL}/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg`}/>
             </div>
             <div className={`container-flex-texte grid3 pre-anim ${scrollY > heightContent.hero/2 ? 'translateR' : ''}`}>
               <h2>Nos produits</h2>
