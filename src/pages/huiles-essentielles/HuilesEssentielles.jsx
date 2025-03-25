@@ -50,7 +50,7 @@ const HuilesEssentielles = () => {
           <circle cx="100" cy="150" r="57" id="circle" transform="rotate(-90,100,100)" />  
         </svg>
         <div className='container-image' ref={ref}>
-          <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/photos/pipette2.png`}  style={{ top: (-mouse.elementY/40), left: (10-mouse.elementX/40) }}></img>
+          <img alt="Pipette avec de l'huile essentielle" src={`${import.meta.env.BASE_URL}/assets/img/photos/pipette2.png`}  style={{ top: (-mouse.elementY/40), left: (10-mouse.elementX/40) }}></img>
         </div>
       </div>
       <section id="sectionHeaderTexte">
@@ -65,7 +65,7 @@ const HuilesEssentielles = () => {
       </section>
       <section id="sectionEvader" className="container-dark">
         <div className='container container-grid'>
-          <div className={`container-image-border grid4 pre-anim ${scrollY > heightContent.sectionHeaderHuile/2 && scrollY < heightContent.sectionHuilesEssentielles ? 'translateL' : ''}`}>
+          <div className={`container-image-border grid4 pre-anim ${scrollY > heightContent.sectionHeaderHuile/3 && scrollY < heightContent.sectionHuilesEssentielles ? 'translateL' : ''}`}>
             <div className='border border-scale-center'>
             </div>
             <div className='container-image image-zoom'>
@@ -105,15 +105,15 @@ const HuilesEssentielles = () => {
             <p><strong>Un engagement RSE fort : </strong>nous participons activement à la protection de l'environnement et soutenons les producteurs locaux.</p>
           </div>
           <div className='container-engagements'>
-            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-list.svg`}></img>
+            <img alt="picto liste d'ingrédients" src={`${import.meta.env.BASE_URL}/assets/picto/picto-list.svg`}></img>
             <p><strong>Des compositions épurées : </strong>nous utilisons seulement l'essentiel pour garantir l'efficacité et la tolérance de nos produits.</p>
           </div>
           <div className='container-engagements'>
-            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-pack.svg`}></img>
+            <img alt="picto packaging" src={`${import.meta.env.BASE_URL}/assets/picto/picto-pack.svg`}></img>
             <p><strong>Des packagings responsables  : </strong>réduction du plastique, utilisation de plastique 100% recyclé.</p>
           </div>
           <div className='container-engagements'>
-            <img alt="picto arbres" src={`${import.meta.env.BASE_URL}/assets/picto/picto-nature.svg`}></img>
+            <img alt="picto de la nature" src={`${import.meta.env.BASE_URL}/assets/picto/picto-nature.svg`}></img>
             <p><strong>Des formules naturelles : </strong>au minimum 90% d'ingrédients d'origine naturelle.</p>
           </div>
         </div>

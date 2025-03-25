@@ -44,7 +44,11 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
   return (
     <div id="page-home">
           <title>Évasion - cosmétique & hygiène sensorielle</title>
-          <meta name='description' content="Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
+          <meta name='description' content="Évasion vous propose des produits cosmiques 
+          et d'hygiène formulés à partir d'huiles essentielles 100% françaises." />
+          <meta name="author" content="Julien Roussel" />
+          <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
+
         <section id="hero">
           <div className='container'>
             <div className={`border pre-anim ${scrollY < heightContent.hero ? 'border-scale-center' : ''}`}></div>
@@ -119,21 +123,21 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
               <Button name="Pour l'adopter" lien='/shop'/>
             </div>
             <div className='grid5 container-image'>
-              <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg`}></img>
+              <img alt="Photo d'huile satinée dans une salle de bain" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg`}></img>
             </div>
             <div className='grid3'>
               <div className='container-image'>
-                <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-03-1000px.jpg`}></img>
+                <img alt="Deux huiles satinées de la marque Évasion" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-03-1000px.jpg`}></img>
               </div>
               <div className='container-image'>
-                <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-02-1000px.jpg`}></img>
+                <img alt="Huile satinée de la marque Évasion" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-2-EVASION-02-1000px.jpg`}></img>
               </div>
             </div>
           </div>
         </section>
         <section id="sectionHuilesEssentielles" className='container-image-large'>
             <div className='container-image'>
-              <img alt="" src={`${import.meta.env.BASE_URL}/assets/img/photos/huiles-essentielles-2-1800px.jpg`}></img>
+              <img alt="Application d'huile essentielles sur des mains" src={`${import.meta.env.BASE_URL}/assets/img/photos/huiles-essentielles-2-1800px.jpg`}></img>
             </div>
             <div className='container container-grid'>
               <div className='container-flex-texte grid5'>

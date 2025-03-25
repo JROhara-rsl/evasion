@@ -8,13 +8,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['js-big-decimal']
   },
-  build: {
-    rollupOptions: {
-      output: {
-        entryFileNames: `assets/index.js`,
-        chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`
-      }
-    }
-  }
+  worker: {
+    format: "es", // Empêche l'utilisation de blobs et évite l'erreur CSP
+  },
 })
