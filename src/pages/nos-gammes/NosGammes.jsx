@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router';
-import { Helmet } from 'react-helmet-async';
 
 // Component
 import ButtonToggle from '../../components/button/ButtonToggle';
@@ -25,10 +24,8 @@ const NosGammes = () => {
 
   return (
     <div id="page-nos-gammes">
-      <Helmet>
         <title>Nos gammes cosmétiques Évasion</title>
         <meta name='description' content="Évasion vous propose des produits cosmétiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
-      </Helmet>
       <section className="container container-first">
           <h1 className='title-XH'>Nos gammes</h1>
       <div id="header-gammes" className='container container-grid'>

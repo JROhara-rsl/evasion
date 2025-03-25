@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router'
 import supabase from "../../supabase.js"
-import { Helmet } from 'react-helmet-async';
 
 // CSS
 import './shop.scss'
@@ -61,10 +60,8 @@ const PageProduit = () => {
 
   return (
     <div id="page-post">  
-        <Helmet>
-          <title>{post.name}</title>
+          <title>{post ? post.name : 'Page produit cosmétique Évasion'}</title>
           <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
-        </Helmet>
         { post &&   
           <section key={post.uuid} id="container-post-product"> 
             <div id="background-post-product"></div>

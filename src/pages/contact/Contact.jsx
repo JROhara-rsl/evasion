@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser'; 
 import validator from "validator";
 
@@ -48,10 +47,8 @@ const Contact = () => {
 
   return (
     <div id="page-contact">    
-      <Helmet>
         <title>Contactez Évasion</title>
         <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
-      </Helmet>
       <section id="section-contact" className='container-image-large'>
           <div className='container-image'>
             <img alt="" src="../../public/assets/img/photos/plage-france.jpg"></img>

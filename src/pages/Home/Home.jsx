@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router'
-import { Helmet } from 'react-helmet-async'
 
 // JS
 import resizeListener from '../../script/functionResizeListener.js';
@@ -46,10 +43,8 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
    
   return (
     <div id="page-home">
-        <Helmet>
           <title>Évasion - cosmétique & hygiène sensorielle</title>
           <meta name='description' content="Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France." />
-        </Helmet>
         <section id="hero">
           <div className='container'>
             <div className={`border pre-anim ${scrollY < heightContent.hero ? 'border-scale-center' : ''}`}></div>

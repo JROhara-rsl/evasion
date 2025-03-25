@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router';
-import { Helmet } from 'react-helmet-async';
 import supabase from "../../supabase.js"
 
 // CSS
@@ -47,10 +46,8 @@ const Panier = () => {
 
   return (
     <div id="page-panier">
-        <Helmet>
             <title>Votre panier - Évasion</title>
             <meta name='description' content="Sélectionnez votre commande et finalisez l'achat." />
-        </Helmet>
         <div className="container">
             <header>
                 <h1 className=''>Votre panier</h1>

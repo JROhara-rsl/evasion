@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
@@ -62,10 +61,8 @@ const Compte = () => {
 
   return (
     <section id="compte-container"  className="container">
-      <Helmet>
           <title>Votre compte - Évasion</title>
           <meta name='description' content="Personaliser les paramètres de votre compte évasion." />
-      </Helmet>
       {session ? (
         <div className="container">
           <header>

@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router'
-import { HelmetProvider } from 'react-helmet-async'
 import { Suspense, lazy } from 'react'
 import emailjs from '@emailjs/browser'; 
 
@@ -29,38 +28,34 @@ import { UpdatePassword } from '@supabase/auth-ui-react';
 import { PanierProvider } from "./context/PanierContext.jsx";
 import { ProfilProvider } from './context/ProfilContext.jsx';
 
-const helmetContext = {};
-
 function App() {
 
   return (
     <>
-      <HelmetProvider context={helmetContext}>
-        <ProfilProvider>
-          <PanierProvider>
-            <Suspense fallback={<div>Chargement...</div>}>
-              <Routes>
-                  <Route path="/" element={<Layout/>}>
-                    <Route index element={<Home/>} />  
-                    <Route path="/shop" element={<Shop/>} /> 
-                    <Route path='/shop/item/:categorieId/:id' element={<PageProduit/>} /> 
-                    <Route path="/nos-gammes" element={<NosGammes/>} />
-                    <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
-                    <Route path="/actualite" element={<Actualite/>} />
-                    <Route path='/actualite/article/:id/:name' element={<Article/>} /> 
-                    <Route path="/contact" element={<Contact/>} />  
-                    <Route path="/panier" element={<Panier/>} />  
-                    <Route path="/panier/commande" element={<Commande/>} />  
-                    <Route path="/compte" element={<Compte />} />
-                    <Route path="/recherche/:searchTerm" element={<Recherche />} />
-                    <Route path="/update-password" element={<UpdatePassword />} />
-                    <Route path='*' element={<Nothing/>} />
-                  </Route>      
-              </Routes>
-            </Suspense>
-          </PanierProvider>
-        </ProfilProvider>
-      </HelmetProvider>
+      <ProfilProvider>
+        <PanierProvider>
+          <Suspense fallback={<div>Chargement...</div>}>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                  <Route index element={<Home/>} />  
+                  <Route path="/shop" element={<Shop/>} /> 
+                  <Route path='/shop/item/:categorieId/:id' element={<PageProduit/>} /> 
+                  <Route path="/nos-gammes" element={<NosGammes/>} />
+                  <Route path="/huiles-essentielles" element={<HuilesEssentielles/>} /> 
+                  <Route path="/actualite" element={<Actualite/>} />
+                  <Route path='/actualite/article/:id/:name' element={<Article/>} /> 
+                  <Route path="/contact" element={<Contact/>} />  
+                  <Route path="/panier" element={<Panier/>} />  
+                  <Route path="/panier/commande" element={<Commande/>} />  
+                  <Route path="/compte" element={<Compte />} />
+                  <Route path="/recherche/:searchTerm" element={<Recherche />} />
+                  <Route path="/update-password" element={<UpdatePassword />} />
+                  <Route path='*' element={<Nothing/>} />
+                </Route>      
+            </Routes>
+          </Suspense>
+        </PanierProvider>
+      </ProfilProvider>
     </>
   )
 }

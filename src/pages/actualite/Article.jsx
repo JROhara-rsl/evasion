@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router';
 import supabase from "../../supabase.js";
-import { Helmet } from 'react-helmet-async';
 import functionActu from './functionActualite.js'
 
 // CSS
@@ -60,10 +59,8 @@ const Article = () => {
 
   return (
     <div>
-        <Helmet>
-          <title>L'Actualité pour s'évader avec Évasion</title>
-          <meta name='description' content="Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature." />
-        </Helmet>
+          <title>{article ? article.title : "L'Actualité pour s'évader avec Évasion"}</title>
+          <meta name='description' content={article ? article.chapeau : "Toute l'actualité pour s'évader avec Évasion"} />
         <section id="container-post-article" className='container-dark'>
         <div className='container'>
           { article &&

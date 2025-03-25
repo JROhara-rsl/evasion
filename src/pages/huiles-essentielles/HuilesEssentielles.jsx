@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router';
-import { Helmet } from 'react-helmet-async';
 import { useMouse } from "@uidotdev/usehooks";
 
 // JS
@@ -44,10 +43,8 @@ const HuilesEssentielles = () => {
       
   return (
     <div id="page-huiles-essentielles">
-      <Helmet>
         <title>Évasion - Laboratoire d'huiles essentielles</title>
         <meta name='description' content="Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence." />
-      </Helmet>
       <div id="sectionHeaderHuile"> 
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 300" preserveAspectRatio="none">
           <circle cx="100" cy="150" r="57" id="circle" transform="rotate(-90,100,100)" />  
