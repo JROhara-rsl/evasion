@@ -101,6 +101,4 @@ export const PanierProvider = ({ children }) => {
   );
 };
 
-
-// Hook personnalisé pour utiliser le contexte plus facilement
 export const usePanier = () => useContext(PanierContext);

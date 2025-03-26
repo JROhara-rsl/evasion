@@ -48,10 +48,10 @@ const NosGammes = () => {
             <div className='liste-filter'>
               <h2 className='name-category'>Nos produits</h2>
               <ul>
-                <Button name="Corse" lien='/shop/corse'/>
                 <Button name="Côte d'Azur" lien='/shop/coteAzur'/>
                 <Button name="Provence" lien='/shop/provence'/>
                 <Button name="Bretagne" lien='/shop/bretagne'/>  
+                <Button name="Corse" lien='/shop/corse'/>
               </ul>
             </div>
         </div>
