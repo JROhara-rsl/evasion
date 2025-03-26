@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import supabase from "../../supabase.js"
+import { useParams } from 'react-router'
 
 // JS
 import functionProduit from './functionProduit.js'
@@ -25,6 +26,10 @@ const Shop = () => {
     };
   }, []);
 
+  
+  
+  const params = useParams()
+  const { gammeParams } = params;  
   const [items, setItems] = useState([]);
   const [categorieOn, setCategorieOn] = useState(false);
   const [gammeOn, setGammeOn] = useState(false);
@@ -43,8 +48,10 @@ const Shop = () => {
   })
 
   const [categorieActive, setCategorieActive] = useState(  ['gelDouche', 'huile', 'huileSatinee', 'creme']  );
-  const [gammeActive, setGammeActive] = useState(  ['bretagne', 'corse', 'coteAzur', 'provence']  );
-
+  const [gammeActive, setGammeActive] = useState(
+    gammeParams ? [gammeParams] : ['bretagne', 'corse', 'coteAzur', 'provence']
+  );
+  
   useEffect(() => {
     const fetchItem = async () => {
       try{
@@ -53,8 +60,7 @@ const Shop = () => {
                                       .select("*")
                                       .in("categorieId", categorieActive)
                                       .in("gammeId", gammeActive);
-        if(status === 200) setItems(data)          
-
+        if(status === 200) setItems(data)                    
       } catch(error) {
         console.log("Error fetching: ", error);
       }
@@ -88,28 +94,35 @@ const Shop = () => {
             return acc;
           }, {});
         }
-    
+        
         // Sinon, on toggle juste l'état du bouton cliqué
         return { ...prevGamme, [name]: !prevGamme[name] };
       });
     }
+    
+    if (categorieActive.length < 2) setCategorieActive(['gelDouche', 'huile', 'huileSatinee', 'creme'])
+    if (gammeActive.length < 2) setGammeActive( ['bretagne', 'corse', 'coteAzur', 'provence'])
   };
-
+  
   // Permet de voir les mises à jour en temps réel
   useEffect(() => {
+    console.log(categorieActive);
     setCategorieActive(
       Object.entries(categorie)
-            .filter(([key, value]) => value === true)
-            .map(([key]) => key)
+      .filter(([key, value]) => value === true)
+      .map(([key]) => key)
     );
-  }, [categorie]); 
-
+    
+    }, [categorie]); 
+  
   useEffect(() => {
+    console.log(gammeActive);
     setGammeActive(
       Object.entries(gamme)
             .filter(([key, value]) => value === true)
             .map(([key]) => key)
     );
+    
   }, [gamme]); 
 
   return (

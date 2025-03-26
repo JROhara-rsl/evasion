@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import supabase from "../supabase";
 
 const PanierContext = createContext();
 
@@ -22,6 +23,38 @@ export const PanierProvider = ({ children }) => {
           quantite: (prevPanier[uuid]?.quantite || 0) + quantite
         }
       }));
+    };
+    
+    // Ajouter une gamme entière
+    const addGamme = async (gamme, quantite = 1) => {
+      try {
+        const { data, error } = await supabase
+          .from("produits")
+          .select("uuid")
+          .eq("gammeId", gamme); // Filtre par gamme
+    
+        if (error) throw error;
+        
+        if (!data || data.length === 0) {          
+          console.log("Aucun produit trouvé pour cette gamme.");
+          return;
+        }
+        setPanier(prevPanier => {
+          const newPanier = { ...prevPanier };
+    
+          data.forEach(product => {
+            const uuid = product.uuid;
+            newPanier[uuid] = {
+              quantite: (prevPanier[uuid]?.quantite || 0) + quantite
+            };
+          });
+          localStorage.setItem("panier", JSON.stringify(newPanier)); // Sauvegarde dans localStorage
+
+      return newPanier;
+        });
+      } catch (error) {
+        console.error("Erreur lors de l'ajout des produits de la gamme :", error);
+      }
     };
 
     // Soustraire une quantité
@@ -62,7 +95,7 @@ export const PanierProvider = ({ children }) => {
     };
 
   return (
-    <PanierContext.Provider value={{ panier, addPanier, lessPanier, deletePanier }}>
+    <PanierContext.Provider value={{ panier, addPanier, addGamme, lessPanier, deletePanier }}>
       {children}
     </PanierContext.Provider>
   );

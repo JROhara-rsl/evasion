@@ -85,7 +85,7 @@ const PageProduit = () => {
                 </div>
                 <div className='container-double'>
                   <ButtonPanier name='Ajouter au panier' action="add" uuid={post.uuid}/>
-                  <ButtonPanier name="Acheter" action="add" lien="/panier" uuid={post.uuid} />
+                  <ButtonPanier name="Acheter" action="add" navigate="true" uuid={post.uuid} />
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ const PageProduit = () => {
             <h2>Vous pourriez aimer aussi...</h2>
               <p>
               Au cœur de nos formules généreuses, aux textures sensorielles et aux senteurs addictives, notre laboratoire intègre des huiles essentielles 100% pures et naturelles qui libèrent leurs bienfaits actifs et créent une bulle de reconnexion à la nature.               </p>
-              <Button name='Profitez de toute la gamme !' lien='/nos-gammes' />
+              <ButtonPanier name='Profitez de toute la gamme !' action="addGamme" navigate="true" gamme={gamme} />
             </div>
             <div id="container-shop" className='grid6d'>
               {items.map(item => 

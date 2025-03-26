@@ -8,7 +8,7 @@ import './button.scss';
 import { usePanier } from "../../context/PanierContext";
 
 const ButtonPanier = (props) => {
-  const { addPanier, lessPanier, deletePanier } = usePanier();
+  const { addPanier, addGamme, lessPanier, deletePanier } = usePanier();
   const [toPanier, setToPanier] = useState(false);
 
   if (toPanier) {
@@ -19,9 +19,11 @@ const ButtonPanier = (props) => {
     <div className="button button-panier">
         <button type="button" id={props.value && props.value} className='border-button'
                 onClick={() => 
-                    props.action === 'add'    && addPanier(props.uuid, 1) + setToPanier(true) ||
+                    props.navigate === 'true' && setToPanier(true) ||
+                    props.action === 'add'    && addPanier(props.uuid, 1) ||
+                    props.action === 'addGamme' && addGamme(props.gamme, 1) ||
                     props.action === 'delete' && deletePanier(props.uuid) ||
-                    props.action === 'less'   && lessPanier(props.uuid, 1) 
+                    props.action === 'less'   && lessPanier(props.uuid, 1)
                   }>
             {props.name}
         </button>

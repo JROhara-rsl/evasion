@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router';
 
 // Component
-import ButtonToggle from '../../components/button/ButtonToggle';
 import Button from '../../components/button/Button';
 import Newsletter from '../../components/newsletter/Newsletter';
 const SliderGamme = React.lazy(() => import('../../components/slider/SliderGamme'));
@@ -49,10 +48,10 @@ const NosGammes = () => {
             <div className='liste-filter'>
               <h2 className='name-category'>Nos produits</h2>
               <ul>
-                <ButtonToggle placeHolder='Gel douche' value="gelDouche"/>
-                <ButtonToggle placeHolder='Huile' value="huile"/>
-                <ButtonToggle placeHolder='Huile satinée'  value="huileSatinee"/>
-                <ButtonToggle placeHolder='Crème'  value="creme"/>
+                <Button name="Corse" lien='/shop/corse'/>
+                <Button name="Côte d'Azur" lien='/shop/coteAzur'/>
+                <Button name="Provence" lien='/shop/provence'/>
+                <Button name="Bretagne" lien='/shop/bretagne'/>  
               </ul>
             </div>
         </div>

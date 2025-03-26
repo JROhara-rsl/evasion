@@ -69,4 +69,16 @@
     .container-first {
         margin: 0 auto 100px;
     }
+
+    .liste-filter {
+        .button {
+            width: 100%;
+            text-align: center;
+            a {
+                width: 100%;
+                font-size: 0.9rem;
+                padding: 15px 0;
+            }
+        }
+    }
 }
