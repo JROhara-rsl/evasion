@@ -95,7 +95,9 @@ const Contact = () => {
                   name="legales" checked={isChecked} 
                   onChange={(e) => setIsChecked(e.target.checked)} 
                 />
-                <label htmlFor="legales">Oui, j’accepte la <Link to='/confidentialite'>politique de confidentialité</Link> et les <Link to='/mentionslegales'> conditions générales.</Link></label>
+                <label htmlFor="legales">
+                  Oui, j’accepte la <Link to='/confidentialite'>politique de confidentialité</Link> et les <Link to='/mentionslegales'> conditions générales.</Link>
+                </label>
               </div>
               <ButtonForm id="envoyer" name="envoyez" placeholder="Envoyez" type="submit" />
             </form>

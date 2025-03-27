@@ -46,7 +46,7 @@ const HuilesEssentielles = () => {
         <title>Évasion - Laboratoire d'huiles essentielles</title>
         <meta name='description' content="Nos produits sont le fruit d'un savoir-faire unique, associant naturalité et innovation. Chaque formulation est développée avec exigence." />
       <div id="sectionHeaderHuile"> 
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 300" preserveAspectRatio="none">
+        <svg version="1.1" viewBox="0 0 300 300" preserveAspectRatio="none">
           <circle cx="100" cy="150" r="57" id="circle" transform="rotate(-90,100,100)" />  
         </svg>
         <div className='container-image' ref={ref}>
@@ -92,8 +92,8 @@ const HuilesEssentielles = () => {
       </section>
       <section id="sectionEngagements">
         <div className='container-image'>
-          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 300" preserveAspectRatio="none">
-            <circle cx="40" cy="150" r="40" id="circle" transform="rotate(-90,100,100)" />  
+          <svg version="1.1" viewBox="0 0 300 300" preserveAspectRatio="none">
+            <circle cx="40" cy="150" r="90" id="circle" transform="rotate(-90,100,100)" />  
           </svg>
           <img alt="Fiole d'huile essentielle" src={`${import.meta.env.BASE_URL}/assets/img/photos/fiole-900px.png`} 
               className={`pre-anim ${scrollY > heightContent.sectionHeaderTexte && scrollY < heightContent.sectionEngagements ? 'translateT' : ''}`}></img>

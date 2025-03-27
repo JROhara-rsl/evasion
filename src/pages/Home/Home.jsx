@@ -69,13 +69,16 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
         <section id="sectionIntroProduit" className='container-dark'>
           <div className='container container-grid'>
             <div className={`grid6 pre-anim ${scrollY > heightContent.hero/2 ? 'translateL' : ''}`}>
-              <img src={`${import.meta.env.BASE_URL}/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg`}/>
+              <img alt="Plusieurs produits de la gamme Provence d'Évasion" 
+                  src={`${import.meta.env.BASE_URL}/assets/img/pack/gamme/GAMME-LAVANDE-750px.jpg`}
+              />
             </div>
             <div className={`container-flex-texte grid3 pre-anim ${scrollY > heightContent.hero/2 ? 'translateR' : ''}`}>
               <h2>Nos produits</h2>
               <p>
                 <span className='paragraphe-chapeau'>Plongez dans un univers où chaque soin devient une invitation au voyage.<br/></span>
-                Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, inspirés des régions les plus emblématiques de France. Parce que prendre soin de soi, c'est aussi s'offrir un moment d'évasion.
+                Évasion vous propose des produits cosmiques et d'hygiène formulés à partir d'huiles essentielles 100% françaises, 
+                inspirés des régions les plus emblématiques de France. Parce que prendre soin de soi, c'est aussi s'offrir un moment d'évasion.
               </p>
               <Button name='Découvrir nos gammes' lien='/nos-gammes' class="button-white" />
             </div>
@@ -121,7 +124,7 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
                 <span>Côte d'Azur</span>
                 Laissez votre peau s'illuminer avec notre Huile Satinée inspirée des rivages ensoleillés de la Côte d'Azur. Riche en huile d'argan, en extraits de fleurs d'oranger et en vitamine E, elle nourrit intensément et laisse un fini soyeux sur votre peau. Son parfum envoûtant vous transporte instantanément sous le soleil méditerranéen.
               </p>
-              <Button name="Pour l'adopter" lien='/shop'/>
+              <Button name="Pour l'adopter" lien='/shop/item/huileSatinee/2918e31a-6b1e-49a4-a695-d48d7574234d/'/>
             </div>
             <div className='grid5 container-image'>
               <img alt="Photo d'huile satinée dans une salle de bain" src={`${import.meta.env.BASE_URL}/assets/img/pack/huile-satinee/HUILE-SATINE-3-EVASION-02-1000px.jpg`}></img>

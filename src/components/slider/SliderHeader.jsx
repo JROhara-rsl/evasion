@@ -6,7 +6,6 @@ import { Link } from 'react-router';
 
 // CSS
 import './slider.scss'
-import Button from '../button/Button';
 
 const SliderHeader = () => {
     const [produits, setProduits] = useState([]);
@@ -53,13 +52,15 @@ const SliderHeader = () => {
       <Slider {...settings} ref={sliderRef}>
           {produits.map(slide => (
               <Link to={'/shop/item/'+slide.categorieId+'/'+slide.uuid} key={slide.id} className='slide-child'>
-                  <div className={isIntersecting ? "active bandeau" : "bandeau"} style={{ left: (mouse.elementX-250), top: (mouse.elementY-150) }} >
+                  <div  className={isIntersecting ? "active bandeau" : "bandeau"} 
+                        style={{ left: (mouse.elementX-250), top: (mouse.elementY-150) }} >
                     <h4>{slide.categorie}</h4>
                     <hr></hr>
                     <span>{slide.gamme}</span>
                     <span>{slide.format}</span>
                   </div>
-                  <img src={import.meta.env.BASE_URL + 'assets/img/' + slide.img2 + '-1200px.png'}  alt={slide.name+ ' ' +slide.gamme} className='floating-in-element' />
+                  <img  src={import.meta.env.BASE_URL + 'assets/img/' + slide.img2 + '-1200px.png'}  
+                        alt={slide.name+ ' ' +slide.gamme} className='floating-in-element' />
               </Link>
           ))}
       </Slider>
