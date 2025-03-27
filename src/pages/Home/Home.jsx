@@ -53,9 +53,10 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
           <div className='container'>
             <div className={`border pre-anim ${scrollY < heightContent.hero ? 'border-scale-center' : ''}`}></div>
             <div className='header-logo'>
-              <h1>Évasion</h1>
+              <h1>Évasion cosmétique & hygiène sensorielle</h1>
               <Logo2 />
               <h2 className='title-H'>Cosmétique sensorielle</h2>
+              <h3 className='title-post-item'>Découvrez nos produits</h3>
             </div>
             <div className='header-button'>
               <Button name='Découvrir nos produits' lien='/shop' /> 
@@ -83,8 +84,8 @@ const SliderHeader = React.lazy(() => import('../../components/slider/SliderHead
         <section id="sectionDefilement">
           <hr></hr>
           <div className='container-defilement'>
-            <h2 className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h2>
-            <h2 aria-hidden="true" className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h2>
+            <h3 className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h3>
+            <h3 aria-hidden="true" className="title-XXH defilement">ÉVASION - COSMÉTIQUE SENSORIELLE - HUILES ESSENTIELLES</h3>
           </div>
           <hr></hr>
         </section>

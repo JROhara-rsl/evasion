@@ -147,3 +147,23 @@
     background-color: $white-color;
     border: none;
 }
+
+.form-checkbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    span {
+        font-size: 0.9rem;
+        font-weight: 500;
+        width: 100%;
+    }
+    input {
+        width: fit-content;
+    }
+    label {   
+        font-weight: 300;    
+        width: 89%;
+        margin: 3px 0 0 1%;
+    }
+}

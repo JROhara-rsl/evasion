@@ -63,7 +63,8 @@ const Footer = () => {
             </div>           
           </nav>
           <ul id="container-copyright">
-            <li>Mentions légales</li>
+            <li><Link to='/mentionslegales' >Mentions légales</Link></li>
+            <li><Link to='/confidentialite' >Politique de confidentialité</Link></li>
             <li>évasion © copyright 2025</li>
             <li></li>
           </ul>

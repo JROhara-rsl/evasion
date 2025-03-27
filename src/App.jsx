@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router'
 import { Suspense, lazy } from 'react'
-import emailjs from '@emailjs/browser'; 
 
 // CSS
 import './App.css'
@@ -23,6 +22,8 @@ const Recherche = lazy(() => import('./pages/recherche/Recherche'));
 import Commande from './pages/panier/Commande.jsx';
 import Compte from './pages/compte/Compte.jsx';
 import { UpdatePassword } from '@supabase/auth-ui-react';
+import Mentions from './pages/simple/Mentions.jsx';
+import Confidentialite from './pages/simple/Confidentialite.jsx'
 
 // Context
 import { PanierProvider } from "./context/PanierContext.jsx";
@@ -51,6 +52,8 @@ function App() {
                   <Route path="/compte" element={<Compte />} />
                   <Route path="/recherche/:searchTerm" element={<Recherche />} />
                   <Route path="/update-password" element={<UpdatePassword />} />
+                  <Route path="/mentionslegales" element={<Mentions />} />
+                  <Route path="/confidentialite" element={<Confidentialite />} />
                   <Route path='*' element={<Nothing/>} />
                 </Route>      
             </Routes>

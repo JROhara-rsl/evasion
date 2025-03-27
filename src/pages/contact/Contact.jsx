@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser'; 
 import validator from "validator";
+import { Link } from 'react-router';
 
 // CSS
 import './contact.scss'
@@ -15,6 +16,7 @@ import Input from '../../components/form/Input';
 const Contact = () => {
   const form = useRef(); 
   const [emailError, setEmailError] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const validateEmail = (e) => {
       const email = e.target.value;
@@ -28,7 +30,11 @@ const Contact = () => {
 
   const sendEmail = (e) => { 
     e.preventDefault(); 
-    
+    if (!isChecked) {
+      alert("Vous devez accepter les conditions légales pour envoyer le message.");
+      return;
+    }
+
     emailjs 
       .sendForm( 
         import.meta.env.VITE_APP_SERVICE_ID, 
@@ -82,7 +88,15 @@ const Contact = () => {
                       name="Message"  id="message" 
                       placeholder="Votre message"
                       required='true' />
-
+              <div className='form-checkbox'>
+                <span>Consentement *</span>
+                <input 
+                  type="checkbox" id="legales" 
+                  name="legales" checked={isChecked} 
+                  onChange={(e) => setIsChecked(e.target.checked)} 
+                />
+                <label htmlFor="legales">Oui, j’accepte la <Link to='/confidentialite'>politique de confidentialité</Link> et les <Link to='/mentionslegales'> conditions générales.</Link></label>
+              </div>
               <ButtonForm id="envoyer" name="envoyez" placeholder="Envoyez" type="submit" />
             </form>
           </div>
